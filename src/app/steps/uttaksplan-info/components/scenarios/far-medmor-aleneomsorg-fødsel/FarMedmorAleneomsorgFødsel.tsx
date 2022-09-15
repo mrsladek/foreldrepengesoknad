@@ -1,5 +1,5 @@
 import { Block, intlUtils } from '@navikt/fp-common';
-import { dateToISOString } from '@navikt/sif-common-formik/lib';
+import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
 import actionCreator from 'app/context/action/actionCreator';
 import { ForeldrepengesøknadContextState } from 'app/context/ForeldrepengesøknadContextConfig';
 import { isAnnenForelderOppgitt } from 'app/context/types/AnnenForelder';

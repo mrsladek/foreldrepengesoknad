@@ -1,5 +1,6 @@
 import { Block, intlUtils } from '@navikt/fp-common';
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
+
 import { Attachment } from 'app/types/Attachment';
 import React, { FunctionComponent } from 'react';
 import { useIntl } from 'react-intl';

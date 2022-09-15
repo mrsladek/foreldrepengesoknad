@@ -30,7 +30,7 @@ import {
 } from './validation/egenNæringValidation';
 import dayjs from 'dayjs';
 import { validateRequiredTextInputField } from 'app/utils/validationUtil';
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 
 interface Props {
     isOpen: boolean;

@@ -1,4 +1,3 @@
-import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik/lib';
 import { AnnenInntekt, AnnenInntektType } from 'app/context/types/AnnenInntekt';
 import { Frilans, FrilansOppdrag } from 'app/context/types/Frilans';
 import { Næring } from 'app/context/types/Næring';

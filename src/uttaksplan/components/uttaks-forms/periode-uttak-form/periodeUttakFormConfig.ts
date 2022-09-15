@@ -1,4 +1,4 @@
-import { getTypedFormComponents, YesOrNo } from '@navikt/sif-common-formik/lib';
+import { getTypedFormComponents, YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { Attachment } from 'app/types/Attachment';
 import { Forelder } from 'app/types/Forelder';
 import { UttakRundtFødselÅrsak } from 'app/types/UttakRundtFødselÅrsak';

@@ -1,5 +1,6 @@
 import { hasValue } from '@navikt/fp-common';
-import { getTypedFormComponents } from '@navikt/sif-common-formik/lib';
+import { getTypedFormComponents } from '@navikt/sif-common-formik-ds/lib';
+
 import Søkersituasjon from 'app/context/types/Søkersituasjon';
 import { Situasjon } from 'app/types/Situasjon';
 import { Søkerrolle } from 'app/types/Søkerrolle';

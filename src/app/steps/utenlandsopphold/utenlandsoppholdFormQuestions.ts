@@ -1,5 +1,6 @@
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { QuestionConfig, Questions } from '@navikt/sif-common-question-config';
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
+
 import { UtenlandsoppholdFormData, UtenlandsoppholdFieldNames } from './utenlandsoppholdFormTypes';
 
 const UtenlandsoppholdFormConfig: QuestionConfig<UtenlandsoppholdFormData, UtenlandsoppholdFieldNames> = {

@@ -1,4 +1,4 @@
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { FarMedmorAleneomsorgFødselUttaksplanInfo } from 'app/context/types/UttaksplanInfo';
 import { Dekningsgrad } from 'app/types/Dekningsgrad';
 import dayjs from 'dayjs';

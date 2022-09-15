@@ -1,5 +1,6 @@
 import { bemUtils, intlUtils, UtvidetInformasjon } from '@navikt/fp-common';
-import { getNumberFromNumberInputValue, TypedFormComponents } from '@navikt/sif-common-formik/lib';
+import { getNumberFromNumberInputValue } from '@navikt/sif-common-formik-ds/lib';
+
 import { SkjemaGruppe } from 'nav-frontend-skjema';
 import { Element } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';

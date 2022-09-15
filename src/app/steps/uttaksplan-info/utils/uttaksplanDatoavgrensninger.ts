@@ -2,10 +2,10 @@ import dayjs from 'dayjs';
 import { Uttaksdagen } from './Uttaksdagen';
 import uttaksConstants from 'app/constants';
 import { DatepickerLimitations } from 'nav-datovelger';
-import { dateToISOString } from '@navikt/sif-common-formik/lib';
 import { andreAugust2022ReglerGjelder } from 'app/utils/dateUtils';
 import { Situasjon } from 'app/types/Situasjon';
 import { getFørsteUttaksdag2UkerFørFødsel } from 'app/utils/wlbUtils';
+import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
 
 function sisteMuligePermisjonsdag(familiehendelsedato: Date): Date {
     const startDato = Uttaksdagen(familiehendelsedato).denneEllerNeste();

@@ -1,5 +1,6 @@
 import { Block, formatDate, intlUtils } from '@navikt/fp-common';
-import { dateToISOString, TypedFormComponents } from '@navikt/sif-common-formik/lib';
+import { dateToISOString, TypedFormComponents } from '@navikt/sif-common-formik-ds/lib';
+
 import LenkeKnapp from 'app/components/lenke-knapp/LenkeKnapp';
 import { Uttaksdagen } from 'app/steps/uttaksplan-info/utils/Uttaksdagen';
 import { uttaksplanDatoavgrensninger } from 'app/steps/uttaksplan-info/utils/uttaksplanDatoavgrensninger';

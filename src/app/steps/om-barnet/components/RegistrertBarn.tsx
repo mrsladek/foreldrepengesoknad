@@ -1,5 +1,6 @@
 import { Block, formatDate, intlUtils } from '@navikt/fp-common';
-import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik/lib';
+import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik-ds/lib';
+
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 import { RegistrertBarn as RegistrertBarnType } from 'app/types/Person';
 import { velgEldsteBarn } from 'app/utils/dateUtils';

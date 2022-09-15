@@ -1,5 +1,6 @@
 import { Tidsperiode, TidsperiodeDate } from '@navikt/fp-common';
-import { dateToISOString } from '@navikt/sif-common-formik/lib';
+import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
+
 import { isValidTidsperiode, Tidsperioden } from 'app/steps/uttaksplan-info/utils/Tidsperioden';
 import { Uttaksdagen } from 'app/steps/uttaksplan-info/utils/Uttaksdagen';
 import { uttaksplanDatoavgrensninger } from 'app/steps/uttaksplan-info/utils/uttaksplanDatoavgrensninger';

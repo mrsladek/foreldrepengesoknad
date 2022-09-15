@@ -38,7 +38,7 @@ import {
 } from './farMedmorFørstegangssøknadMedAnnenPartUtils';
 import { getMorHarRettPåForeldrepenger } from 'app/utils/personUtils';
 import { getHarAktivitetskravIPeriodeUtenUttak } from 'app/utils/uttaksplan/uttaksplanUtils';
-import { dateToISOString } from '@navikt/sif-common-formik/lib';
+import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
 
 interface Props {
     tilgjengeligeStønadskontoer100DTO: TilgjengeligeStønadskontoerDTO;

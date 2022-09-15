@@ -1,9 +1,9 @@
+import { BodyLong, BodyShort } from '@navikt/ds-react';
 import { intlUtils, Block, UtvidetInformasjon, hasValue, TidsperiodeDate } from '@navikt/fp-common';
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
+import { FormikRadioProp } from '@navikt/sif-common-formik-ds/lib/components/formik-radio-group/FormikRadioGroup';
 import Arbeidsforhold from 'app/types/Arbeidsforhold';
 import { getKunArbeidsforholdForValgtTidsperiode } from 'app/utils/arbeidsforholdUtils';
-import { RadioPanelProps } from 'nav-frontend-skjema';
-import { Normaltekst } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Arbeidsform } from 'uttaksplan/types/Periode';
@@ -19,10 +19,10 @@ interface Props {
 export const getArbeidsOptions = (
     arbeidsforhold: Arbeidsforhold[],
     tidsperiode: TidsperiodeDate
-): RadioPanelProps[] => {
+): FormikRadioProp[] => {
     const aktiveArbeidsforholdIPerioden = getKunArbeidsforholdForValgtTidsperiode(arbeidsforhold, tidsperiode);
 
-    const defaultOptions: RadioPanelProps[] = [
+    const defaultOptions: FormikRadioProp[] = [
         {
             label: 'Selvstendig næringsdrivende',
             value: Arbeidsform.selvstendignæringsdrivende,
@@ -32,7 +32,7 @@ export const getArbeidsOptions = (
             value: Arbeidsform.frilans,
         },
     ];
-    const eksisterendeArbeidsforhold: RadioPanelProps[] = [];
+    const eksisterendeArbeidsforhold: FormikRadioProp[] = [];
 
     if (aktiveArbeidsforholdIPerioden.length > 0) {
         aktiveArbeidsforholdIPerioden.forEach((arb) =>
@@ -69,9 +69,9 @@ const SkalHaGraderingSpørsmål: FunctionComponent<Props> = ({
                     label={intlUtils(intl, 'uttaksplan.stillingsprosent')}
                     description={
                         <UtvidetInformasjon apneLabel={intlUtils(intl, 'uttaksplan.stillingsprosent.lesMer.tittel')}>
-                            <Normaltekst>
+                            <BodyShort>
                                 <FormattedMessage id="uttaksplan.stillingsprosent.lesMer.innhold" />
-                            </Normaltekst>
+                            </BodyShort>
                         </UtvidetInformasjon>
                     }
                     maxLength={4}
@@ -84,9 +84,9 @@ const SkalHaGraderingSpørsmål: FunctionComponent<Props> = ({
                     legend={intlUtils(intl, 'uttaksplan.arbeidsformer')}
                     description={
                         <UtvidetInformasjon apneLabel={intlUtils(intl, 'uttaksplan.arbeidsformer.lesMer.tittel')}>
-                            <Normaltekst>
+                            <BodyLong>
                                 <FormattedMessage id="uttaksplan.arbeidsformer.lesMer.innhold" />
-                            </Normaltekst>
+                            </BodyLong>
                         </UtvidetInformasjon>
                     }
                     useTwoColumns={true}

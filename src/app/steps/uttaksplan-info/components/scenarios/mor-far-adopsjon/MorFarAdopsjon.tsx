@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import dayjs from 'dayjs';
-import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik/lib';
+
 import { Block, intlUtils } from '@navikt/fp-common';
 import { Hovedknapp } from 'nav-frontend-knapper';
 import Veilederpanel from 'nav-frontend-veilederpanel';
@@ -46,6 +46,7 @@ import { ForeldrepengesøknadContextState } from 'app/context/Foreldrepengesøkn
 import { getAntallUker } from 'app/steps/uttaksplan-info/utils/stønadskontoer';
 import AdopsjonStartdatoValg from './adopsjonStartdatoValg';
 import { getHarAktivitetskravIPeriodeUtenUttak } from 'app/utils/uttaksplan/uttaksplanUtils';
+import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 
 interface Props {
     tilgjengeligeStønadskontoer100DTO: TilgjengeligeStønadskontoerDTO;

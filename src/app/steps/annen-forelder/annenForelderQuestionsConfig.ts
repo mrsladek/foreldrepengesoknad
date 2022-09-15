@@ -1,6 +1,5 @@
 import { QuestionConfig, Questions } from '@navikt/sif-common-question-config';
 import { AnnenForelderFormData, AnnenForelderFormField } from './annenforelderFormConfig';
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
 import { Søkerrolle } from 'app/types/Søkerrolle';
 import { hasValue } from '@navikt/fp-common';
 import isFarEllerMedmor from 'app/utils/isFarEllerMedmor';

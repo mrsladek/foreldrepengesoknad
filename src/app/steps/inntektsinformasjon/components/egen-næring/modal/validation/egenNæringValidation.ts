@@ -1,5 +1,5 @@
 import { hasValue, intlUtils } from '@navikt/fp-common';
-import { getNumberFromNumberInputValue } from '@navikt/sif-common-formik/lib';
+import { getNumberFromNumberInputValue } from '@navikt/sif-common-formik-ds/lib';
 import { SkjemaelementFeil } from 'app/types/SkjemaelementFeil';
 import { isDateABeforeDateB, isDateInTheFuture } from 'app/utils/dateUtils';
 import { erGyldigNorskOrgnummer } from 'app/utils/numberUtils';

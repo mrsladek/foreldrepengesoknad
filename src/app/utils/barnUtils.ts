@@ -1,4 +1,4 @@
-import { dateToISOString } from '@navikt/sif-common-formik/lib';
+import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
 import Barn, { isFødtBarn, isUfødtBarn } from 'app/context/types/Barn';
 import { RegistrertBarn } from 'app/types/Person';
 import dayjs from 'dayjs';

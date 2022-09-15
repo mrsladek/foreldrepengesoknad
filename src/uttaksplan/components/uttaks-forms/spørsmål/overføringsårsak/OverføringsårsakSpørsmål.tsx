@@ -1,10 +1,9 @@
+import { GuidePanel } from '@navikt/ds-react';
 import { intlUtils, Block, hasValue } from '@navikt/fp-common';
-import VeilederNormal from 'app/assets/VeilederNormal';
 import FormikFileUploader from 'app/components/formik-file-uploader/FormikFileUploader';
 import { Attachment } from 'app/types/Attachment';
 import { AttachmentType } from 'app/types/AttachmentType';
 import { Skjemanummer } from 'app/types/Skjemanummer';
-import Veilederpanel from 'nav-frontend-veilederpanel';
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { OverføringÅrsakType } from 'uttaksplan/types/OverføringÅrsakType';
@@ -78,12 +77,12 @@ const OverføringsårsakSpørsmål: FunctionComponent<Props> = ({
             </Block>
             {beOmDokumentasjon && (
                 <Block padBottom="l">
-                    <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                    <GuidePanel>
                         <FormattedMessage
                             id="uttaksplan.overføringsårsak.informasjonVedSykdomAnnenForelder"
                             values={{ navnAnnenForelder }}
                         />
-                    </Veilederpanel>
+                    </GuidePanel>
                 </Block>
             )}
             {beOmDokumentasjon && (

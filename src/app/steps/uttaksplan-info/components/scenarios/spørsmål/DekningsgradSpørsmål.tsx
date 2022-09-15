@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { useIntl } from 'react-intl';
-import { TypedFormComponents } from '@navikt/sif-common-formik/lib';
+
 import { intlUtils, UtvidetInformasjon } from '@navikt/fp-common';
 import { Dekningsgrad } from 'app/types/Dekningsgrad';
 import { getAntallUker } from 'app/steps/uttaksplan-info/utils/stønadskontoer';
 import { TilgjengeligStønadskonto } from 'app/types/TilgjengeligStønadskonto';
+import { TypedFormComponents } from '@navikt/sif-common-formik-ds/lib';
 
 interface Props {
     FormKomponent: TypedFormComponents<any, any, any>;

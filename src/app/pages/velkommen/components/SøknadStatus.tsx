@@ -3,7 +3,6 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import dayjs from 'dayjs';
 
 import { bemUtils, Block, InfoBlock, intlUtils } from '@navikt/fp-common';
-import { YesOrNo, UnansweredQuestionsInfo } from '@navikt/sif-common-formik/lib';
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 
 import EtikettBase from 'nav-frontend-etiketter';

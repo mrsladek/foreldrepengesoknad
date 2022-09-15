@@ -1,6 +1,4 @@
 import { bemUtils, Block, intlUtils } from '@navikt/fp-common';
-import Modal from 'nav-frontend-modal';
-import { Undertittel } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import {
@@ -18,14 +16,12 @@ import { AnnenInntekt, AnnenInntektType } from 'app/context/types/AnnenInntekt';
 import andreInntekterModalQuestionsConfig from './andreInntekterModalQuestionsConfig';
 import FormikFileUploader from 'app/components/formik-file-uploader/FormikFileUploader';
 import { AttachmentType } from 'app/types/AttachmentType';
-import Veilederpanel from 'nav-frontend-veilederpanel';
-import VeilederNormal from 'app/assets/VeilederNormal';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import { validateAnnenInntektFom, validateAnnenInntektTom } from './../validation/andreInntekterValidation';
-
-import './andreInntekterModal.less';
 import dayjs from 'dayjs';
 import { validateRequiredTextInputField } from 'app/utils/validationUtil';
+import { Button, GuidePanel, Heading, Modal } from '@navikt/ds-react';
+
+import './andreInntekterModal.less';
 
 interface Props {
     isOpen: boolean;
@@ -72,106 +68,114 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
 
     return (
         <Modal
-            isOpen={isOpen}
-            contentLabel={contentLabel}
-            onRequestClose={onRequestClose}
+            open={isOpen}
+            aria-label={contentLabel}
+            onClose={onRequestClose}
             closeButton={true}
             shouldCloseOnOverlayClick={false}
             className={bem.block}
         >
-            <AndreInntekterModalFormComponents.FormikWrapper
-                initialValues={getInitialAndreInntekterFormValues(selectedAnnenInntekt)}
-                onSubmit={onValidSubmit}
-                renderForm={({ values: formValues }) => {
-                    const visibility = andreInntekterModalQuestionsConfig.getVisbility(formValues);
+            <Modal.Content>
+                <AndreInntekterModalFormComponents.FormikWrapper
+                    initialValues={getInitialAndreInntekterFormValues(selectedAnnenInntekt)}
+                    onSubmit={onValidSubmit}
+                    renderForm={({ values: formValues }) => {
+                        const visibility = andreInntekterModalQuestionsConfig.getVisbility(formValues);
 
-                    return (
-                        <AndreInntekterModalFormComponents.Form
-                            includeButtons={false}
-                            cleanup={(values) => cleanupAndreInntekterForm(values, visibility)}
-                        >
-                            <Block padBottom="l">
-                                <Undertittel className={bem.element('tittel')}>
-                                    <FormattedMessage id="inntektsinformasjon.andreInntekterModal.tittel" />
-                                </Undertittel>
-                            </Block>
-                            <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.type)}>
-                                <AndreInntekterModalFormComponents.RadioPanelGroup
-                                    name={AndreInntekterFormField.type}
-                                    radios={[
-                                        { label: 'Jobb i utlandet', value: AnnenInntektType.JOBB_I_UTLANDET },
-                                        { label: 'Vartpenger og ventelønn', value: AnnenInntektType.VENTELØNN },
-                                        { label: 'Sluttvederlag', value: AnnenInntektType.SLUTTPAKKE },
-                                        { label: 'Førstegangstjeneste', value: AnnenInntektType.MILITÆRTJENESTE },
-                                    ]}
-                                />
-                            </Block>
-                            <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.land)}>
-                                <AndreInntekterModalFormComponents.CountrySelect
-                                    name={AndreInntekterFormField.land}
-                                    label={intlUtils(intl, 'annenInntekt.spørsmål.land')}
-                                    useAlpha3Code={false}
-                                />
-                            </Block>
-                            <Block
-                                padBottom="l"
-                                visible={visibility.isVisible(AndreInntekterFormField.navnPåArbeidsgiver)}
+                        return (
+                            <AndreInntekterModalFormComponents.Form
+                                includeButtons={false}
+                                cleanup={(values) => cleanupAndreInntekterForm(values, visibility)}
                             >
-                                <AndreInntekterModalFormComponents.Input
-                                    name={AndreInntekterFormField.navnPåArbeidsgiver}
-                                    label={navnPåArbeidsgiverLabel}
-                                    validate={validateRequiredTextInputField(navnPåArbeidsgiverLabel, intl)}
-                                />
-                            </Block>
-                            <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.fom)}>
-                                <AndreInntekterModalFormComponents.DatePicker
-                                    name={AndreInntekterFormField.fom}
-                                    label={intlUtils(intl, 'fom')}
-                                    placeholder="dd.mm.åååå"
-                                    fullscreenOverlay={true}
-                                    showYearSelector={true}
-                                    validate={validateAnnenInntektFom(intl, formValues.tom)}
-                                    maxDate={dayjs().toDate()}
-                                />
-                            </Block>
-                            <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.pågående)}>
-                                <AndreInntekterModalFormComponents.YesOrNoQuestion
-                                    name={AndreInntekterFormField.pågående}
-                                    legend={intlUtils(intl, 'pågående')}
-                                />
-                            </Block>
-                            <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.tom)}>
-                                <AndreInntekterModalFormComponents.DatePicker
-                                    name={AndreInntekterFormField.tom}
-                                    label={intlUtils(intl, 'tom')}
-                                    placeholder="dd.mm.åååå"
-                                    fullscreenOverlay={true}
-                                    showYearSelector={true}
-                                    validate={validateAnnenInntektTom(intl, formValues.fom)}
-                                    maxDate={dayjs().toDate()}
-                                />
-                            </Block>
-                            <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.dokumentasjon)}>
-                                <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
-                                    <FormattedMessage id={getVeilederMessageId(formValues)} />
-                                </Veilederpanel>
-                            </Block>
-                            <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.dokumentasjon)}>
-                                <FormikFileUploader
-                                    name={AndreInntekterFormField.dokumentasjon}
-                                    label="Last opp dokumentasjon"
-                                    attachments={formValues.dokumentasjon}
-                                    attachmentType={AttachmentType.ANNEN_INNTEKT}
-                                    skjemanummer={getSkjemanummer(formValues)}
-                                />
-                            </Block>
-                            <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
-                                <Hovedknapp>{intlUtils(intl, 'søknad.gåVidere')}</Hovedknapp>
-                            </Block>
-                        </AndreInntekterModalFormComponents.Form>
-                    );
-                }}
-            />
+                                <Block padBottom="l">
+                                    <Heading className={bem.element('tittel')} size="small">
+                                        <FormattedMessage id="inntektsinformasjon.andreInntekterModal.tittel" />
+                                    </Heading>
+                                </Block>
+                                <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.type)}>
+                                    <AndreInntekterModalFormComponents.RadioPanelGroup
+                                        name={AndreInntekterFormField.type}
+                                        radios={[
+                                            { label: 'Jobb i utlandet', value: AnnenInntektType.JOBB_I_UTLANDET },
+                                            { label: 'Vartpenger og ventelønn', value: AnnenInntektType.VENTELØNN },
+                                            { label: 'Sluttvederlag', value: AnnenInntektType.SLUTTPAKKE },
+                                            { label: 'Førstegangstjeneste', value: AnnenInntektType.MILITÆRTJENESTE },
+                                        ]}
+                                    />
+                                </Block>
+                                <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.land)}>
+                                    <AndreInntekterModalFormComponents.CountrySelect
+                                        name={AndreInntekterFormField.land}
+                                        label={intlUtils(intl, 'annenInntekt.spørsmål.land')}
+                                        useAlpha3Code={false}
+                                    />
+                                </Block>
+                                <Block
+                                    padBottom="l"
+                                    visible={visibility.isVisible(AndreInntekterFormField.navnPåArbeidsgiver)}
+                                >
+                                    <AndreInntekterModalFormComponents.Input
+                                        name={AndreInntekterFormField.navnPåArbeidsgiver}
+                                        label={navnPåArbeidsgiverLabel}
+                                        validate={validateRequiredTextInputField(navnPåArbeidsgiverLabel, intl)}
+                                    />
+                                </Block>
+                                <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.fom)}>
+                                    <AndreInntekterModalFormComponents.DatePicker
+                                        name={AndreInntekterFormField.fom}
+                                        label={intlUtils(intl, 'fom')}
+                                        placeholder="dd.mm.åååå"
+                                        fullscreenOverlay={true}
+                                        showYearSelector={true}
+                                        validate={validateAnnenInntektFom(intl, formValues.tom)}
+                                        maxDate={dayjs().toDate()}
+                                    />
+                                </Block>
+                                <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.pågående)}>
+                                    <AndreInntekterModalFormComponents.YesOrNoQuestion
+                                        name={AndreInntekterFormField.pågående}
+                                        legend={intlUtils(intl, 'pågående')}
+                                    />
+                                </Block>
+                                <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.tom)}>
+                                    <AndreInntekterModalFormComponents.DatePicker
+                                        name={AndreInntekterFormField.tom}
+                                        label={intlUtils(intl, 'tom')}
+                                        placeholder="dd.mm.åååå"
+                                        fullscreenOverlay={true}
+                                        showYearSelector={true}
+                                        validate={validateAnnenInntektTom(intl, formValues.fom)}
+                                        maxDate={dayjs().toDate()}
+                                    />
+                                </Block>
+                                <Block
+                                    padBottom="l"
+                                    visible={visibility.isVisible(AndreInntekterFormField.dokumentasjon)}
+                                >
+                                    <GuidePanel>
+                                        <FormattedMessage id={getVeilederMessageId(formValues)} />
+                                    </GuidePanel>
+                                </Block>
+                                <Block
+                                    padBottom="l"
+                                    visible={visibility.isVisible(AndreInntekterFormField.dokumentasjon)}
+                                >
+                                    <FormikFileUploader
+                                        name={AndreInntekterFormField.dokumentasjon}
+                                        label="Last opp dokumentasjon"
+                                        attachments={formValues.dokumentasjon}
+                                        attachmentType={AttachmentType.ANNEN_INNTEKT}
+                                        skjemanummer={getSkjemanummer(formValues)}
+                                    />
+                                </Block>
+                                <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
+                                    <Button variant="secondary">{intlUtils(intl, 'søknad.gåVidere')}</Button>
+                                </Block>
+                            </AndreInntekterModalFormComponents.Form>
+                        );
+                    }}
+                />
+            </Modal.Content>
         </Modal>
     );
 };

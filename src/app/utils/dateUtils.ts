@@ -9,12 +9,13 @@ import { IntlShape } from 'react-intl';
 import { formatDate, formatDateExtended, hasValue, intlUtils, Tidsperiode, TidsperiodeDate } from '@navikt/fp-common';
 import { SkjemaelementFeil } from 'app/types/SkjemaelementFeil';
 import { RegistrertBarn } from 'app/types/Person';
-import { dateToISOString } from '@navikt/sif-common-formik/lib';
+
 import { Alder } from 'app/types/Alder';
 import { Uttaksdagen } from 'app/steps/uttaksplan-info/utils/Uttaksdagen';
 import { Periode, Utsettelsesperiode } from 'uttaksplan/types/Periode';
 import { Perioden } from 'app/steps/uttaksplan-info/utils/Perioden';
 import UttaksplanInfo, { isFarMedmorFødselBeggeHarRettUttaksplanInfo } from 'app/context/types/UttaksplanInfo';
+import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);

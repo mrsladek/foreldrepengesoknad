@@ -1,5 +1,6 @@
 import { hasValue } from '@navikt/fp-common';
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
+
 import { QuestionConfig, Questions } from '@navikt/sif-common-question-config/lib';
 import { isValidTidsperiode } from 'app/steps/uttaksplan-info/utils/Tidsperioden';
 import { Situasjon } from 'app/types/Situasjon';

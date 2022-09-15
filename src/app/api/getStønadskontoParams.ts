@@ -1,4 +1,3 @@
-import { dateToISOString } from '@navikt/sif-common-formik/lib';
 import AnnenForelder, { isAnnenForelderOppgitt } from 'app/context/types/AnnenForelder';
 import Barn, { isAdoptertAnnetBarn, isAdoptertStebarn, isFødtBarn, isUfødtBarn } from 'app/context/types/Barn';
 import Søkersituasjon from 'app/context/types/Søkersituasjon';

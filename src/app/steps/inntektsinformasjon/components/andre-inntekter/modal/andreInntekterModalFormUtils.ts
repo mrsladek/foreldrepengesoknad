@@ -1,4 +1,4 @@
-import { YesOrNo } from '@navikt/sif-common-formik/lib';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 import { AnnenInntekt, AnnenInntektType } from 'app/context/types/AnnenInntekt';
 import { AttachmentType } from 'app/types/AttachmentType';

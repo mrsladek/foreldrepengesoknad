@@ -30,7 +30,7 @@ import useSøkerinfo from 'app/utils/hooks/useSøkerinfo';
 import Veilederpanel from 'nav-frontend-veilederpanel';
 import VeilederNormal from 'app/assets/VeilederNormal';
 import dayjs from 'dayjs';
-import { DateRange, dateToISOString } from '@navikt/sif-common-formik/lib';
+
 import { Tidsperioden } from 'app/steps/uttaksplan-info/utils/Tidsperioden';
 import { uttaksplanDatoavgrensninger } from 'app/steps/uttaksplan-info/utils/uttaksplanDatoavgrensninger';
 import { Uttaksdagen } from 'app/steps/uttaksplan-info/utils/Uttaksdagen';
@@ -45,6 +45,7 @@ import { ForeldrepengesøknadContextState } from 'app/context/Foreldrepengesøkn
 import { andreAugust2022ReglerGjelder, ISOStringToDate } from 'app/utils/dateUtils';
 import { getErMorUfør } from 'app/utils/annenForelderUtils';
 import { getHarAktivitetskravIPeriodeUtenUttak } from 'app/utils/uttaksplan/uttaksplanUtils';
+import { DateRange, dateToISOString } from '@navikt/sif-common-formik-ds/lib';
 
 const skalViseInfoOmPrematuruker = (fødselsdato: Date | undefined, termindato: Date | undefined): boolean => {
     if (fødselsdato === undefined || termindato === undefined) {

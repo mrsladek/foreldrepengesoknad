@@ -1,5 +1,5 @@
 import { hasValue } from '@navikt/fp-common';
-import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik/lib';
+import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 import { Næring, EndringAvNæringsinntektInformasjon, Næringsrelasjon } from 'app/context/types/Næring';
 import { date4YearsAgo, ISOStringToDate } from 'app/utils/dateUtils';
