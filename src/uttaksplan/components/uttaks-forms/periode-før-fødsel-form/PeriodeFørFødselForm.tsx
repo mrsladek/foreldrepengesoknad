@@ -85,7 +85,9 @@ const PeriodeFørFødselForm: FunctionComponent<Props> = ({
                             />
                         </Block>
                         <PeriodeFørFødselFormComponents.Form includeButtons={false}>
-                            <SubmitListener cleanup={() => handleCleanup(values, visibility)} />
+                            <SubmitListener
+                                cleanup={() => handleCleanup(values as PeriodeFørFødselFormData, visibility)}
+                            />
 
                             <Block
                                 visible={

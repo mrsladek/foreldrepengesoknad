@@ -6,6 +6,7 @@ import ForeldrepengesøknadContextProvider from './context/ForeldrepengesøknadC
 import Foreldrepengesøknad from './Foreldrepengesøknad';
 import ByttBrowserModal from 'app/pages/byttBrowserModal/ByttBrowserModal';
 import ErrorBoundary from './errorBoundary/ErrorBoundary';
+import { Modal } from '@navikt/ds-react';
 
 const localeFromSessionStorage = getLocaleFromSessionStorage();
 
@@ -13,6 +14,12 @@ dayjs.locale(localeFromSessionStorage);
 
 const AppContainer = () => {
     const [locale, setLocale] = useState<Locale>(localeFromSessionStorage);
+
+    React.useEffect(() => {
+        if (Modal.setAppElement) {
+            Modal.setAppElement('#app');
+        }
+    });
 
     return (
         <ForeldrepengesøknadContextProvider>

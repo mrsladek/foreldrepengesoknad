@@ -1,6 +1,6 @@
+import { BodyShort } from '@navikt/ds-react';
 import { formatDate, hasValue, intlUtils } from '@navikt/fp-common';
 import { AdoptertAnnetBarn, AdoptertStebarn, isAdoptertStebarn } from 'app/context/types/Barn';
-import { Normaltekst } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import OppsummeringsPunkt from '../OppsummeringsPunkt';
@@ -19,15 +19,15 @@ const BarnAdoptertIUtlandetDetaljer: FunctionComponent<Props> = ({ barn }) => {
     return (
         <>
             <OppsummeringsPunkt title={intlUtils(intl, 'oppsummering.barn.adoptertIUtlandet')}>
-                <Normaltekst>
+                <BodyShort>
                     <FormattedMessage id={barn.adoptertIUtlandet ? 'ja' : 'nei'} />
-                </Normaltekst>
+                </BodyShort>
             </OppsummeringsPunkt>
             <OppsummeringsPunkt
                 title={intlUtils(intl, 'oppsummering.barn.ankomstdato')}
                 visible={hasValue(barn.ankomstdato)}
             >
-                <Normaltekst>{formatDate(barn.ankomstdato!)}</Normaltekst>
+                <BodyShort>{formatDate(barn.ankomstdato!)}</BodyShort>
             </OppsummeringsPunkt>
         </>
     );

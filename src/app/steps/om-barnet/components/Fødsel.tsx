@@ -31,7 +31,7 @@ const Fødsel: FunctionComponent<Props> = ({ søkersituasjon, formValues, visibi
     return (
         <>
             <Block padBottom="l" visible={visibility.isVisible(OmBarnetFormField.antallBarn)}>
-                <OmBarnetFormComponents.RadioPanelGroup
+                <OmBarnetFormComponents.RadioGroup
                     name={OmBarnetFormField.antallBarn}
                     radios={[
                         {
@@ -47,12 +47,11 @@ const Fødsel: FunctionComponent<Props> = ({ søkersituasjon, formValues, visibi
                             value: '3',
                         },
                     ]}
-                    useTwoColumns={true}
                     legend={intlUtils(intl, 'omBarnet.antallBarn.født')}
                 />
             </Block>
             <Block padBottom="l" visible={antallBarn !== undefined && parseInt(antallBarn, 10) >= 3}>
-                <OmBarnetFormComponents.Select name={OmBarnetFormField.antallBarnSelect}>
+                <OmBarnetFormComponents.Select label="Antall barn" name={OmBarnetFormField.antallBarnSelect}>
                     <option value="" />
                     <option value="3">3</option>
                     <option value="4">4</option>

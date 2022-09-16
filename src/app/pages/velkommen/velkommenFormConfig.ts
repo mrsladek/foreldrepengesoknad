@@ -1,3 +1,4 @@
+import { getTypedFormComponents, YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { Questions, QuestionConfig } from '@navikt/sif-common-question-config/lib';
 
 export enum VelkommenFormField {

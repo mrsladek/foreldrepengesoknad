@@ -5,16 +5,13 @@ import dayjs from 'dayjs';
 import { bemUtils, Block, InfoBlock, intlUtils } from '@navikt/fp-common';
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 
-import EtikettBase from 'nav-frontend-etiketter';
-import { Element, Normaltekst } from 'nav-frontend-typografi';
-import Veilederpanel from 'nav-frontend-veilederpanel';
-
-import VeilederKompakt from 'app/assets/VeilederKompaktSvg';
 import BarnevognIkon from 'app/assets/BarnevognIkon';
 import { VelkommenFormComponents, VelkommenFormData, VelkommenFormField } from '../velkommenFormConfig';
 
 import './søknadStatus.less';
 import './wrapper.less';
+import { UnansweredQuestionsInfo, YesOrNo } from '@navikt/sif-common-formik-ds/lib';
+import { BodyLong, BodyShort, GuidePanel, Label, Tag } from '@navikt/ds-react';
 interface SøknadStatusProps {
     sakOpprettetDato: Date;
     sakErFerdigbehandlet: boolean;
@@ -35,7 +32,7 @@ const SøknadStatusInfoBlokk: React.FunctionComponent<SøknadStatusProps> = ({
 }) => {
     const bem = bemUtils('søknad-status');
     const intl = useIntl();
-    const etikettType = sakErFerdigbehandlet ? 'suksess' : 'fokus';
+    const etikettType = sakErFerdigbehandlet ? 'success' : 'warning';
     const statusTekst = sakErFerdigbehandlet
         ? 'velkommen.sak.status.ferdigBehandlet'
         : 'velkommen.sak.status.underBehandling';
@@ -44,18 +41,18 @@ const SøknadStatusInfoBlokk: React.FunctionComponent<SøknadStatusProps> = ({
             <InfoBlock>
                 <div className={bem.block}>
                     <div className={bem.element('text')}>
-                        <Element className="blokk-xxxs">{intlUtils(intl, 'velkommen.sak.type')}</Element>
-                        <Normaltekst className="blokk-xxxs">
+                        <Label className="blokk-xxxs">{intlUtils(intl, 'velkommen.sak.type')}</Label>
+                        <BodyShort className="blokk-xxxs">
                             <FormattedMessage
                                 id="velkommen.sak.sistEndret"
                                 values={{
                                     date: dayjs(sakOpprettetDato).format('D. MMMM YYYY'),
                                 }}
                             />
-                        </Normaltekst>
-                        <EtikettBase className="blokk-xxxs" type={etikettType}>
+                        </BodyShort>
+                        <Tag className="blokk-xxxs" variant={etikettType}>
                             {intlUtils(intl, statusTekst)}
-                        </EtikettBase>
+                        </Tag>
                     </div>
                     <div className={bem.element('icon')}>
                         <BarnevognIkon></BarnevognIkon>
@@ -82,19 +79,19 @@ const SøknadStatus: React.FunctionComponent<SøknadProps> = ({
                 {kanSøkeOmEndring && (
                     <>
                         <Block margin="l">
-                            <Normaltekst>{intlUtils(intl, 'velkommen.intro.harSak.del1')}</Normaltekst>
+                            <BodyLong>{intlUtils(intl, 'velkommen.intro.harSak.del1')}</BodyLong>
                         </Block>
                         <Block margin="l">
-                            <Normaltekst>{intlUtils(intl, 'velkommen.intro.harSak.del2')}</Normaltekst>
+                            <BodyLong>{intlUtils(intl, 'velkommen.intro.harSak.del2')}</BodyLong>
                         </Block>
                     </>
                 )}
                 {harSakTilBehandling && (
                     <>
                         <Block margin="l">
-                            <Normaltekst>
+                            <BodyShort>
                                 {intlUtils(intl, 'velkommen.intro.harFørstegangssøknadUnderBehandling')}
-                            </Normaltekst>
+                            </BodyShort>
                         </Block>
                     </>
                 )}
@@ -107,10 +104,11 @@ const SøknadStatus: React.FunctionComponent<SøknadProps> = ({
 
             <Block visible={visibility.isVisible(VelkommenFormField.vilSøkeOmEndring)} padBottom="l" margin="l">
                 <Block padBottom="l">
-                    <Element>{intlUtils(intl, 'velkommen.spørsmål.søknadstype.harSak.spørsmål')}</Element>
+                    <Label>{intlUtils(intl, 'velkommen.spørsmål.søknadstype.harSak.spørsmål')}</Label>
                 </Block>
                 <Block padBottom="l">
                     <VelkommenFormComponents.YesOrNoQuestion
+                        legend="Vil du søke om endring?"
                         name={VelkommenFormField.vilSøkeOmEndring}
                         labels={{
                             yes: intlUtils(intl, `velkommen.spørsmål.søknadstype.harSak.alternativ.endring`),
@@ -120,9 +118,7 @@ const SøknadStatus: React.FunctionComponent<SøknadProps> = ({
                 </Block>
             </Block>
             <Block visible={values.vilSøkeOmEndring === YesOrNo.NO} padBottom="l">
-                <Veilederpanel kompakt svg={<VeilederKompakt svgProps />}>
-                    {intlUtils(intl, `velkommen.intro.harSak.veileder`)}
-                </Veilederpanel>
+                <GuidePanel>{intlUtils(intl, `velkommen.intro.harSak.veileder`)}</GuidePanel>
             </Block>
             <Block
                 padBottom="l"

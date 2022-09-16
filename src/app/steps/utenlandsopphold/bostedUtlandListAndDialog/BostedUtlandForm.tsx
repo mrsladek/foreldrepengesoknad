@@ -1,11 +1,11 @@
 import React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-import { Systemtittel } from 'nav-frontend-typografi';
 import { BostedUtland, isValidBostedUtland } from './types';
 import { Block, intlUtils, validateRequiredField } from '@navikt/fp-common';
 import { dateRangeValidation, ISOStringToDate } from 'app/utils/dateUtils';
 import { getTypedFormComponents } from '@navikt/sif-common-formik-ds/lib';
+import { Heading } from '@navikt/ds-react';
 
 export interface BostedUtlandFormLabels {
     tittel: string;
@@ -72,9 +72,9 @@ const BostedUtlandForm: React.FunctionComponent<Props> = ({
             renderForm={({ values }) => {
                 return (
                     <Form.Form onCancel={onCancel}>
-                        <Systemtittel tag="h1">
+                        <Heading size="medium" as="h1">
                             <FormattedMessage id={'utenlandsopphold.leggTilUtenlandsopphold.tittel'} />
-                        </Systemtittel>
+                        </Heading>
                         <Block>
                             <Form.DateIntervalPicker
                                 legend={intlUtils(intl, 'utenlandsopphold.leggTilUtenlandsopphold.tidsrom')}

@@ -9,7 +9,6 @@ import Api from 'app/api/api';
 import UttaksplanInfoScenarios from './components/UttaksplanInfoScenarios';
 import getStønadskontoParams from 'app/api/getStønadskontoParams';
 import { Dekningsgrad } from 'app/types/Dekningsgrad';
-import NavFrontendSpinner from 'nav-frontend-spinner';
 import { getRegistrertBarnOmDetFinnes } from 'app/utils/barnUtils';
 import isFarEllerMedmor from 'app/utils/isFarEllerMedmor';
 import { useForeldrepengesøknadContext } from 'app/context/hooks/useForeldrepengesøknadContext';
@@ -18,6 +17,7 @@ import { mapEksisterendeSakFromDTO } from 'app/utils/eksisterendeSakUtils';
 import useFortsettSøknadSenere from 'app/utils/hooks/useFortsettSøknadSenere';
 import { RequestStatus } from 'app/types/RequestState';
 import { getFarMedmorErAleneOmOmsorg, getMorErAleneOmOmsorg } from 'app/utils/personUtils';
+import { Loader } from '@navikt/ds-react';
 
 const UttaksplanInfo = () => {
     const intl = useIntl();
@@ -110,7 +110,7 @@ const UttaksplanInfo = () => {
 
         return (
             <div style={{ textAlign: 'center', padding: '12rem 0' }}>
-                <NavFrontendSpinner type="XXL" />
+                <Loader size="2xlarge" />
             </div>
         );
     }

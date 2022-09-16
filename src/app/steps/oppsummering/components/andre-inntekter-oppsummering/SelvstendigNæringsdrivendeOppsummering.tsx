@@ -1,6 +1,6 @@
+import { BodyShort } from '@navikt/ds-react';
 import { formatDate, intlUtils } from '@navikt/fp-common';
 import useSøknad from 'app/utils/hooks/useSøknad';
-import { Normaltekst } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 import { useIntl } from 'react-intl';
 import OppsummeringsPunkt from '../OppsummeringsPunkt';
@@ -16,9 +16,9 @@ const SelvstendigNæringsdrivendeOppsummering: FunctionComponent = () => {
     if (!selvstendigNæringsdrivendeInformasjon || !harJobbetSomSelvstendigNæringsdrivendeSiste10Mnd) {
         return (
             <OppsummeringsPunkt title={intlUtils(intl, 'oppsummering.selvstendigNæringsdrivende.tittel')}>
-                <Normaltekst>
+                <BodyShort>
                     {intlUtils(intl, 'oppsummering.selvstendigNæringsdrivende.ikkeSelvstendigNæringsdrivende')}
-                </Normaltekst>
+                </BodyShort>
             </OppsummeringsPunkt>
         );
     }

@@ -1,6 +1,5 @@
 import { Block, formatDate, intlUtils, Step, UtvidetInformasjon } from '@navikt/fp-common';
 import SøknadRoutes from 'app/routes/routes';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import _ from 'lodash';
 import React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -16,12 +15,9 @@ import {
 } from './manglendeVedleggFormConfig';
 import dayjs from 'dayjs';
 import { manglendeVedleggQuestionsConfig } from './manglendeVedleggQuestionsConfig';
-import Veilederpanel from 'nav-frontend-veilederpanel';
-import VeilederNormal from 'app/assets/VeilederNormal';
 import { sorterPerioder } from '../uttaksplan-info/utils/Periodene';
 import { finnSendSenereVedlegg, isAttachmentForPeriode } from './util';
 import { AttachmentType } from 'app/types/AttachmentType';
-import { Normaltekst, Element } from 'nav-frontend-typografi';
 import FormikFileUploader from 'app/components/formik-file-uploader/FormikFileUploader';
 import { isAnnenForelderOppgitt } from 'app/context/types/AnnenForelder';
 import { getInitValues } from './manglendeVedleggFormUtils';
@@ -29,6 +25,7 @@ import { FieldArray } from 'formik';
 import { storeAppState } from 'app/utils/submitUtils';
 import { ForeldrepengesøknadContextState } from 'app/context/ForeldrepengesøknadContextConfig';
 import useFortsettSøknadSenere from 'app/utils/hooks/useFortsettSøknadSenere';
+import { BodyShort, Button, GuidePanel, Label } from '@navikt/ds-react';
 
 export const attenUkerPluss3Number = 18 * 7 + 3;
 
@@ -120,7 +117,7 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                     >
                         <ManglendeVedleggFormComponents.Form includeButtons={false}>
                             <Block padBottom="l">
-                                <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                                <GuidePanel>
                                     <FormattedMessage
                                         id={
                                             erLikEllerMindreEnnFireUkerTilUttaketStarter
@@ -128,7 +125,7 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                                                 : 'manglendeVedlegg.uttaksplan.advarsel.forTidligUtenDokumentasjon'
                                         }
                                     />
-                                </Veilederpanel>
+                                </GuidePanel>
                             </Block>
                             {alleStierMedManglendeVedlegg.map((keyISoknad, index) => {
                                 const key = keyISoknad.replace('søknad.', '');
@@ -146,13 +143,13 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                                             periode?.tidsperiode?.tom
                                         }
                                     >
-                                        <Element>
+                                        <Label>
                                             {intlUtils(
                                                 intl,
                                                 `manglendeVedlegg.title.${sendSenereVedlegg.type}`,
                                                 getManglendeVedleggValues(sendSenereVedlegg.type, fornavnAnnenForelder)
                                             )}
-                                        </Element>
+                                        </Label>
                                         <UtvidetInformasjon
                                             apneLabel={intlUtils(
                                                 intl,
@@ -161,7 +158,7 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                                             )}
                                         >
                                             <div style={{ backgroundColor: '#e9e7e7', padding: '1.5rem' }}>
-                                                <Normaltekst>
+                                                <BodyShort>
                                                     {intlUtils(
                                                         intl,
                                                         `manglendeVedlegg.info.${sendSenereVedlegg.type}`,
@@ -170,12 +167,12 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                                                             fornavnAnnenForelder
                                                         )
                                                     )}
-                                                </Normaltekst>
+                                                </BodyShort>
                                             </div>
                                         </UtvidetInformasjon>
                                         {periode?.tidsperiode && periode?.type && (
                                             <Block margin="l">
-                                                <Normaltekst>
+                                                <BodyShort>
                                                     {intlUtils(
                                                         intl,
                                                         isAttachmentForPeriode(sendSenereVedlegg.type)
@@ -194,7 +191,7 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                                                                 : '-',
                                                         }
                                                     )}
-                                                </Normaltekst>
+                                                </BodyShort>
                                             </Block>
                                         )}
                                         <FieldArray
@@ -209,9 +206,9 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                                                             'manglendeVedlegg.lastopp.manglende.vedlegg'
                                                         )}
                                                         attachments={
-                                                            formValues.vedlegg.length > index &&
-                                                            formValues.vedlegg[index]
-                                                                ? formValues.vedlegg[index]
+                                                            formValues.vedlegg!.length > index &&
+                                                            formValues.vedlegg![index]
+                                                                ? formValues.vedlegg![index]
                                                                 : []
                                                         }
                                                         attachmentType={sendSenereVedlegg.type}
@@ -224,9 +221,9 @@ const ManglendeVedlegg: React.FunctionComponent = () => {
                                 );
                             })}
                             <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
-                                <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                                <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                     {intlUtils(intl, 'søknad.gåVidere')}
-                                </Hovedknapp>
+                                </Button>
                             </Block>
                         </ManglendeVedleggFormComponents.Form>
                     </Step>

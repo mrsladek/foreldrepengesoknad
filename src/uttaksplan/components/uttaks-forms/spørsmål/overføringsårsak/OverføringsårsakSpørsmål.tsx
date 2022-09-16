@@ -61,13 +61,12 @@ const OverføringsårsakSpørsmål: FunctionComponent<Props> = ({
     return (
         <>
             <Block padBottom="l">
-                <PeriodeUttakFormComponents.RadioPanelGroup
+                <PeriodeUttakFormComponents.RadioGroup
                     name={PeriodeUttakFormField.overføringsårsak}
                     legend={intlUtils(intl, 'uttaksplan.overføringsårsak', {
                         navnAnnenForelder: getNavnGenitivEierform(navnAnnenForelder, intl.locale),
                     })}
                     radios={radios}
-                    useTwoColumns={true}
                     validate={(value) => {
                         if (!hasValue(value)) {
                             return intlUtils(intl, 'uttaksplan.validering.overføringsårsak');

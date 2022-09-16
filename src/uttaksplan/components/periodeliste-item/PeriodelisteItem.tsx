@@ -1,3 +1,4 @@
+import { Accordion } from '@navikt/ds-react';
 import { bemUtils, Block } from '@navikt/fp-common';
 import AnnenForelder from 'app/context/types/AnnenForelder';
 import Arbeidsforhold from 'app/types/Arbeidsforhold';
@@ -5,7 +6,6 @@ import { NavnPåForeldre } from 'app/types/NavnPåForeldre';
 import { Situasjon } from 'app/types/Situasjon';
 import { TilgjengeligStønadskonto } from 'app/types/TilgjengeligStønadskonto';
 import classNames from 'classnames';
-import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import React, { Dispatch, FunctionComponent, SetStateAction } from 'react';
 import {
     isAvslåttPeriode,
@@ -172,7 +172,6 @@ const renderPeriodeListeInnhold = (
 const PeriodelisteItem: FunctionComponent<Props> = ({
     egenPeriode,
     periode,
-    isOpen,
     toggleIsOpen,
     familiehendelsesdato,
     handleUpdatePeriode,
@@ -195,6 +194,7 @@ const PeriodelisteItem: FunctionComponent<Props> = ({
     termindato,
     antallBarn,
     utsettelserIPlan,
+    isOpen,
 }) => {
     const bem = bemUtils('periodelisteItem');
     const melding = meldinger.length > 0 ? meldinger[0] : undefined;
@@ -204,53 +204,55 @@ const PeriodelisteItem: FunctionComponent<Props> = ({
     }
 
     return (
-        <article className={bem.block}>
-            <EkspanderbartpanelBase
-                className={classNames(bem.element('header'), egenPeriode ? undefined : bem.modifier('transparent'))}
-                tittel={
-                    <PeriodelisteItemHeader
-                        egenPeriode={egenPeriode}
-                        periode={periode}
-                        navnPåForeldre={navnPåForeldre}
-                        melding={melding}
-                        annenForelderSamtidigUttakPeriode={annenForelderSamtidigUttakPeriode}
-                        familiehendelsesdato={familiehendelsesdato}
-                        termindato={termindato}
-                        situasjon={situasjon}
-                        erFarEllerMedmor={erFarEllerMedmor}
-                        erAleneOmOmsorg={erAleneOmOmsorg}
-                    />
-                }
-                apen={isOpen}
-                onClick={() => toggleIsOpen(periode.id)}
-            >
-                <Block visible={meldinger.length > 0}>
-                    <VeilederMeldinger meldinger={meldinger.filter((m) => m.avvikType !== 'skjema')} />
-                </Block>
-                {renderPeriodeListeInnhold(
-                    periode,
-                    familiehendelsesdato,
-                    handleUpdatePeriode,
-                    stønadskontoer,
-                    navnPåForeldre,
-                    annenForelder,
-                    toggleIsOpen,
-                    arbeidsforhold,
-                    handleDeletePeriode,
-                    erFarEllerMedmor,
-                    erFlerbarnssøknad,
-                    erAleneOmOmsorg,
-                    erDeltUttak,
-                    situasjon,
-                    erMorUfør,
-                    søkerErFarEllerMedmorOgKunDeHarRett,
-                    setPeriodeErGyldig,
-                    erEndringssøknad,
-                    termindato,
-                    antallBarn,
-                    utsettelserIPlan
-                )}
-            </EkspanderbartpanelBase>
+        <article
+            className={classNames(bem.block, egenPeriode ? bem.modifier('egenPeriode') : bem.modifier('transparent'))}
+        >
+            <Accordion>
+                <Accordion.Item open={isOpen}>
+                    <Accordion.Header onClick={() => toggleIsOpen(periode.id)} className={bem.element('header')}>
+                        <PeriodelisteItemHeader
+                            egenPeriode={egenPeriode}
+                            periode={periode}
+                            navnPåForeldre={navnPåForeldre}
+                            melding={melding}
+                            annenForelderSamtidigUttakPeriode={annenForelderSamtidigUttakPeriode}
+                            familiehendelsesdato={familiehendelsesdato}
+                            termindato={termindato}
+                            situasjon={situasjon}
+                            erFarEllerMedmor={erFarEllerMedmor}
+                            erAleneOmOmsorg={erAleneOmOmsorg}
+                        />
+                    </Accordion.Header>
+                    <Accordion.Content>
+                        <Block visible={meldinger.length > 0}>
+                            <VeilederMeldinger meldinger={meldinger.filter((m) => m.avvikType !== 'skjema')} />
+                        </Block>
+                        {renderPeriodeListeInnhold(
+                            periode,
+                            familiehendelsesdato,
+                            handleUpdatePeriode,
+                            stønadskontoer,
+                            navnPåForeldre,
+                            annenForelder,
+                            toggleIsOpen,
+                            arbeidsforhold,
+                            handleDeletePeriode,
+                            erFarEllerMedmor,
+                            erFlerbarnssøknad,
+                            erAleneOmOmsorg,
+                            erDeltUttak,
+                            situasjon,
+                            erMorUfør,
+                            søkerErFarEllerMedmorOgKunDeHarRett,
+                            setPeriodeErGyldig,
+                            erEndringssøknad,
+                            termindato,
+                            antallBarn,
+                            utsettelserIPlan
+                        )}
+                    </Accordion.Content>
+                </Accordion.Item>
+            </Accordion>
         </article>
     );
 };

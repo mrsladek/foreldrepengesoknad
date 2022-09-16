@@ -1,4 +1,5 @@
 import { hasValue } from '@navikt/fp-common';
+import { dateToISOString, YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 import AnnenForelder, { isAnnenForelderIkkeOppgitt, isAnnenForelderOppgitt } from 'app/context/types/AnnenForelder';
 import Barn from 'app/context/types/Barn';

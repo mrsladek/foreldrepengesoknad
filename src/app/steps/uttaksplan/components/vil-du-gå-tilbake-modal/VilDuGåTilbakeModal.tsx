@@ -1,8 +1,6 @@
+import { BodyShort, Button, Heading, Modal } from '@navikt/ds-react';
 import { bemUtils, Block, intlUtils } from '@navikt/fp-common';
 import SøknadRoutes from 'app/routes/routes';
-import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
-import ModalWrapper from 'nav-frontend-modal';
-import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import React, { Dispatch, FunctionComponent, SetStateAction } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
@@ -20,36 +18,39 @@ const VilDuGåTilbakeModal: FunctionComponent<Props> = ({ isOpen, setIsOpen }) =
     const navigate = useNavigate();
 
     return (
-        <ModalWrapper
+        <Modal
             className={bem.block}
-            contentLabel={'Tittel'}
+            aria-label={'Tittel'}
             closeButton={false}
-            isOpen={isOpen}
-            onRequestClose={() => setIsOpen(false)}
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
         >
-            <Block padBottom="l">
-                <Undertittel tag="h1">{intlUtils(intl, 'uttaksplan.vilDuGåTilbakeModal.tittel')}</Undertittel>
-            </Block>
-            <Block padBottom="l">
-                <Normaltekst>{intlUtils(intl, 'uttaksplan.vilDuGåTilbakeModal.intro')}</Normaltekst>
-            </Block>
-            <Block padBottom="l">
-                <Normaltekst>{intlUtils(intl, 'uttaksplan.vilDuGåTilbakeModal.spørsmål')}</Normaltekst>
-            </Block>
-            <div className={bem.element('knapperad')}>
-                <Hovedknapp
-                    onClick={() => {
-                        setIsOpen(false);
-                        navigate(SøknadRoutes.UTTAKSPLAN_INFO);
-                    }}
-                >
-                    <FormattedMessage id="uttaksplan.vilDuGåTilbakeModal.okLabel" />
-                </Hovedknapp>
-                <Knapp onClick={() => setIsOpen(false)}>
-                    <FormattedMessage id="uttaksplan.vilDuGåTilbakeModal.avbrytLabel" />
-                </Knapp>
-            </div>
-        </ModalWrapper>
+            <Modal.Content>
+                <Block padBottom="l">
+                    <Heading size="small">{intlUtils(intl, 'uttaksplan.vilDuGåTilbakeModal.tittel')}</Heading>
+                </Block>
+                <Block padBottom="l">
+                    <BodyShort>{intlUtils(intl, 'uttaksplan.vilDuGåTilbakeModal.intro')}</BodyShort>
+                </Block>
+                <Block padBottom="l">
+                    <BodyShort>{intlUtils(intl, 'uttaksplan.vilDuGåTilbakeModal.spørsmål')}</BodyShort>
+                </Block>
+                <div className={bem.element('knapperad')}>
+                    <Button
+                        variant="primary"
+                        onClick={() => {
+                            setIsOpen(false);
+                            navigate(SøknadRoutes.UTTAKSPLAN_INFO);
+                        }}
+                    >
+                        <FormattedMessage id="uttaksplan.vilDuGåTilbakeModal.okLabel" />
+                    </Button>
+                    <Button variant="secondary" type="button" onClick={() => setIsOpen(false)}>
+                        <FormattedMessage id="uttaksplan.vilDuGåTilbakeModal.avbrytLabel" />
+                    </Button>
+                </div>
+            </Modal.Content>
+        </Modal>
     );
 };
 

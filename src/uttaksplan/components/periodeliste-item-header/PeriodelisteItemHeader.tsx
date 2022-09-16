@@ -3,7 +3,6 @@ import { NavnPåForeldre } from 'app/types/NavnPåForeldre';
 import { getUkerOgDagerFromDager, måned, måned3bokstaver, år } from 'app/utils/dateUtils';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
-import { Element, Normaltekst } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 import {
     isForeldrepengerFørFødselUttaksperiode,
@@ -26,6 +25,7 @@ import { VeilederMessage } from 'uttaksplan/validering/veilederInfo/types';
 import UttaksplanAdvarselIkon from 'uttaksplan/assets/UttaksplanAdvarselIkon';
 import { Forelder } from 'app/types/Forelder';
 import { Situasjon } from 'app/types/Situasjon';
+import { BodyShort, Label } from '@navikt/ds-react';
 
 interface Props {
     egenPeriode: boolean;
@@ -124,14 +124,14 @@ const renderDagMnd = (dato: Date, visÅr = true): JSX.Element => {
     return (
         <div className={bem.element('dagmnd')}>
             <span className={bem.element('dagmnd__dato')}>
-                <Normaltekst>
+                <BodyShort>
                     {d.get('date')}. {måned3bokstaver(d)}.
-                </Normaltekst>
+                </BodyShort>
             </span>
             {visÅr && (
-                <Normaltekst tag="span" className={bem.element('dagmnd__mnd')}>
+                <BodyShort as="span" className={bem.element('dagmnd__mnd')}>
                     <abbr title={`${måned(d)} ${år(d)}`}>{år(d)}</abbr>
-                </Normaltekst>
+                </BodyShort>
             )}
         </div>
     );
@@ -185,7 +185,7 @@ const PeriodelisteItemHeader: FunctionComponent<Props> = ({
                 >
                     <div className={bem.element('ikon')}>{getPeriodeIkon(periode, navnPåForeldre)}</div>
                     <div className={bem.element('tittel')}>
-                        <Element tag="h2">
+                        <Label as="h2">
                             {getPeriodeTittel(
                                 intl,
                                 periode,
@@ -196,8 +196,8 @@ const PeriodelisteItemHeader: FunctionComponent<Props> = ({
                                 erFarEllerMedmor,
                                 erAleneOmOmsorg
                             )}
-                        </Element>
-                        <Normaltekst>{varighetString}</Normaltekst>
+                        </Label>
+                        <BodyShort>{varighetString}</BodyShort>
                     </div>
                     <div className={bem.element('advarsel')}>
                         {melding && (
@@ -226,9 +226,9 @@ const PeriodelisteItemHeader: FunctionComponent<Props> = ({
                     })}
                 >
                     <div>
-                        <Element>
+                        <Label>
                             <FormattedMessage id="oppsummering.morsAktivitet.SamtidigUttak" />
-                        </Element>
+                        </Label>
                     </div>
                     <div className={bem.element('beskrivelse')}>
                         <em className={bem.element('beskrivelse__tekst')}>

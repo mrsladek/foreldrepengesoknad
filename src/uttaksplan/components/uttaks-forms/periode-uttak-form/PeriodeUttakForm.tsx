@@ -5,7 +5,6 @@ import Arbeidsforhold from 'app/types/Arbeidsforhold';
 import { Forelder } from 'app/types/Forelder';
 import { NavnPåForeldre } from 'app/types/NavnPåForeldre';
 import { TilgjengeligStønadskonto } from 'app/types/TilgjengeligStønadskonto';
-import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import React, { Dispatch, FunctionComponent, SetStateAction, useEffect, useState } from 'react';
 import LinkButton from 'uttaksplan/components/link-button/LinkButton';
 import TidsperiodeDisplay from 'uttaksplan/components/tidsperiode-display/TidsperiodeDisplay';
@@ -40,8 +39,6 @@ import { Situasjon } from 'app/types/Situasjon';
 import { andreAugust2022ReglerGjelder, formaterDatoKompakt, ISOStringToDate } from 'app/utils/dateUtils';
 import AktivitetskravSpørsmål from '../spørsmål/aktivitetskrav/AktivitetskravSpørsmål';
 import { guid } from 'nav-frontend-js-utils';
-import Veilederpanel from 'nav-frontend-veilederpanel';
-import VeilederNormal from 'app/assets/VeilederNormal';
 import {
     getFørsteUttaksdag2UkerFørFødsel,
     getSisteUttaksdag6UkerEtterFødsel,
@@ -51,6 +48,7 @@ import { Uttaksdagen } from 'app/steps/uttaksplan-info/utils/Uttaksdagen';
 import dayjs from 'dayjs';
 
 import './periodeUttakForm.less';
+import { Button, GuidePanel } from '@navikt/ds-react';
 
 interface Props {
     periode: Periode;
@@ -163,11 +161,11 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
     const forelder = erFarEllerMedmor ? Forelder.farMedmor : Forelder.mor;
 
     const handleCleanup = (
-        values: PeriodeUttakFormData,
+        values: Partial<PeriodeUttakFormData>,
         visibility: QuestionVisibility<PeriodeUttakFormField, undefined>
     ): PeriodeUttakFormData => {
         return cleanPeriodeUttakFormData(
-            values,
+            values as PeriodeUttakFormData,
             visibility,
             erDeltUttak,
             forelder,
@@ -235,7 +233,7 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                 setPeriodeErGyldig(isValid);
 
                 const visibility = periodeUttakFormQuestionsConfig.getVisbility({
-                    values,
+                    values: values as PeriodeUttakFormData,
                     regelProps: {
                         annenForelder,
                         erAleneOmOmsorg,
@@ -346,10 +344,10 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                             </Block>
                             <Block padBottom="l" visible={visibility.isVisible(PeriodeUttakFormField.overføringsårsak)}>
                                 <OverføringsårsakSpørsmål
-                                    vedlegg={values.overføringsdokumentasjon}
+                                    vedlegg={values.overføringsdokumentasjon!}
                                     navnAnnenForelder={navnPåAnnenForelder!}
                                     erEndringssøknad={erEndringssøknad}
-                                    valgtOverføringsårsak={values.overføringsårsak}
+                                    valgtOverføringsårsak={values.overføringsårsak!}
                                 />
                             </Block>
                             <Block
@@ -361,9 +359,9 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                             <Block padBottom="l" visible={visibility.isVisible(PeriodeUttakFormField.erMorForSyk)}>
                                 <ErMorForSykSpørsmål
                                     fieldName={PeriodeUttakFormField.erMorForSyk}
-                                    erMorForSyk={values.erMorForSyk}
+                                    erMorForSyk={values.erMorForSyk!}
                                     navnMor={navnPåForeldre.mor}
-                                    vedlegg={values.erMorForSykDokumentasjon}
+                                    vedlegg={values.erMorForSykDokumentasjon!}
                                 />
                             </Block>
                             <Block
@@ -372,9 +370,9 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                             >
                                 <UttakRundtFødselÅrsakSpørsmål
                                     fieldName={PeriodeUttakFormField.uttakRundtFødselÅrsak}
-                                    uttakRundtFødselÅrsak={values.uttakRundtFødselÅrsak}
+                                    uttakRundtFødselÅrsak={values.uttakRundtFødselÅrsak!}
                                     navnMor={navnPåForeldre.mor}
-                                    vedlegg={values.erMorForSykDokumentasjon}
+                                    vedlegg={values.erMorForSykDokumentasjon!}
                                 />
                             </Block>
                             {startDatoPeriodeRundtFødselFarMedmor !== undefined &&
@@ -389,10 +387,7 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                                             situasjon
                                         )}
                                     >
-                                        <Veilederpanel
-                                            fargetema="normal"
-                                            svg={<VeilederNormal transparentBackground={true} />}
-                                        >
+                                        <GuidePanel>
                                             <FormattedMessage
                                                 id="uttaksplan.samtidigUttakVeileder"
                                                 values={{
@@ -400,7 +395,7 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                                                     tomDato: formaterDatoKompakt(sluttDatoPeriodeRundtFødselFarMedmor),
                                                 }}
                                             />
-                                        </Veilederpanel>
+                                        </GuidePanel>
                                     </Block>
                                 )}
                             <Block padBottom="l" visible={visibility.isVisible(PeriodeUttakFormField.samtidigUttak)}>
@@ -422,8 +417,8 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                                 <AktivitetskravSpørsmål
                                     fieldName={PeriodeUttakFormField.aktivitetskravMor}
                                     navnPåForeldre={navnPåForeldre}
-                                    aktivitetskravMorValue={values.aktivitetskravMor}
-                                    aktivitetskravVedlegg={values.aktivitetskravMorDokumentasjon}
+                                    aktivitetskravMorValue={values.aktivitetskravMor!}
+                                    aktivitetskravVedlegg={values.aktivitetskravMorDokumentasjon!}
                                     FormComponents={PeriodeUttakFormComponents}
                                     vedleggFieldName={PeriodeUttakFormField.aktivitetskravMorDokumentasjon}
                                 />
@@ -443,9 +438,9 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                                 }
                             >
                                 <div className={bem.element('knapperad-endre')}>
-                                    <Knapp htmlType="button" onClick={() => toggleIsOpen!(periode.id)}>
+                                    <Button variant="secondary" onClick={() => toggleIsOpen!(periode.id)}>
                                         <FormattedMessage id="uttaksplan.lukk" />
-                                    </Knapp>
+                                    </Button>
                                     <div className={bem.element('slettPeriodeWrapper')}>
                                         <LinkButton
                                             onClick={() => handleDeletePeriode!(periode.id)}
@@ -464,12 +459,12 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                                 }
                             >
                                 <div className={bem.element('knapperad-legg-til')}>
-                                    <Knapp htmlType="button" onClick={() => setNyPeriodeFormIsVisible!(false)}>
+                                    <Button variant="secondary" onClick={() => setNyPeriodeFormIsVisible!(false)}>
                                         <FormattedMessage id="uttaksplan.avbryt" />
-                                    </Knapp>
+                                    </Button>
                                     {visibility.areAllQuestionsAnswered() ? (
-                                        <Hovedknapp
-                                            htmlType="button"
+                                        <Button
+                                            variant="primary"
                                             onClick={() => {
                                                 handleAddPeriode!(
                                                     mapPeriodeUttakFormToPeriode(
@@ -487,7 +482,7 @@ const PeriodeUttakForm: FunctionComponent<Props> = ({
                                             }}
                                         >
                                             <FormattedMessage id="uttaksplan.leggTil" />
-                                        </Hovedknapp>
+                                        </Button>
                                     ) : null}
                                 </div>
                             </Block>

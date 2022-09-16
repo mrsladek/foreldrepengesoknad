@@ -22,7 +22,6 @@ import useAvbrytSøknad from 'app/utils/hooks/useAvbrytSøknad';
 import { utenlandsoppholdFormQuestions } from './utenlandsoppholdFormQuestions';
 import BostedUtlandListAndDialog from './bostedUtlandListAndDialog/BostedUtlandListAndDialog';
 import stepConfig, { getPreviousStepHref } from '../stepsConfig';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import {
     getInitialUtenlandsoppholdValuesFromState,
     mapUtenlandsoppholdFormDataToState,
@@ -32,6 +31,7 @@ import { validateUtenlandsoppholdNeste12Mnd, validateUtenlandsoppholdSiste12Mnd 
 import { storeAppState } from 'app/utils/submitUtils';
 import { ForeldrepengesøknadContextState } from 'app/context/ForeldrepengesøknadContextConfig';
 import useFortsettSøknadSenere from 'app/utils/hooks/useFortsettSøknadSenere';
+import { Button } from '@navikt/ds-react';
 
 const Utenlandsopphold: React.FunctionComponent = () => {
     const intl = useIntl();
@@ -55,7 +55,7 @@ const Utenlandsopphold: React.FunctionComponent = () => {
             initialValues={getInitialUtenlandsoppholdValuesFromState(informasjonOmUtenlandsopphold)}
             onSubmit={handleSubmit}
             renderForm={({ values: formValues }) => {
-                const visibility = utenlandsoppholdFormQuestions.getVisbility(formValues);
+                const visibility = utenlandsoppholdFormQuestions.getVisbility(formValues as UtenlandsoppholdFormData);
 
                 return (
                     <Step
@@ -173,9 +173,9 @@ const Utenlandsopphold: React.FunctionComponent = () => {
                                 />
                             </Block>
                             <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
-                                <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                                <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                     {intlUtils(intl, 'søknad.gåVidere')}
-                                </Hovedknapp>
+                                </Button>
                             </Block>
                         </UtenlandsoppholdFormComponents.Form>
                     </Step>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ArrayHelpers, useFormikContext } from 'formik';
-import FormikFileInput from '@navikt/sif-common-formik/lib/components/formik-file-input/FormikFileInput';
 import { Block, intlUtils, PictureScanningGuide, UtvidetInformasjon } from '@navikt/fp-common';
 import { Attachment } from 'app/types/Attachment';
 import { AttachmentType } from 'app/types/AttachmentType';
@@ -10,7 +9,8 @@ import AttachmentList from '../attachment/AttachmentList';
 import { deleteAttachment } from 'app/utils/globalUtil';
 import { IntlShape, useIntl } from 'react-intl';
 import { isAttachmentWithError, mapFilTilVedlegg } from 'app/utils/vedleggUtils';
-import { Normaltekst } from 'nav-frontend-typografi';
+import { BodyShort } from '@navikt/ds-react';
+import { FormikFileInput } from '@navikt/sif-common-formik-ds/lib';
 
 export type FieldArrayReplaceFn = (index: number, value: any) => void;
 export type FieldArrayPushFn = (obj: any) => void;
@@ -103,8 +103,10 @@ const FormikFileUploader: React.FunctionComponent<Props> = ({
         <>
             <Block padBottom="l">
                 <FormikFileInput
+                    legend="Last opp vedlegg"
+                    buttonLabel="Last opp vedlegg"
                     name={name}
-                    acceptedExtensions={VALID_EXTENSIONS.join(', ')}
+                    accept={VALID_EXTENSIONS.join(', ')}
                     onFilesSelect={(files: File[], { push, replace, remove }: ArrayHelpers) => {
                         const alleNyeVedlegg = mapFilerTilPendingVedlegg(files, attachmentType, skjemanummer);
                         const alleNyeGyldigeVedlegg = sjekkFiltypeVedlegg(alleNyeVedlegg, setErrors, intl);
@@ -112,9 +114,9 @@ const FormikFileUploader: React.FunctionComponent<Props> = ({
                         lastOppVedlegg(alleNyeGyldigeVedlegg, replace, remove, setErrors, attachments.length, intl);
                     }}
                     onClick={onFileInputClick}
-                    feil={
+                    error={
                         errors.length > 0
-                            ? errors.map((error) => <Normaltekst key={error}>{error}</Normaltekst>)
+                            ? errors.map((error) => <BodyShort key={error}>{error}</BodyShort>)
                             : undefined
                     }
                     {...otherProps}

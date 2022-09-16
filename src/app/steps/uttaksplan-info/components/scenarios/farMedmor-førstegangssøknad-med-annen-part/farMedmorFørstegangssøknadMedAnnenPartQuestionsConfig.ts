@@ -6,7 +6,7 @@ import {
 } from './farMedmorFørstegangssøknadMedAnnenPartFormConfig';
 
 const FarMedmorFørstegangssøknadMedAnnenPartFormConfig: QuestionConfig<
-    FarMedmorFørstegangssøknadMedAnnenPartFormData,
+    Partial<FarMedmorFørstegangssøknadMedAnnenPartFormData>,
     FarMedmorFørstegangssøknadMedAnnenPartFormField
 > = {
     [FarMedmorFørstegangssøknadMedAnnenPartFormField.permisjonStartdato]: {
@@ -16,6 +16,6 @@ const FarMedmorFørstegangssøknadMedAnnenPartFormConfig: QuestionConfig<
 };
 
 export const farMedmorFørstegangssøknadMedAnnenPartQuestionsConfig = Questions<
-    FarMedmorFørstegangssøknadMedAnnenPartFormData,
+    Partial<FarMedmorFørstegangssøknadMedAnnenPartFormData>,
     FarMedmorFørstegangssøknadMedAnnenPartFormField
 >(FarMedmorFørstegangssøknadMedAnnenPartFormConfig);

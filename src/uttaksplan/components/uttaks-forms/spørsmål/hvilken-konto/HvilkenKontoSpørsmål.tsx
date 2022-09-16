@@ -49,11 +49,10 @@ const HvilkenKontoSpørsmål: FunctionComponent<Props> = ({
     );
 
     return (
-        <PeriodeUttakFormComponents.RadioPanelGroup
+        <PeriodeUttakFormComponents.RadioGroup
             name={fieldName}
             radios={radios}
             legend={legend}
-            useTwoColumns={true}
             validate={(value) => {
                 if (!hasValue(value)) {
                     return intlUtils(intl, 'uttaksplan.validering.hvilkenKonto');

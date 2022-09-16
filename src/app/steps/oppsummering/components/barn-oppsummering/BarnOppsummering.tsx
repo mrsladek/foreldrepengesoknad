@@ -1,6 +1,6 @@
+import { BodyShort } from '@navikt/ds-react';
 import { formatDate, intlUtils } from '@navikt/fp-common';
 import Barn, { BarnType, isAdoptertAnnetBarn, isAdoptertStebarn, isUfødtBarn } from 'app/context/types/Barn';
-import { Normaltekst } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, IntlShape, useIntl } from 'react-intl';
 import OppsummeringsPunkt from '../OppsummeringsPunkt';
@@ -44,20 +44,20 @@ const BarnOppsummering: FunctionComponent<Props> = ({ barn }) => {
     return (
         <>
             <OppsummeringsPunkt title={intlUtils(intl, 'oppsummering.barn.søknadenGjelder')}>
-                <Normaltekst>{getAntallBarnTekst(barn.antallBarn, intl)}</Normaltekst>
+                <BodyShort>{getAntallBarnTekst(barn.antallBarn, intl)}</BodyShort>
             </OppsummeringsPunkt>
             <OppsummeringsPunkt title={getTerminEllerFødselTittel(barn.type)}>
-                <Normaltekst>{getTerminEllerFødselsdato(barn)}</Normaltekst>
+                <BodyShort>{getTerminEllerFødselsdato(barn)}</BodyShort>
             </OppsummeringsPunkt>
             {(isAdoptertAnnetBarn(barn) || isAdoptertStebarn(barn)) && (
                 <>
                     <OppsummeringsPunkt title={intlUtils(intl, 'oppsummering.barn.gjelderSøknadenStebarnsadopsjon')}>
-                        <Normaltekst>
+                        <BodyShort>
                             <FormattedMessage id={barn.type === BarnType.ADOPTERT_STEBARN ? 'ja' : 'nei'} />
-                        </Normaltekst>
+                        </BodyShort>
                     </OppsummeringsPunkt>
                     <OppsummeringsPunkt title={intlUtils(intl, 'oppsummering.barn.adopsjonsdato')}>
-                        <Normaltekst>{formatDate(barn.adopsjonsdato)}</Normaltekst>
+                        <BodyShort>{formatDate(barn.adopsjonsdato)}</BodyShort>
                     </OppsummeringsPunkt>
                     <BarnAdoptertIUtlandetDetaljer barn={barn} />
                 </>

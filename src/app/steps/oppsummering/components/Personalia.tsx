@@ -1,9 +1,9 @@
+import { BodyShort, Heading } from '@navikt/ds-react';
 import { bemUtils } from '@navikt/fp-common';
 import KvinneIkon from 'app/assets/KvinneIkon';
 import MannIkon from 'app/assets/MannIkon';
 import { Søkerinfo } from 'app/types/Søkerinfo';
 import { getKjønnFromFnrString } from 'app/utils/personUtils';
-import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 
 import './personalia.less';
@@ -22,8 +22,8 @@ const Personalia: FunctionComponent<Props> = ({ søkerinfo }) => {
                 {getKjønnFromFnrString(person.fnr) === 'K' ? <KvinneIkon /> : <MannIkon />}
             </div>
             <div>
-                <Undertittel>{`${søkerinfo.person.fornavn} ${søkerinfo.person.etternavn}`}</Undertittel>
-                <Normaltekst>{søkerinfo.person.fnr}</Normaltekst>
+                <Heading size="small">{`${søkerinfo.person.fornavn} ${søkerinfo.person.etternavn}`}</Heading>
+                <BodyShort>{søkerinfo.person.fnr}</BodyShort>
             </div>
         </div>
     );

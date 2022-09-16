@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Modal from 'nav-frontend-modal';
 import {
     FrilansoppdragModalFormComponents,
     FrilansoppdragModalFormData,
@@ -12,7 +11,6 @@ import {
 } from './frilansoppdragModalFormUtils';
 import { bemUtils, Block, intlUtils } from '@navikt/fp-common';
 import { useIntl } from 'react-intl';
-import { Undertittel } from 'nav-frontend-typografi';
 import frilansoppdragModalQuestionsConfig from './frilansoppdragModalQuestionsConfig';
 import { FormattedMessage } from 'react-intl';
 import { FrilansOppdrag } from 'app/context/types/Frilans';
@@ -25,6 +23,7 @@ import {
 import dayjs from 'dayjs';
 
 import './frilansoppdragModal.less';
+import { Heading, Modal } from '@navikt/ds-react';
 
 interface Props {
     isOpen: boolean;
@@ -65,9 +64,9 @@ const FrilansoppdragModal: FunctionComponent<Props> = ({
 
     return (
         <Modal
-            isOpen={isOpen}
-            contentLabel={title}
-            onRequestClose={onRequestClose}
+            open={isOpen}
+            aria-label={title}
+            onClose={onRequestClose}
             closeButton={true}
             shouldCloseOnOverlayClick={false}
             className={bem.block}
@@ -76,17 +75,19 @@ const FrilansoppdragModal: FunctionComponent<Props> = ({
                 initialValues={getInitialFrilansoppdragModalValues(selectedFrilansoppdrag)}
                 onSubmit={(values: Partial<FrilansoppdragModalFormData>) => onValidSubmit(values)}
                 renderForm={({ values: formValues }) => {
-                    const visibility = frilansoppdragModalQuestionsConfig.getVisbility(formValues);
+                    const visibility = frilansoppdragModalQuestionsConfig.getVisbility(
+                        formValues as FrilansoppdragModalFormData
+                    );
 
                     return (
                         <FrilansoppdragModalFormComponents.Form
                             cleanup={(values) => cleanupFrilansoppdragForm(values, visibility)}
                         >
-                            <Undertittel className={bem.element('tittel')}>
+                            <Heading size="small" className={bem.element('tittel')}>
                                 <FormattedMessage id="inntektsinformasjon.frilansOppdrag.tittel" />
-                            </Undertittel>
+                            </Heading>
                             <Block padBottom="l">
-                                <FrilansoppdragModalFormComponents.Input
+                                <FrilansoppdragModalFormComponents.TextField
                                     name={FrilansoppdragModalFormField.navnOppdragsgiver}
                                     label={oppdragsgiverNavnLabel}
                                     validate={validateNavnPåOppdragsgiver(intl, oppdragsgiverNavnLabel)}
@@ -98,7 +99,7 @@ const FrilansoppdragModal: FunctionComponent<Props> = ({
                                     label={intlUtils(intl, 'fom')}
                                     placeholder={'dd.mm.åååå'}
                                     fullscreenOverlay={true}
-                                    validate={validateOppdragFom(intl, formValues.tom, oppstartsdato)}
+                                    validate={validateOppdragFom(intl, formValues.tom!, oppstartsdato)}
                                     minDate={dayjs(oppstartsdato).toDate()}
                                     maxDate={dayjs().toDate()}
                                     showYearSelector={startetSomFrilansIForrigeKalenderårEllerTidligere(oppstartsdato)}
@@ -119,8 +120,8 @@ const FrilansoppdragModal: FunctionComponent<Props> = ({
                                     fullscreenOverlay={true}
                                     validate={validateOppdragTom(
                                         intl,
-                                        formValues.pågående,
-                                        formValues.fom,
+                                        formValues.pågående!,
+                                        formValues.fom!,
                                         oppstartsdato
                                     )}
                                     minDate={dayjs(formValues.fom).toDate()}

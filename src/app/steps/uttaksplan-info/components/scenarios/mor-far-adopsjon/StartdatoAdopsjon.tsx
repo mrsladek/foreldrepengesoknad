@@ -8,7 +8,7 @@ import { isAdoptertAnnetBarn, isAdoptertBarn } from 'app/context/types/Barn';
 import { formaterDatoUtenDag, ISOStringToDate } from 'app/utils/dateUtils';
 import { getFamiliehendelsedato } from 'app/utils/barnUtils';
 import { uttaksplanDatoavgrensninger } from 'app/steps/uttaksplan-info/utils/uttaksplanDatoavgrensninger';
-import { DatepickerDateRange } from 'nav-datovelger';
+import { DatepickerDateRange } from '@navikt/ds-datepicker';
 import { validateErAnnenStartdatoAdopsjonGyldig } from './validation/morFarAdopsjonValidering';
 import AdopsjonStartdatoValg from './adopsjonStartdatoValg';
 import { assertUnreachable } from 'app/utils/globalUtil';
@@ -86,11 +86,10 @@ const StartdatoAdopsjon: FunctionComponent<Props> = ({ valgtStartdatoAdopsjon })
     return (
         <>
             <Block padBottom="l">
-                <MorFarAdopsjonFormComponents.RadioPanelGroup
+                <MorFarAdopsjonFormComponents.RadioGroup
                     name={MorFarAdopsjonFormField.startdatoAdopsjonValg}
                     radios={radios}
                     legend={intlUtils(intl, 'uttaksplaninfo.startdatoAdopsjon.spørsmål')}
-                    useTwoColumns={true}
                 />
             </Block>
             <Block padBottom="l" visible={valgtStartdatoAdopsjon === AdopsjonStartdatoValg.ANNEN}>

@@ -1,7 +1,4 @@
 import { bemUtils, Block, intlUtils, Step } from '@navikt/fp-common';
-import VeilederNormal from 'app/assets/VeilederNormal';
-import { Hovedknapp } from 'nav-frontend-knapper';
-import Veilederpanel from 'nav-frontend-veilederpanel';
 import React, { useEffect, useMemo, useState } from 'react';
 import useSøknad from 'app/utils/hooks/useSøknad';
 import useSøkerinfo from 'app/utils/hooks/useSøkerinfo';
@@ -36,6 +33,7 @@ import { getFamiliehendelsedato, getTermindato } from 'app/utils/barnUtils';
 import { ISOStringToDate } from 'app/utils/dateUtils';
 import { isAnnenForelderOppgitt } from 'app/context/types/AnnenForelder';
 import { redirectToLogin } from 'app/utils/redirectToLogin';
+import { Button, GuidePanel } from '@navikt/ds-react';
 
 const Oppsummering = () => {
     const intl = useIntl();
@@ -156,9 +154,9 @@ const Oppsummering = () => {
                             kompakt={true}
                         >
                             <Block padBottom="l">
-                                <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                                <GuidePanel>
                                     <FormattedMessage id="oppsummering.veileder" />
-                                </Veilederpanel>
+                                </GuidePanel>
                             </Block>
                             <Block padBottom="l">
                                 <div className={bem.block}>
@@ -225,9 +223,9 @@ const Oppsummering = () => {
                             </Block>
                             <Block padBottom="l">
                                 <div style={{ textAlign: 'center' }}>
-                                    <Hovedknapp disabled={formSubmitted} spinner={formSubmitted}>
+                                    <Button variant="primary" disabled={formSubmitted} loading={formSubmitted}>
                                         {submitKnappTekst}
-                                    </Hovedknapp>
+                                    </Button>
                                 </div>
                             </Block>
                         </Step>

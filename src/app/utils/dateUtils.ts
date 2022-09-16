@@ -1,5 +1,4 @@
 import dayjs, { Dayjs } from 'dayjs';
-import { isISODateString } from 'nav-datovelger';
 import isBetween from 'dayjs/plugin/isBetween';
 import minMax from 'dayjs/plugin/minMax';
 import utc from 'dayjs/plugin/utc';
@@ -16,6 +15,7 @@ import { Periode, Utsettelsesperiode } from 'uttaksplan/types/Periode';
 import { Perioden } from 'app/steps/uttaksplan-info/utils/Perioden';
 import UttaksplanInfo, { isFarMedmorFødselBeggeHarRettUttaksplanInfo } from 'app/context/types/UttaksplanInfo';
 import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
+import { isISODateString } from '@navikt/ds-datepicker';
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);

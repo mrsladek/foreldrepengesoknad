@@ -1,3 +1,4 @@
+import { Button } from '@navikt/ds-react';
 import { Block, intlUtils } from '@navikt/fp-common';
 import { dateToISOString } from '@navikt/sif-common-formik-ds/lib';
 import actionCreator from 'app/context/action/actionCreator';
@@ -22,7 +23,6 @@ import { getValgtStønadskontoFor80Og100Prosent } from 'app/utils/stønadskontoU
 import { storeAppState } from 'app/utils/submitUtils';
 import { lagUttaksplan } from 'app/utils/uttaksplan/lagUttaksplan';
 import { getHarAktivitetskravIPeriodeUtenUttak } from 'app/utils/uttaksplan/uttaksplanUtils';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import React, { FunctionComponent } from 'react';
 import { useIntl } from 'react-intl';
 import TilgjengeligeDagerGraf from '../../tilgjengeligeDagerGraf/TilgjengeligeDagerGraf';
@@ -135,9 +135,11 @@ const FarMedmorAleneomsorgFødsel: FunctionComponent<Props> = ({
             )}
             onSubmit={handleSubmit}
             renderForm={({ values: formValues }) => {
-                const visibility = farMedmorAleneomsorgFødselAdopsjonQuestionsConfig.getVisbility(formValues);
+                const visibility = farMedmorAleneomsorgFødselAdopsjonQuestionsConfig.getVisbility(
+                    formValues as FarMedmorAleneomsorgFødselFormData
+                );
 
-                const valgtStønadskonto = tilgjengeligeStønadskontoer[formValues.dekningsgrad];
+                const valgtStønadskonto = tilgjengeligeStønadskontoer[formValues.dekningsgrad!];
 
                 return (
                     <FarMedmorAleneomsorgFødselFormComponents.Form
@@ -204,9 +206,9 @@ const FarMedmorAleneomsorgFødsel: FunctionComponent<Props> = ({
                             />
                         </Block>
                         <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
-                            <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                            <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                 {intlUtils(intl, 'søknad.gåVidere')}
-                            </Hovedknapp>
+                            </Button>
                         </Block>
                     </FarMedmorAleneomsorgFødselFormComponents.Form>
                 );

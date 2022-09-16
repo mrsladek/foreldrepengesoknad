@@ -58,7 +58,7 @@ export const erSamtidigUttakFarMedmorFørFørsteSeksUkerWLB = (
 };
 
 export const skalViseInfoOmSamtidigUttakRundtFødsel = (
-    values: PeriodeUttakFormData,
+    values: Partial<PeriodeUttakFormData>,
     familiehendelsesdato: Date,
     erFarEllerMedmor: boolean,
     erDeltUttak: boolean,

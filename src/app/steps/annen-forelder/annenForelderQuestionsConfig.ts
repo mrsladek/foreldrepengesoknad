@@ -3,6 +3,7 @@ import { AnnenForelderFormData, AnnenForelderFormField } from './annenforelderFo
 import { Søkerrolle } from 'app/types/Søkerrolle';
 import { hasValue } from '@navikt/fp-common';
 import isFarEllerMedmor from 'app/utils/isFarEllerMedmor';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 
 interface AnnenForelderQuestionsPayload extends AnnenForelderFormData {
     skalOppgiPersonalia: boolean;

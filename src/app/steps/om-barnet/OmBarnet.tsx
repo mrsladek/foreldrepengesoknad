@@ -1,7 +1,6 @@
 import { Block, hasValue, intlUtils, Step } from '@navikt/fp-common';
 import actionCreator from 'app/context/action/actionCreator';
 import SøknadRoutes from 'app/routes/routes';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import useOnValidSubmit from 'app/utils/hooks/useOnValidSubmit';
@@ -24,6 +23,7 @@ import useFortsettSøknadSenere from 'app/utils/hooks/useFortsettSøknadSenere';
 import { andreAugust2022ReglerGjelder, ISOStringToDate } from 'app/utils/dateUtils';
 import { convertYesOrNoOrUndefinedToBoolean } from 'app/utils/formUtils';
 import isFarEllerMedmor from 'app/utils/isFarEllerMedmor';
+import { Button } from '@navikt/ds-react';
 
 const OmBarnet: React.FunctionComponent = () => {
     const intl = useIntl();
@@ -49,7 +49,7 @@ const OmBarnet: React.FunctionComponent = () => {
             onSubmit={handleSubmit}
             renderForm={({ values: formValues, setFieldValue }) => {
                 const visibility = omBarnetQuestionsConfig.getVisbility({
-                    ...formValues,
+                    ...(formValues as OmBarnetFormData),
                     arbeidsforhold,
                     situasjon: søkersituasjon.situasjon,
                     rolle: søkersituasjon.rolle,
@@ -83,26 +83,34 @@ const OmBarnet: React.FunctionComponent = () => {
                             <RegistrertBarn
                                 registrerteBarn={registrerteBarn}
                                 visibility={visibility}
-                                formValues={formValues}
+                                formValues={formValues as OmBarnetFormData}
                                 setFieldValue={setFieldValue}
                             />
                             <BarnFødtEllerAdoptert visibility={visibility} />
                             <AdopsjonAnnetBarn
                                 søkersituasjon={søkersituasjon}
-                                formValues={formValues}
+                                formValues={formValues as OmBarnetFormData}
                                 visibility={visibility}
                             />
                             <AdopsjonEktefellesBarn
                                 søkersituasjon={søkersituasjon}
-                                formValues={formValues}
+                                formValues={formValues as OmBarnetFormData}
                                 visibility={visibility}
                             />
-                            <Termin søkersituasjon={søkersituasjon} formValues={formValues} visibility={visibility} />
-                            <Fødsel søkersituasjon={søkersituasjon} formValues={formValues} visibility={visibility} />
+                            <Termin
+                                søkersituasjon={søkersituasjon}
+                                formValues={formValues as OmBarnetFormData}
+                                visibility={visibility}
+                            />
+                            <Fødsel
+                                søkersituasjon={søkersituasjon}
+                                formValues={formValues as OmBarnetFormData}
+                                visibility={visibility}
+                            />
                             <Block visible={visGåVidereKnapp} textAlignCenter={true}>
-                                <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                                <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                     {intlUtils(intl, 'søknad.gåVidere')}
-                                </Hovedknapp>
+                                </Button>
                             </Block>
                         </OmBarnetFormComponents.Form>
                     </Step>

@@ -7,13 +7,16 @@ interface ManglendeVedleggQuestionsPayload extends ManglendeVedleggFormData {
     erLikEllerMindreEnnFireUkerTilUttaketStarter: boolean;
 }
 
-const ManglendeVedleggFormConfig: QuestionConfig<ManglendeVedleggQuestionsPayload, ManglendeVedleggFormField> = {
+const ManglendeVedleggFormConfig: QuestionConfig<
+    Partial<ManglendeVedleggQuestionsPayload>,
+    ManglendeVedleggFormField
+> = {
     [ManglendeVedleggFormField.vedlegg]: {
         isAnswered: ({ vedlegg, manglendeVedleggTyper, erLikEllerMindreEnnFireUkerTilUttaketStarter }) =>
             erLikEllerMindreEnnFireUkerTilUttaketStarter
                 ? true
-                : manglendeVedleggTyper.every((type) =>
-                      vedlegg
+                : manglendeVedleggTyper!.every((type) =>
+                      vedlegg!
                           .filter((vedlegg) => !!vedlegg)
                           .flat()
                           .some((v) => v.type === type)
@@ -22,6 +25,7 @@ const ManglendeVedleggFormConfig: QuestionConfig<ManglendeVedleggQuestionsPayloa
     },
 };
 
-export const manglendeVedleggQuestionsConfig = Questions<ManglendeVedleggQuestionsPayload, ManglendeVedleggFormField>(
-    ManglendeVedleggFormConfig
-);
+export const manglendeVedleggQuestionsConfig = Questions<
+    Partial<ManglendeVedleggQuestionsPayload>,
+    ManglendeVedleggFormField
+>(ManglendeVedleggFormConfig);

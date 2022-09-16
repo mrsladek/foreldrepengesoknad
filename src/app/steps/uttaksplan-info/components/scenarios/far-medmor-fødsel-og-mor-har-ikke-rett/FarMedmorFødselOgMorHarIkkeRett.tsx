@@ -27,15 +27,11 @@ import { getTilgjengeligeDager } from '../../tilgjengeligeDagerGraf/tilgjengelig
 import { Forelder } from 'app/types/Forelder';
 import { formaterNavn } from 'app/utils/personUtils';
 import useSøkerinfo from 'app/utils/hooks/useSøkerinfo';
-import Veilederpanel from 'nav-frontend-veilederpanel';
-import VeilederNormal from 'app/assets/VeilederNormal';
 import dayjs from 'dayjs';
-
 import { Tidsperioden } from 'app/steps/uttaksplan-info/utils/Tidsperioden';
 import { uttaksplanDatoavgrensninger } from 'app/steps/uttaksplan-info/utils/uttaksplanDatoavgrensninger';
 import { Uttaksdagen } from 'app/steps/uttaksplan-info/utils/Uttaksdagen';
-import { DatepickerDateRange } from 'nav-datovelger';
-import { Hovedknapp } from 'nav-frontend-knapper';
+import { DatepickerDateRange } from '@navikt/ds-datepicker';
 import { validateStartdatoFarMedmor } from './validation/farMedmorFødselOgMorHarIkkeRettValidering';
 import DekningsgradSpørsmål from '../spørsmål/DekningsgradSpørsmål';
 import { getDekningsgradFromString } from 'app/utils/getDekningsgradFromString';
@@ -46,6 +42,7 @@ import { andreAugust2022ReglerGjelder, ISOStringToDate } from 'app/utils/dateUti
 import { getErMorUfør } from 'app/utils/annenForelderUtils';
 import { getHarAktivitetskravIPeriodeUtenUttak } from 'app/utils/uttaksplan/uttaksplanUtils';
 import { DateRange, dateToISOString } from '@navikt/sif-common-formik-ds/lib';
+import { Button, GuidePanel } from '@navikt/ds-react';
 
 const skalViseInfoOmPrematuruker = (fødselsdato: Date | undefined, termindato: Date | undefined): boolean => {
     if (fødselsdato === undefined || termindato === undefined) {
@@ -177,12 +174,12 @@ const FarMedmorFødselOgMorHarIkkeRett: FunctionComponent<Props> = ({
             onSubmit={handleSubmit}
             renderForm={({ values: formValues }) => {
                 const visibility = farMedmorFødselOgMorHarIkkeRettQuestionsConfig.getVisbility({
-                    ...formValues,
+                    ...(formValues as FarMedmorFødselOgMorHarIkkeRettFormData),
                     erMorUfør,
                     familiehendelsesdato: familiehendelsesdatoDate!,
                 });
 
-                const valgtStønadskonto = tilgjengeligeStønadskontoer[formValues.dekningsgrad];
+                const valgtStønadskonto = tilgjengeligeStønadskontoer[formValues.dekningsgrad!];
 
                 return (
                     <FarMedmorFødselOgMorHarIkkeRettFormComponents.Form
@@ -219,7 +216,7 @@ const FarMedmorFødselOgMorHarIkkeRett: FunctionComponent<Props> = ({
                             )}
                         </Block>
                         <Block padBottom="l" visible={visInfoOmPrematuruker === true}>
-                            <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                            <GuidePanel>
                                 <FormattedMessage
                                     id="uttaksplaninfo.veileder.informasjonPrematuruker"
                                     values={{
@@ -227,7 +224,7 @@ const FarMedmorFødselOgMorHarIkkeRett: FunctionComponent<Props> = ({
                                         antallprematurdager: ekstraDagerGrunnetPrematurFødsel! % 5,
                                     }}
                                 />
-                            </Veilederpanel>
+                            </GuidePanel>
                         </Block>
                         <Block
                             padBottom="l"
@@ -249,9 +246,9 @@ const FarMedmorFødselOgMorHarIkkeRett: FunctionComponent<Props> = ({
                             />
                         </Block>
                         <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
-                            <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                            <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                 {intlUtils(intl, 'søknad.gåVidere')}
-                            </Hovedknapp>
+                            </Button>
                         </Block>
                     </FarMedmorFødselOgMorHarIkkeRettFormComponents.Form>
                 );

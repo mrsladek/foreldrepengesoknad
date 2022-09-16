@@ -79,7 +79,7 @@ const SkalHaGraderingSpørsmål: FunctionComponent<Props> = ({
                 />
             </Block>
             <Block visible={graderingsprosentVisible}>
-                <PeriodeUttakFormComponents.RadioPanelGroup
+                <PeriodeUttakFormComponents.RadioGroup
                     name={PeriodeUttakFormField.arbeidsformer}
                     legend={intlUtils(intl, 'uttaksplan.arbeidsformer')}
                     description={
@@ -89,7 +89,6 @@ const SkalHaGraderingSpørsmål: FunctionComponent<Props> = ({
                             </BodyLong>
                         </UtvidetInformasjon>
                     }
-                    useTwoColumns={true}
                     radios={getArbeidsOptions(arbeidsforhold, tidsperiode)}
                     validate={(value) => {
                         if (!hasValue(value)) {

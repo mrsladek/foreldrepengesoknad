@@ -5,7 +5,6 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 
 import OppsummeringsPunkt from '../OppsummeringsPunkt';
-import { Normaltekst } from 'nav-frontend-typografi';
 import UttaksplanOppsummeringsliste from './UttaksplanOppsummeringsliste';
 import { Periode } from 'uttaksplan/types/Periode';
 import Arbeidsforhold from 'app/types/Arbeidsforhold';
@@ -13,6 +12,7 @@ import { NavnPåForeldre } from 'app/types/NavnPåForeldre';
 import AnnenForelder from 'app/context/types/AnnenForelder';
 import { Tilleggsopplysning } from 'app/context/types/Tilleggsopplysninger';
 import { Situasjon } from 'app/types/Situasjon';
+import { BodyShort } from '@navikt/ds-react';
 
 interface Props {
     perioder: Periode[];
@@ -41,7 +41,7 @@ const UttaksplanOppsummering: React.FunctionComponent<Props> = ({ dekningsgrad, 
     return (
         <>
             <OppsummeringsPunkt title={intlUtils(intl, 'oppsummering.uttak.dekningsgrad.label')}>
-                <Normaltekst>{dekningsgradTekst}</Normaltekst>
+                <BodyShort>{dekningsgradTekst}</BodyShort>
             </OppsummeringsPunkt>
             <UttaksplanOppsummeringsliste {...rest}></UttaksplanOppsummeringsliste>
         </>

@@ -80,7 +80,9 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
                     initialValues={getInitialAndreInntekterFormValues(selectedAnnenInntekt)}
                     onSubmit={onValidSubmit}
                     renderForm={({ values: formValues }) => {
-                        const visibility = andreInntekterModalQuestionsConfig.getVisbility(formValues);
+                        const visibility = andreInntekterModalQuestionsConfig.getVisbility(
+                            formValues as AndreInntekterFormData
+                        );
 
                         return (
                             <AndreInntekterModalFormComponents.Form
@@ -93,7 +95,8 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
                                     </Heading>
                                 </Block>
                                 <Block padBottom="l" visible={visibility.isVisible(AndreInntekterFormField.type)}>
-                                    <AndreInntekterModalFormComponents.RadioPanelGroup
+                                    <AndreInntekterModalFormComponents.RadioGroup
+                                        legend="Andre inntekter"
                                         name={AndreInntekterFormField.type}
                                         radios={[
                                             { label: 'Jobb i utlandet', value: AnnenInntektType.JOBB_I_UTLANDET },
@@ -114,7 +117,7 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
                                     padBottom="l"
                                     visible={visibility.isVisible(AndreInntekterFormField.navnPåArbeidsgiver)}
                                 >
-                                    <AndreInntekterModalFormComponents.Input
+                                    <AndreInntekterModalFormComponents.TextField
                                         name={AndreInntekterFormField.navnPåArbeidsgiver}
                                         label={navnPåArbeidsgiverLabel}
                                         validate={validateRequiredTextInputField(navnPåArbeidsgiverLabel, intl)}
@@ -127,7 +130,7 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
                                         placeholder="dd.mm.åååå"
                                         fullscreenOverlay={true}
                                         showYearSelector={true}
-                                        validate={validateAnnenInntektFom(intl, formValues.tom)}
+                                        validate={validateAnnenInntektFom(intl, formValues.tom!)}
                                         maxDate={dayjs().toDate()}
                                     />
                                 </Block>
@@ -144,7 +147,7 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
                                         placeholder="dd.mm.åååå"
                                         fullscreenOverlay={true}
                                         showYearSelector={true}
-                                        validate={validateAnnenInntektTom(intl, formValues.fom)}
+                                        validate={validateAnnenInntektTom(intl, formValues.fom!)}
                                         maxDate={dayjs().toDate()}
                                     />
                                 </Block>
@@ -153,7 +156,9 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
                                     visible={visibility.isVisible(AndreInntekterFormField.dokumentasjon)}
                                 >
                                     <GuidePanel>
-                                        <FormattedMessage id={getVeilederMessageId(formValues)} />
+                                        <FormattedMessage
+                                            id={getVeilederMessageId(formValues as AndreInntekterFormData)}
+                                        />
                                     </GuidePanel>
                                 </Block>
                                 <Block
@@ -163,13 +168,13 @@ const AndreInntekterModal: FunctionComponent<Props> = ({
                                     <FormikFileUploader
                                         name={AndreInntekterFormField.dokumentasjon}
                                         label="Last opp dokumentasjon"
-                                        attachments={formValues.dokumentasjon}
+                                        attachments={formValues.dokumentasjon!}
                                         attachmentType={AttachmentType.ANNEN_INNTEKT}
-                                        skjemanummer={getSkjemanummer(formValues)}
+                                        skjemanummer={getSkjemanummer(formValues as AndreInntekterFormData)}
                                     />
                                 </Block>
                                 <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
-                                    <Button variant="secondary">{intlUtils(intl, 'søknad.gåVidere')}</Button>
+                                    <Button variant="primary">{intlUtils(intl, 'søknad.gåVidere')}</Button>
                                 </Block>
                             </AndreInntekterModalFormComponents.Form>
                         );

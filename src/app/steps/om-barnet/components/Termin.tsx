@@ -1,3 +1,4 @@
+import { GuidePanel, Link } from '@navikt/ds-react';
 import {
     attenUkerTreDager,
     date21DaysAgo,
@@ -10,15 +11,12 @@ import {
 import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
-import VeilederNormal from 'app/assets/VeilederNormal';
 import FormikFileUploader from 'app/components/formik-file-uploader/FormikFileUploader';
 import Søkersituasjon from 'app/context/types/Søkersituasjon';
 import links from 'app/links/links';
 import { AttachmentType } from 'app/types/AttachmentType';
 import { Skjemanummer } from 'app/types/Skjemanummer';
 import isFarEllerMedmor from 'app/utils/isFarEllerMedmor';
-import Lenke from 'nav-frontend-lenker';
-import Veilederpanel from 'nav-frontend-veilederpanel';
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { OmBarnetFormComponents, OmBarnetFormData, OmBarnetFormField } from '../omBarnetFormConfig';
@@ -51,7 +49,7 @@ const Termin: FunctionComponent<Props> = ({ søkersituasjon, visibility, formVal
     return (
         <>
             <Block padBottom="l" visible={visibility.isVisible(OmBarnetFormField.antallBarn)}>
-                <OmBarnetFormComponents.RadioPanelGroup
+                <OmBarnetFormComponents.RadioGroup
                     name={OmBarnetFormField.antallBarn}
                     radios={[
                         {
@@ -67,7 +65,6 @@ const Termin: FunctionComponent<Props> = ({ søkersituasjon, visibility, formVal
                             value: '3',
                         },
                     ]}
-                    useTwoColumns={true}
                     legend={intlUtils(intl, intlSpørsmålAntallBarnId)}
                 />
             </Block>
@@ -75,7 +72,7 @@ const Termin: FunctionComponent<Props> = ({ søkersituasjon, visibility, formVal
                 padBottom="l"
                 visible={formValues.antallBarn !== undefined && parseInt(formValues.antallBarn, 10) >= 3}
             >
-                <OmBarnetFormComponents.Select name={OmBarnetFormField.antallBarnSelect}>
+                <OmBarnetFormComponents.Select name={OmBarnetFormField.antallBarnSelect} label="Antall barn">
                     <option value="" />
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -104,25 +101,25 @@ const Termin: FunctionComponent<Props> = ({ søkersituasjon, visibility, formVal
 
             {farMedMorSøkerPåTermin && !kanSøkePåTermin(søkersituasjon.rolle, formValues.termindato) && (
                 <Block padBottom="l">
-                    <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                    <GuidePanel>
                         <FormattedMessage
                             id="omBarnet.veileder.medMorEllerFarTermin"
                             values={{
                                 lenke: (
-                                    <Lenke href={links.papirsøknad}>
+                                    <Link href={links.papirsøknad}>
                                         <FormattedMessage id="omBarnet.papirsøknad.lenke" />
-                                    </Lenke>
+                                    </Link>
                                 ),
                             }}
                         />
-                    </Veilederpanel>
+                    </GuidePanel>
                 </Block>
             )}
 
             <Block padBottom="l" visible={visibility.isVisible(OmBarnetFormField.terminbekreftelse)}>
-                <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                <GuidePanel>
                     <FormattedMessage id={intlTerminbekreftelseId} />
-                </Veilederpanel>
+                </GuidePanel>
             </Block>
             <Block padBottom="l" visible={visibility.isVisible(OmBarnetFormField.terminbekreftelse)}>
                 <FormikFileUploader

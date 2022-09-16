@@ -4,7 +4,7 @@ import { SkjemaelementFeil } from 'app/types/SkjemaelementFeil';
 import { isDateABeforeDateB, isDateInTheFuture } from 'app/utils/dateUtils';
 import { erGyldigNorskOrgnummer } from 'app/utils/numberUtils';
 import { validateTextInputField } from 'app/utils/validationUtil';
-import { isISODateString } from 'nav-datovelger';
+import { isISODateString } from '@navikt/ds-datepicker';
 import { IntlShape } from 'react-intl';
 
 export const validateEgenNæringFom =

@@ -1,5 +1,5 @@
+import { Loader } from '@navikt/ds-react';
 import { Locale } from '@navikt/fp-common';
-import NavFrontendSpinner from 'nav-frontend-spinner';
 import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Api from './api/api';
@@ -19,7 +19,7 @@ interface Props {
 
 const renderSpinner = () => (
     <div style={{ textAlign: 'center', padding: '12rem 0' }}>
-        <NavFrontendSpinner type="XXL" />
+        <Loader size="2xlarge" />
     </div>
 );
 

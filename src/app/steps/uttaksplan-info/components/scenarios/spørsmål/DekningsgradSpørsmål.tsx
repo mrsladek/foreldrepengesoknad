@@ -28,7 +28,7 @@ const DekningsgradSpørsmål: FunctionComponent<Props> = ({
         ? 'uttaksplaninfo.dekningsgrad.label.deltUttak'
         : 'uttaksplaninfo.dekningsgrad.label.ikkeDeltUttak';
     return (
-        <FormKomponent.RadioPanelGroup
+        <FormKomponent.RadioGroup
             name={dekningsgradFeltNavn}
             radios={[
                 {
@@ -51,7 +51,6 @@ const DekningsgradSpørsmål: FunctionComponent<Props> = ({
                     ikke endres senere.
                 </UtvidetInformasjon>
             }
-            useTwoColumns={true}
         />
     );
 };

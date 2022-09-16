@@ -39,7 +39,7 @@ const RegistrertBarn: FunctionComponent<Props> = ({ registrerteBarn, visibility,
     return (
         <>
             <Block padBottom="l" visible={visibility.isVisible(OmBarnetFormField.valgteBarn)}>
-                <OmBarnetFormComponents.CheckboxPanelGroup
+                <OmBarnetFormComponents.CheckboxGroup
                     name={OmBarnetFormField.valgteBarn}
                     legend={intlUtils(intl, 'omBarnet.barnRegistrert')}
                     checkboxes={registrerteBarn.map((barn) => ({

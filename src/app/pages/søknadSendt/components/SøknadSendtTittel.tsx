@@ -1,11 +1,11 @@
+import { Heading } from '@navikt/ds-react';
 import React from 'react';
-import { Undertittel } from 'nav-frontend-typografi';
 
 import './søknadSendtTittel.less';
 
 const SøknadSendtTittel = () => (
     <div className="søknadSendtTittel" role="main" aria-label="Foreldrepengesøknaden">
-        <Undertittel>Foreldrepengesøknaden</Undertittel>
+        <Heading size="small">Foreldrepengesøknaden</Heading>
     </div>
 );
 

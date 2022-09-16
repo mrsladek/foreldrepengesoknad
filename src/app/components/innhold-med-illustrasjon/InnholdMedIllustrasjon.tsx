@@ -1,8 +1,8 @@
 import React from 'react';
-import { Systemtittel } from 'nav-frontend-typografi';
 import { bemUtils } from '@navikt/fp-common';
 
 import './innholdMedIllustrasjon.less';
+import { Heading } from '@navikt/ds-react';
 
 interface Props {
     tittel: string;
@@ -24,9 +24,9 @@ const InnholdMedIllustrasjon: React.FunctionComponent<Props> = ({ tittel, illust
             <div className={bem.element('contentWrapper')}>
                 <div className={bem.element('headerWrapper')}>
                     <header>
-                        <Systemtittel tag="h2" className={bem.element('tittel')}>
+                        <Heading size="medium" as="h2" className={bem.element('tittel')}>
                             {tittel}
-                        </Systemtittel>
+                        </Heading>
                         {infoboks !== undefined && infoboks}
                     </header>
                 </div>

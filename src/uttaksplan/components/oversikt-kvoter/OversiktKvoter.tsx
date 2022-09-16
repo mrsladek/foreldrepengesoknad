@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { bemUtils, intlUtils } from '@navikt/fp-common';
-import { Undertittel } from 'nav-frontend-typografi';
 import Personkort from 'app/components/personkort/Personkort';
 import ForelderIkon from 'app/components/foreldrepar/ForelderIkon';
 import { getVarighetString } from 'app/utils/dateUtils';
@@ -20,6 +19,7 @@ import Kontostatus from './konto-status/Kontostatus';
 import TilesList from './tilesList/TilesList';
 import './oversiktKvoter.less';
 import { Situasjon } from 'app/types/Situasjon';
+import { Heading } from '@navikt/ds-react';
 
 const bem = bemUtils('oversiktKvoter');
 
@@ -45,9 +45,9 @@ const OversiktPerForelder: FunctionComponent<PropsPerForelder> = ({
     return (
         <div className={bem.block}>
             <div className={bem.element('perForelder')}>
-                <Undertittel tag="h2" className="blokk-xs">
+                <Heading size="small" as="h2" className="blokk-xs">
                     {intlUtils(intl, 'uttaksplan.oversiktKvoter.tittel.foreldre')}
-                </Undertittel>
+                </Heading>
                 <TilesList columns={'flex'}>
                     {(erDeltUttak || søkerErMor) && (
                         <Personkort ikon={<ForelderIkon forelder={svgInfo.mor} />} tittel={navnPåForeldre.mor}>
@@ -89,7 +89,7 @@ const OversiktPerKvote: FunctionComponent<PropsPerKvote> = ({
 }) => {
     return (
         <div className={bem.element('perKvote')}>
-            <Undertittel tag="h2" className="blokk-xs">
+            <Heading size="small" as="h2" className="blokk-xs">
                 <FormattedMessage
                     id={
                         uttaksstatus.gjelderDagerBrukt
@@ -98,7 +98,7 @@ const OversiktPerKvote: FunctionComponent<PropsPerKvote> = ({
                     }
                     values={{ antall: erDeltUttak ? 2 : 1 }}
                 />
-            </Undertittel>
+            </Heading>
             <TilesList columns={2}>
                 {uttaksstatus.uttak.map((uttak, idx) => (
                     <Kontostatus

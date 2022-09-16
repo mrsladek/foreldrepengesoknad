@@ -1,7 +1,7 @@
+import { BodyLong, BodyShort } from '@navikt/ds-react';
 import { ActionLink, bemUtils, Block, intlUtils } from '@navikt/fp-common';
 import { Tidsperioden } from 'app/steps/uttaksplan-info/utils/Tidsperioden';
 import { førsteOktober2021ReglerGjelder } from 'app/utils/dateUtils';
-import { Normaltekst } from 'nav-frontend-typografi';
 import React, { FunctionComponent } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Periode, Periodetype } from 'uttaksplan/types/Periode';
@@ -53,12 +53,12 @@ const PeriodeHull: FunctionComponent<Props> = ({
     return (
         <div className={bem.block}>
             <Block padBottom="l" visible={kunHelligdager}>
-                <Normaltekst>
+                <BodyShort>
                     <FormattedMessage id="uttaksplan.hull.helligdager" />
-                </Normaltekst>
+                </BodyShort>
             </Block>
             <Block padBottom="l" visible={kunUttaksdager || (kunUttaksdager === false && kunHelligdager === false)}>
-                <Normaltekst>
+                <BodyLong>
                     {erDeltUttak ? (
                         <FormattedMessage
                             id="uttaksplan.hull.uttaksdager.deltUttak"
@@ -79,7 +79,7 @@ const PeriodeHull: FunctionComponent<Props> = ({
                             }}
                         />
                     )}
-                </Normaltekst>
+                </BodyLong>
             </Block>
             <div className={bem.element('lenker')}>
                 <ActionLink onClick={onLeggInnNyPeriode}>{intlUtils(intl, 'uttaksplan.leggInnNyPeriode')}</ActionLink>

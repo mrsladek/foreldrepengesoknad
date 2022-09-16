@@ -1,6 +1,6 @@
 import { formatDate, hasValue, intlUtils } from '@navikt/fp-common';
 import { isDateABeforeDateB } from 'app/utils/dateUtils';
-import { isISODateString } from 'nav-datovelger';
+import { isISODateString } from '@navikt/ds-datepicker';
 import { IntlShape } from 'react-intl';
 
 export const validateStartdatoUttakFarMedmorAleneomsorgFødsel =

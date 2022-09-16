@@ -1,6 +1,5 @@
 import { bemUtils, Block, hasValue, intlUtils, UtvidetInformasjon } from '@navikt/fp-common';
 import { isValidTidsperiode, Tidsperioden } from 'app/steps/uttaksplan-info/utils/Tidsperioden';
-import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import React, { Dispatch, FunctionComponent, useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import LinkButton from 'uttaksplan/components/link-button/LinkButton';
@@ -10,7 +9,11 @@ import { Arbeidsform, Periode, Utsettelsesperiode } from 'uttaksplan/types/Perio
 import { getSlettPeriodeTekst } from 'uttaksplan/utils/periodeUtils';
 import { SubmitListener } from '../submit-listener/SubmitListener';
 import TidsperiodeForm from '../tidsperiode-form/TidsperiodeForm';
-import { PeriodeUtsettelseFormComponents, PeriodeUtsettelseFormField } from './periodeUtsettelseFormConfig';
+import {
+    PeriodeUtsettelseFormComponents,
+    PeriodeUtsettelseFormData,
+    PeriodeUtsettelseFormField,
+} from './periodeUtsettelseFormConfig';
 import {
     cleanupPeriodeUtsettelseFormData,
     getPeriodeUtsettelseFormInitialValues,
@@ -24,11 +27,11 @@ import { førsteOktober2021ReglerGjelder, ISOStringToDate } from 'app/utils/date
 import AktivitetskravSpørsmål from '../spørsmål/aktivitetskrav/AktivitetskravSpørsmål';
 import { NavnPåForeldre } from 'app/types/NavnPåForeldre';
 import Arbeidsforhold from 'app/types/Arbeidsforhold';
-import { Normaltekst } from 'nav-frontend-typografi';
-import { CheckboksPanelProps } from 'nav-frontend-skjema';
 import { guid } from 'nav-frontend-js-utils';
 import { getKunArbeidsforholdForValgtTidsperiode } from 'app/utils/arbeidsforholdUtils';
 import { Situasjon } from 'app/types/Situasjon';
+import { FormikCheckboxGroupCheckboxProp } from '@navikt/sif-common-formik-ds/lib/components/formik-checkbox-group/FormikCheckboxGroup';
+import { BodyLong, Button } from '@navikt/ds-react';
 
 interface Props {
     periode: Periode;
@@ -82,10 +85,10 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
         setTidsperiodeIsOpen(!tidsperiodeIsOpen);
     };
 
-    const getArbeidUnderUtsettelseOptions = (arbeidsgivere: Arbeidsforhold[]): CheckboksPanelProps[] => {
+    const getArbeidUnderUtsettelseOptions = (arbeidsgivere: Arbeidsforhold[]): FormikCheckboxGroupCheckboxProp[] => {
         const aktiveArbeidsforholdIPerioden = getKunArbeidsforholdForValgtTidsperiode(arbeidsgivere, tidsperiode);
 
-        const defaultOptions: CheckboksPanelProps[] = [
+        const defaultOptions: FormikCheckboxGroupCheckboxProp[] = [
             {
                 label: 'Selvstendig næringsdrivende',
                 value: Arbeidsform.selvstendignæringsdrivende,
@@ -95,7 +98,7 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                 value: Arbeidsform.frilans,
             },
         ];
-        const eksisterendeArbeidsforhold: CheckboksPanelProps[] = [];
+        const eksisterendeArbeidsforhold: FormikCheckboxGroupCheckboxProp[] = [];
 
         if (aktiveArbeidsforholdIPerioden.length > 0) {
             aktiveArbeidsforholdIPerioden.forEach((arb) =>
@@ -143,7 +146,9 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                             />
                         </Block>
                         <PeriodeUtsettelseFormComponents.Form includeButtons={false}>
-                            <SubmitListener cleanup={() => cleanupPeriodeUtsettelseFormData(values)} />
+                            <SubmitListener
+                                cleanup={() => cleanupPeriodeUtsettelseFormData(values as PeriodeUtsettelseFormData)}
+                            />
 
                             <Block visible={isValidTidsperiode(tidsperiode)} padBottom="l">
                                 <TidsperiodeDisplay
@@ -181,8 +186,8 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                                     tidsperiodenErInnenforFørsteSeksUker={Tidsperioden(
                                         tidsperiode
                                     ).erInnenforFørsteSeksUker(familiehendelsesdato)}
-                                    utsettelseårsak={values.årsak}
-                                    vedlegg={values.vedlegg}
+                                    utsettelseårsak={values.årsak!}
+                                    vedlegg={values.vedlegg!}
                                     erMorUfør={erMorUfør}
                                     søkerErFarEllerMedmorOgKunDeHarRett={søkerErFarEllerMedmorOgKunDeHarRett}
                                 />
@@ -191,19 +196,18 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                                 visible={visibility.isVisible(PeriodeUtsettelseFormField.arbeidsformer)}
                                 padBottom="l"
                             >
-                                <PeriodeUtsettelseFormComponents.CheckboxPanelGroup
+                                <PeriodeUtsettelseFormComponents.CheckboxGroup
                                     name={PeriodeUtsettelseFormField.arbeidsformer}
                                     legend={intlUtils(intl, 'uttaksplan.arbeidsformer')}
                                     description={
                                         <UtvidetInformasjon
                                             apneLabel={intlUtils(intl, 'uttaksplan.arbeidsformer.lesMer.tittel')}
                                         >
-                                            <Normaltekst>
+                                            <BodyLong>
                                                 <FormattedMessage id="uttaksplan.arbeidsformer.lesMer.innhold" />
-                                            </Normaltekst>
+                                            </BodyLong>
                                         </UtvidetInformasjon>
                                     }
-                                    useTwoColumns={true}
                                     checkboxes={getArbeidUnderUtsettelseOptions(arbeidsforhold)}
                                     validate={(value) => {
                                         if (!hasValue(value) || value === undefined || value.length === 0) {
@@ -217,8 +221,8 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                                 padBottom="l"
                             >
                                 <AktivitetskravSpørsmål
-                                    aktivitetskravMorValue={values.morsAktivitetIPerioden}
-                                    aktivitetskravVedlegg={values.morsAktivitetIPeriodenDokumentasjon}
+                                    aktivitetskravMorValue={values.morsAktivitetIPerioden!}
+                                    aktivitetskravVedlegg={values.morsAktivitetIPeriodenDokumentasjon!}
                                     fieldName={PeriodeUtsettelseFormField.morsAktivitetIPerioden}
                                     navnPåForeldre={navnPåForeldre}
                                     FormComponents={PeriodeUtsettelseFormComponents}
@@ -231,9 +235,9 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                                 }
                             >
                                 <div style={{ textAlign: 'center', position: 'relative' }}>
-                                    <Knapp htmlType="button" onClick={() => toggleIsOpen!(periode.id)}>
+                                    <Button variant="secondary" type="button" onClick={() => toggleIsOpen!(periode.id)}>
                                         <FormattedMessage id="uttaksplan.lukk" />
-                                    </Knapp>
+                                    </Button>
                                     <div className={bem.element('slettPeriodeWrapper')}>
                                         <LinkButton
                                             onClick={() => handleDeletePeriode!(periode.id)}
@@ -252,12 +256,16 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                                 }
                             >
                                 <div className={bem.element('knapperad')}>
-                                    <Knapp htmlType="button" onClick={() => setNyPeriodeFormIsVisible!(false)}>
+                                    <Button
+                                        variant="secondary"
+                                        type="button"
+                                        onClick={() => setNyPeriodeFormIsVisible!(false)}
+                                    >
                                         <FormattedMessage id="uttaksplan.avbryt" />
-                                    </Knapp>
+                                    </Button>
                                     {visibility.areAllQuestionsAnswered() ? (
-                                        <Hovedknapp
-                                            htmlType="button"
+                                        <Button
+                                            variant="primary"
                                             onClick={() => {
                                                 handleAddPeriode!(
                                                     mapPeriodeUtsettelseFormToPeriode(values, guid(), erFarEllerMedmor),
@@ -267,7 +275,7 @@ const PeriodeUtsettelseForm: FunctionComponent<Props> = ({
                                             }}
                                         >
                                             <FormattedMessage id="uttaksplan.leggTil" />
-                                        </Hovedknapp>
+                                        </Button>
                                     ) : null}
                                 </div>
                             </Block>

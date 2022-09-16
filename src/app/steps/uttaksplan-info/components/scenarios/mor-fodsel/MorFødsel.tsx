@@ -2,8 +2,6 @@ import React, { FunctionComponent } from 'react';
 import dayjs from 'dayjs';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Block, intlUtils } from '@navikt/fp-common';
-import Veilederpanel from 'nav-frontend-veilederpanel';
-import VeilederNormal from 'app/assets/VeilederNormal';
 import useSøknad from 'app/utils/hooks/useSøknad';
 import actionCreator from 'app/context/action/actionCreator';
 import { getFamiliehendelsedato, getFødselsdato, getTermindato } from 'app/utils/barnUtils';
@@ -26,7 +24,6 @@ import { Forelder } from 'app/types/Forelder';
 import useOnValidSubmit from 'app/utils/hooks/useOnValidSubmit';
 import SøknadRoutes from 'app/routes/routes';
 import { MorFødselUttaksplanInfo } from 'app/context/types/UttaksplanInfo';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import { morFødselQuestionsConfig } from './morFødselQuestionsConfig';
 import useUttaksplanInfo from 'app/utils/hooks/useUttaksplanInfo';
 import DekningsgradSpørsmål from '../spørsmål/DekningsgradSpørsmål';
@@ -37,6 +34,7 @@ import { storeAppState } from 'app/utils/submitUtils';
 import { ForeldrepengesøknadContextState } from 'app/context/ForeldrepengesøknadContextConfig';
 import { ISOStringToDate } from 'app/utils/dateUtils';
 import { getAntallUker } from 'app/steps/uttaksplan-info/utils/stønadskontoer';
+import { Button, GuidePanel } from '@navikt/ds-react';
 
 const skalViseInfoOmPrematuruker = (fødselsdato: Date | undefined, termindato: Date | undefined): boolean => {
     if (fødselsdato === undefined || termindato === undefined) {
@@ -158,12 +156,12 @@ const MorFødsel: FunctionComponent<Props> = ({
             onSubmit={handleSubmit}
             renderForm={({ values: formValues, setFieldValue }) => {
                 const visibility = morFødselQuestionsConfig.getVisbility({
-                    ...formValues,
+                    ...(formValues as MorFødselFormData),
                     harRettPåForeldrepenger,
                     erAleneOmOmsorg,
                 });
 
-                const valgtStønadskonto = tilgjengeligeStønadskontoer[formValues.dekningsgrad];
+                const valgtStønadskonto = tilgjengeligeStønadskontoer[formValues.dekningsgrad!];
 
                 return (
                     <MorFødselFormComponents.Form includeButtons={false} includeValidationSummary={true}>
@@ -191,7 +189,7 @@ const MorFødsel: FunctionComponent<Props> = ({
                             )}
                         </Block>
                         <Block padBottom="l" visible={visInfoOmPrematuruker === true}>
-                            <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                            <GuidePanel>
                                 <FormattedMessage
                                     id="uttaksplaninfo.veileder.informasjonPrematuruker"
                                     values={{
@@ -199,12 +197,12 @@ const MorFødsel: FunctionComponent<Props> = ({
                                         antallprematurdager: ekstraDagerGrunnetPrematurFødsel! % 5,
                                     }}
                                 />
-                            </Veilederpanel>
+                            </GuidePanel>
                         </Block>
                         <Block visible={visibility.isAnswered(MorFødselFormField.dekningsgrad)}>
                             <StartdatoPermisjonMor
-                                permisjonStartdato={formValues.permisjonStartdato}
-                                skalIkkeHaUttakFørTermin={formValues.skalIkkeHaUttakFørTermin}
+                                permisjonStartdato={formValues.permisjonStartdato!}
+                                skalIkkeHaUttakFørTermin={formValues.skalIkkeHaUttakFørTermin!}
                             />
                         </Block>
                         <Block
@@ -222,7 +220,7 @@ const MorFødsel: FunctionComponent<Props> = ({
                                         formValues.skalIkkeHaUttakFørTermin === true)
                                 }
                             >
-                                <Veilederpanel fargetema="normal" svg={<VeilederNormal transparentBackground={true} />}>
+                                <GuidePanel>
                                     <FormattedMessage
                                         id="uttaksplaninfo.veileder.flerbarnsInformasjon"
                                         values={{
@@ -231,7 +229,7 @@ const MorFødsel: FunctionComponent<Props> = ({
                                             navnMor: navnMor,
                                         }}
                                     />
-                                </Veilederpanel>
+                                </GuidePanel>
                             </Block>
                             <Block
                                 padBottom="l"
@@ -248,9 +246,9 @@ const MorFødsel: FunctionComponent<Props> = ({
                             </Block>
                         </Block>
                         <Block visible={visibility.areAllQuestionsAnswered()} textAlignCenter={true}>
-                            <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                            <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                 {intlUtils(intl, 'søknad.gåVidere')}
-                            </Hovedknapp>
+                            </Button>
                         </Block>
                     </MorFødselFormComponents.Form>
                 );

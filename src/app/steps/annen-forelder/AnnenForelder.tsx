@@ -10,7 +10,6 @@ import { Skjemanummer } from 'app/types/Skjemanummer';
 import { convertYesOrNoOrUndefinedToBoolean } from 'app/utils/formUtils';
 import isFarEllerMedmor from 'app/utils/isFarEllerMedmor';
 import { getFamiliehendelsedato, getRegistrertBarnOmDetFinnes } from 'app/utils/barnUtils';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import React, { useCallback } from 'react';
 import useOnValidSubmit from 'app/utils/hooks/useOnValidSubmit';
 import useSøknad from 'app/utils/hooks/useSøknad';
@@ -35,6 +34,8 @@ import { storeAppState } from 'app/utils/submitUtils';
 import { ForeldrepengesøknadContextState } from 'app/context/ForeldrepengesøknadContextConfig';
 import { ISOStringToDate } from 'app/utils/dateUtils';
 import useFortsettSøknadSenere from 'app/utils/hooks/useFortsettSøknadSenere';
+import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
+import { Button } from '@navikt/ds-react';
 
 const AnnenForelder = () => {
     const intl = useIntl();
@@ -92,7 +93,7 @@ const AnnenForelder = () => {
             onSubmit={handleSubmit}
             renderForm={({ values: formValues }) => {
                 const visibility = annenForelderQuestionsConfig.getVisbility({
-                    ...formValues,
+                    ...(formValues as AnnenForelderFormData),
                     skalOppgiPersonalia,
                     søkerRolle: rolle,
                     gjelderStebarnsadopsjon: isAdoptertStebarn(barn) ? true : false,
@@ -249,9 +250,9 @@ const AnnenForelder = () => {
                                 />
                             </Block>
                             <Block visible={kanGåVidereMedSøknaden} textAlignCenter={true}>
-                                <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                                <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                     {intlUtils(intl, 'søknad.gåVidere')}
-                                </Hovedknapp>
+                                </Button>
                             </Block>
                         </AnnenForelderFormComponents.Form>
                     </Step>

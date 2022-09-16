@@ -1,7 +1,7 @@
 import { formatDateExtended, intlUtils } from '@navikt/fp-common';
 import { ISOStringToDate } from 'app/utils/dateUtils';
 import dayjs from 'dayjs';
-import { isISODateString } from 'nav-datovelger';
+import { isISODateString } from '@navikt/ds-datepicker';
 import { IntlShape } from 'react-intl';
 import { Uttaksdagen } from '../../../../utils/Uttaksdagen';
 

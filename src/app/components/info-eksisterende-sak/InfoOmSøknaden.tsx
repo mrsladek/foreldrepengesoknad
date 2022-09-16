@@ -2,7 +2,6 @@ import React from 'react';
 import { useIntl, IntlShape, FormattedMessage } from 'react-intl';
 import SituasjonSirkel from './illustrasjoner/situasjon-sirkel/SituasjonSirkel';
 import UkerSirkel from './illustrasjoner/uker-sirkel/UkerSirkel';
-import { Normaltekst } from 'nav-frontend-typografi';
 import { EksisterendeSak } from 'app/types/EksisterendeSak';
 import { TilgjengeligStønadskonto } from 'app/types/TilgjengeligStønadskonto';
 import { bemUtils, Block, hasValue, intlUtils, UtvidetInformasjon } from '@navikt/fp-common';
@@ -30,6 +29,7 @@ import InfoEksisterendePerioder from './InfoEksisterendePerioder';
 
 import './infoOmSøknaden.less';
 import { getFamiliehendelsedato, getTermindato } from 'app/utils/barnUtils';
+import { BodyShort } from '@navikt/ds-react';
 
 interface Props {
     tilgjengeligeStønadskontoer: TilgjengeligStønadskonto[];
@@ -133,7 +133,7 @@ const InfoOmSøknaden: React.FunctionComponent<Props> = ({
                 ]}
             >
                 <Block padBottom="l">
-                    <Normaltekst>
+                    <BodyShort>
                         <FormattedMessage
                             id="eksisterendeSak.tekst.html"
                             values={{
@@ -142,10 +142,10 @@ const InfoOmSøknaden: React.FunctionComponent<Props> = ({
                                 navn: hvem,
                             }}
                         />
-                    </Normaltekst>
+                    </BodyShort>
                 </Block>
                 {skalViseInfoOmMorsSak && hasValue(annenForelderNavn) && nesteMuligeUttaksdagEtterAnnenPart && (
-                    <Normaltekst>
+                    <BodyShort>
                         <FormattedMessage
                             id="eksisterendeSak.tekst.nesteMuligeUttaksdato"
                             values={{
@@ -154,7 +154,7 @@ const InfoOmSøknaden: React.FunctionComponent<Props> = ({
                                 b: (msg: any) => <b>{msg}</b>,
                             }}
                         />
-                    </Normaltekst>
+                    </BodyShort>
                 )}
 
                 {skalViseInfoOmMorsSak &&
@@ -199,7 +199,7 @@ const InfoOmSøknaden: React.FunctionComponent<Props> = ({
                     }
                 ></InnholdMedIllustrasjon>
             )}
-            <Normaltekst>
+            <BodyShort>
                 <FormattedMessage
                     id="uttaksplan.informasjon.lesMer"
                     values={{
@@ -210,7 +210,7 @@ const InfoOmSøknaden: React.FunctionComponent<Props> = ({
                         ),
                     }}
                 />
-            </Normaltekst>
+            </BodyShort>
         </Block>
     );
 };

@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { Uttaksdagen } from './Uttaksdagen';
 import uttaksConstants from 'app/constants';
-import { DatepickerLimitations } from 'nav-datovelger';
+import { DatepickerLimitations } from '@navikt/ds-datepicker';
 import { andreAugust2022ReglerGjelder } from 'app/utils/dateUtils';
 import { Situasjon } from 'app/types/Situasjon';
 import { getFørsteUttaksdag2UkerFørFødsel } from 'app/utils/wlbUtils';

@@ -12,8 +12,6 @@ import {
     velkommenFormQuestions,
 } from './velkommenFormConfig';
 import DinePlikter from 'app/components/dine-plikter/DinePlikter';
-import { Hovedknapp } from 'nav-frontend-knapper';
-import { Innholdstittel, Normaltekst } from 'nav-frontend-typografi';
 import DinePersonopplysningerModal from '../modaler/DinePersonopplysningerModal';
 
 import './velkommen.less';
@@ -34,6 +32,7 @@ import {
     getSisteForeldrepengeSak,
     skalKunneSøkeOmEndring,
 } from 'app/utils/sakerUtils';
+import { BodyShort, Button, Heading } from '@navikt/ds-react';
 
 interface Props {
     fornavn: string;
@@ -100,7 +99,7 @@ const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr
             onSubmit={handleSubmit}
             renderForm={({ values }) => {
                 const visibility = velkommenFormQuestions.getVisbility({
-                    ...values,
+                    ...(values as VelkommenFormData),
                     kanSøkeOmEndring,
                 });
                 return (
@@ -124,9 +123,9 @@ const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr
                         />
 
                         <div className={bem.block}>
-                            <Innholdstittel className={`${bem.element('tittel')} blokk-s`}>
+                            <Heading size="large" className={`${bem.element('tittel')} blokk-s`}>
                                 {intlUtils(intl, 'velkommen.tittel')}
-                            </Innholdstittel>
+                            </Heading>
                             {sak && !sakErAvsluttet && (
                                 <Block padBottom="l">
                                     <SøknadStatus
@@ -134,7 +133,7 @@ const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr
                                         sakErFerdigbehandlet={sakErFerdigbehandlet}
                                         kanSøkeOmEndring={kanSøkeOmEndring}
                                         harSakTilBehandling={harSakTilBehandling}
-                                        values={values}
+                                        values={values as VelkommenFormData}
                                         visibility={visibility}
                                     />
                                 </Block>
@@ -164,12 +163,12 @@ const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr
                             </Block>
                             <Block padBottom="l">
                                 <div style={{ textAlign: 'center' }}>
-                                    <Hovedknapp disabled={isSubmitting} spinner={isSubmitting}>
+                                    <Button variant="primary" disabled={isSubmitting} loading={isSubmitting}>
                                         Begynn med søknad
-                                    </Hovedknapp>
+                                    </Button>
                                 </div>
                             </Block>
-                            <Normaltekst className={bem.element('personopplysningerLink')}>
+                            <BodyShort className={bem.element('personopplysningerLink')}>
                                 <a
                                     className="lenke"
                                     href="#"
@@ -180,7 +179,7 @@ const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr
                                 >
                                     <FormattedMessage id="velkommen.lesMerOmPersonopplysninger" />
                                 </a>
-                            </Normaltekst>
+                            </BodyShort>
                             <DinePersonopplysningerModal
                                 isOpen={isDinePersonopplysningerModalOpen}
                                 onRequestClose={() => setDinePersonopplysningerModalOpen(false)}

@@ -1,8 +1,8 @@
+import { Button } from '@navikt/ds-react';
 import { Block, dateToday, intlUtils } from '@navikt/fp-common';
 import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 import { FrilansOppdrag } from 'app/context/types/Frilans';
-import { Knapp } from 'nav-frontend-knapper';
 import React, { FunctionComponent, useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import {
@@ -126,9 +126,9 @@ const Frilans: FunctionComponent<Props> = ({ frilansoppdrag, setFrilansoppdrag, 
                                 selectOppdrag={selectOppdrag}
                             />
                         </Block>
-                        <Knapp htmlType="button" onClick={handleOnLeggTil}>
+                        <Button variant="secondary" type="button" onClick={handleOnLeggTil}>
                             <FormattedMessage id="inntektsinformasjon.leggTilOppdrag" />
-                        </Knapp>
+                        </Button>
                     </Block>
                     <Block
                         padBottom="l"

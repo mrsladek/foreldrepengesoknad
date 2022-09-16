@@ -1,6 +1,4 @@
 import React from 'react';
-import { SkjemaGruppe } from 'nav-frontend-skjema';
-import { Element } from 'nav-frontend-typografi';
 import { guid } from 'nav-frontend-js-utils';
 import Fieldset from 'app/components/fieldset/Fieldset';
 import { Block } from '@navikt/fp-common';
@@ -8,6 +6,7 @@ import NumberStepper, { Props as NumberStepperProps } from './../number-stepper/
 
 import './ukerDagerTeller.less';
 import { bemUtils } from '@navikt/fp-common';
+import { Label } from '@navikt/ds-react';
 
 export interface Props {
     ukeLegend: string;
@@ -17,12 +16,15 @@ export interface Props {
     dagStepper: NumberStepperProps;
 }
 
-const UkerDagerTeller: React.FunctionComponent<Props> = ({ feil, ukeStepper, dagStepper, ukeLegend, dagLegend }) => {
+const UkerDagerTeller: React.FunctionComponent<Props> = ({ ukeStepper, dagStepper, ukeLegend, dagLegend }) => {
     const bem = bemUtils('ukerDagerTeller');
     const ukeLegendId = guid();
     const dagLegendId = guid();
     return (
-        <SkjemaGruppe feil={feil} legend={<Element tag="span">Varighet på perioden</Element>}>
+        <>
+            <legend>
+                <Label as="span">Varighet på perioden</Label>
+            </legend>
             <div className={bem.block}>
                 <div className={bem.element('ukerFelt')}>
                     <Block padBottom="l">
@@ -35,7 +37,7 @@ const UkerDagerTeller: React.FunctionComponent<Props> = ({ feil, ukeStepper, dag
                     <NumberStepper {...dagStepper} legendId={dagLegendId} />
                 </Fieldset>
             </div>
-        </SkjemaGruppe>
+        </>
     );
 };
 

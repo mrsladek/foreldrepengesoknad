@@ -1,12 +1,10 @@
 import * as React from 'react';
-import Modal from 'nav-frontend-modal';
-import { Hovedknapp } from 'nav-frontend-knapper';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Systemtittel, Normaltekst } from 'nav-frontend-typografi';
 import { AdvarselIkon, bemUtils, intlUtils } from '@navikt/fp-common';
 import { shouldChangeBrowser } from 'app/utils/browserUtils';
 
 import './byttBrowserModal.less';
+import { BodyShort, Button, Heading, Modal } from '@navikt/ds-react';
 
 interface Props {
     skalEndreNettleser: boolean;
@@ -19,18 +17,20 @@ export const ByttBrowserModalImpl: React.FunctionComponent<Props> = ({ skalEndre
     return (
         <Modal
             className={cls.block}
-            contentLabel={intlUtils(intl, 'sesjonUtløpt.tittel')}
+            aria-label={intlUtils(intl, 'sesjonUtløpt.tittel')}
             closeButton={false}
-            isOpen={isOpen}
-            onRequestClose={() => undefined}
+            open={isOpen}
+            onClose={() => undefined}
         >
             <AdvarselIkon />
-            <Systemtittel className="blokk-m">{<FormattedMessage id="byttBrowser.tittel" />}</Systemtittel>
-            <Normaltekst className="blokk-m">{<FormattedMessage id="byttBrowser.ingress" />}</Normaltekst>
+            <Heading size="medium" className="blokk-m">
+                {<FormattedMessage id="byttBrowser.tittel" />}
+            </Heading>
+            <BodyShort className="blokk-m">{<FormattedMessage id="byttBrowser.ingress" />}</BodyShort>
             <div className={cls.element('ok-knapp')}>
-                <Hovedknapp className={cls.element('ok-knapp')} onClick={() => toggleIsOpen(false)}>
+                <Button variant="primary" className={cls.element('ok-knapp')} onClick={() => toggleIsOpen(false)}>
                     {<FormattedMessage id="ok" />}
-                </Hovedknapp>
+                </Button>
             </div>
         </Modal>
     );

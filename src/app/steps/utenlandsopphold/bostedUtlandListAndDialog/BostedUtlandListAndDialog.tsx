@@ -1,9 +1,9 @@
 import React from 'react';
-import { FormikModalFormAndList, ModalFormAndListLabels } from '@navikt/sif-common-formik';
 import BostedUtlandForm from './BostedUtlandForm';
 import BostedUtlandListe from './BostedUtlandList';
 import { BostedUtland } from './types';
 import { sortItemsByFom } from '@navikt/fp-common';
+import { FormikModalFormAndList, ModalFormAndListLabels } from '@navikt/sif-common-formik-ds/lib';
 
 interface Props<FieldNames> {
     name: FieldNames;
@@ -26,6 +26,7 @@ function BostedUtlandListAndDialog<FieldNames>({
         <FormikModalFormAndList<FieldNames, BostedUtland, string>
             name={name}
             labels={labels}
+            shouldCloseOnOverlayClick={true}
             validate={validate}
             dialogWidth="narrow"
             sortFunc={sortItemsByFom}

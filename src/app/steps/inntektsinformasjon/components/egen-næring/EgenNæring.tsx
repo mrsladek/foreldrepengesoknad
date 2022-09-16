@@ -1,8 +1,8 @@
+import { Button } from '@navikt/ds-react';
 import { Block, intlUtils } from '@navikt/fp-common';
 import { YesOrNo } from '@navikt/sif-common-formik-ds/lib';
 import { QuestionVisibility } from '@navikt/sif-common-question-config/lib';
 import { Næring } from 'app/context/types/Næring';
-import { Knapp } from 'nav-frontend-knapper';
 import React, { FunctionComponent, useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import {
@@ -90,9 +90,9 @@ const EgenNæring: FunctionComponent<Props> = ({
                             selectNæring={selectNæring}
                         />
                     </Block>
-                    <Knapp htmlType="button" onClick={handleOnLeggTil}>
+                    <Button variant="secondary" type="button" onClick={handleOnLeggTil}>
                         <FormattedMessage id="inntektsinformasjon.leggTilVirksomhet" />
-                    </Knapp>
+                    </Button>
                 </div>
             )}
         </>

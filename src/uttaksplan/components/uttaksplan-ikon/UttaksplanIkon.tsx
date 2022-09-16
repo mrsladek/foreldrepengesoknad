@@ -1,5 +1,5 @@
+import { InformationColored, ErrorColored, WarningColored } from '@navikt/ds-icons';
 import React, { SVGProps } from 'react';
-import Ikon from 'nav-frontend-ikoner-assets';
 import ArbeidIkon from 'uttaksplan/assets/ArbeidIkon';
 import FerieIkon from 'uttaksplan/assets/FerieIkon';
 import SykdomIkon from 'uttaksplan/assets/SykdomIkon';
@@ -37,11 +37,11 @@ const UttaksplanIkon: React.FunctionComponent<Props> = ({ ikon, title }) => {
         case 'termin':
             return <TerminIkon title={title} />;
         case 'info':
-            return <Ikon kind="info-sirkel-fyll" size="1.5rem" />;
+            return <InformationColored />;
         case 'advarsel':
-            return <Ikon kind="advarsel-sirkel-fyll" size="1.5rem" />;
+            return <WarningColored />;
         case 'feil':
-            return <Ikon kind="feil-sirkel-fyll" size="1.5rem" />;
+            return <ErrorColored />;
         default:
             return <UttakIkon title={title} />;
     }

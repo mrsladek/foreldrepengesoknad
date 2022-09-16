@@ -1,7 +1,7 @@
+import { BodyLong } from '@navikt/ds-react';
 import { intlUtils, UtvidetInformasjon } from '@navikt/fp-common';
 import EksternUrl from 'app/components/ekstern-url/EksternUrl';
 import links from 'app/links/links';
-import { Normaltekst } from 'nav-frontend-typografi';
 import React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -13,9 +13,9 @@ const HvemKanVæreFrilanser = () => {
             apneLabel={intlUtils(intl, 'inntektsinformasjon.harDuJobbetSomFrilansSiste10Mnd.apneLabel')}
         >
             <div style={{ backgroundColor: '#e9e7e7', padding: '1.5rem' }}>
-                <Normaltekst>
+                <BodyLong>
                     <FormattedMessage id="inntektsinformasjon.harDuJobbetSomFrilansSiste10Mnd.infoboksTekst.del1" />
-                </Normaltekst>
+                </BodyLong>
                 <ul>
                     <li>
                         <FormattedMessage id="inntektsinformasjon.harDuJobbetSomFrilansSiste10Mnd.infoboksTekst.punkt1" />
@@ -42,10 +42,10 @@ const HvemKanVæreFrilanser = () => {
                         <FormattedMessage id="inntektsinformasjon.harDuJobbetSomFrilansSiste10Mnd.infoboksTekst.punkt8" />
                     </li>
                 </ul>
-                <Normaltekst>
+                <BodyLong>
                     <FormattedMessage id="inntektsinformasjon.harDuJobbetSomFrilansSiste10Mnd.infoboksTekst.del2" />
                     <EksternUrl url={links.frilanserInfoBoks} lenkeTekst={intlUtils(intl, 'hjemmeside')} />
-                </Normaltekst>
+                </BodyLong>
             </div>
         </UtvidetInformasjon>
     );

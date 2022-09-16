@@ -1,12 +1,12 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { getCountryName } from '@navikt/sif-common-formik';
 import { BostedUtland } from './types';
 import { ActionLink, bemUtils, formatDateExtended, ItemList } from '@navikt/fp-common';
 
 import dayjs from 'dayjs';
 
 import './bostedUtlandList.less';
+import { getCountryName } from '@navikt/sif-common-formik-ds/lib';
 
 interface Props {
     bosteder: BostedUtland[];

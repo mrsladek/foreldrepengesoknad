@@ -5,7 +5,7 @@ import { PeriodeUtsettelseFormData, PeriodeUtsettelseFormField } from './periode
 import { UtsettelseÅrsakType } from 'uttaksplan/types/UtsettelseÅrsakType';
 
 interface PeriodeUtsettelseFormConfigPayload {
-    values: PeriodeUtsettelseFormData;
+    values: Partial<PeriodeUtsettelseFormData>;
     erFarEllerMedmor: boolean;
     erAleneOmOmsorg: boolean;
     søkerErFarEllerMedmorOgKunDeHarRett: boolean;

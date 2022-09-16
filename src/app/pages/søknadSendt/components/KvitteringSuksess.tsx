@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { Undertittel, Normaltekst } from 'nav-frontend-typografi';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { MissingAttachment } from 'app/types/MissingAttachment';
 import { guid } from 'nav-frontend-js-utils';
@@ -7,6 +6,7 @@ import { AdvarselIkon, bemUtils, Block, intlUtils, UtvidetInformasjon } from '@n
 import CheckmarkIkon from 'app/assets/CheckmarkIkon';
 
 import './kvitteringSuksess.less';
+import { BodyShort, Heading } from '@navikt/ds-react';
 
 interface Props {
     missingAttachments: MissingAttachment[];
@@ -28,7 +28,7 @@ const KvitteringSuksess: FunctionComponent<Props> = ({ missingAttachments }) => 
                 <div className={bem.element('ikon')}>{isMissingAttachments ? <AdvarselIkon /> : <CheckmarkIkon />}</div>
                 <div className={bem.element('tekst')}>
                     <Block padBottom="l">
-                        <Undertittel>
+                        <Heading size="small">
                             <FormattedMessage
                                 id={
                                     isMissingAttachments
@@ -36,10 +36,10 @@ const KvitteringSuksess: FunctionComponent<Props> = ({ missingAttachments }) => 
                                         : 'søknadSendt.info.tittel'
                                 }
                             />
-                        </Undertittel>
+                        </Heading>
                     </Block>
                     <div>
-                        <Normaltekst>
+                        <BodyShort>
                             <FormattedMessage
                                 id={
                                     isMissingAttachments
@@ -47,17 +47,17 @@ const KvitteringSuksess: FunctionComponent<Props> = ({ missingAttachments }) => 
                                         : 'søknadSendt.info.innhold'
                                 }
                             />
-                        </Normaltekst>
+                        </BodyShort>
                         {isMissingAttachments && (
                             <>
                                 <ul>
                                     {missingAttachments.map((a) => (
                                         <li key={guid()}>
-                                            <Normaltekst>
+                                            <BodyShort>
                                                 <FormattedMessage
                                                     id={`søknadSendt.info.missingAttachment.${a.skjemanummer}`}
                                                 />
-                                            </Normaltekst>
+                                            </BodyShort>
                                         </li>
                                     ))}
                                 </ul>
@@ -65,9 +65,9 @@ const KvitteringSuksess: FunctionComponent<Props> = ({ missingAttachments }) => 
                                 <UtvidetInformasjon
                                     apneLabel={intlUtils(intl, 'søknadSendt.info.missingAttachment.lesMer')}
                                 >
-                                    <Normaltekst>
+                                    <BodyShort>
                                         <FormattedMessage id="søknadSendt.info.missingAttachment.lesMer.content" />
-                                    </Normaltekst>
+                                    </BodyShort>
                                 </UtvidetInformasjon>
                             </>
                         )}
