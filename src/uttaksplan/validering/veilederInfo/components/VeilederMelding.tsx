@@ -42,7 +42,7 @@ const renderAlert = (message: VeilederMessage, skjulMeldingIkon: boolean) => {
     const content = (
         <>
             {message.titleIntlKey !== undefined && (
-                <Label>
+                <Label as="div">
                     <FormattedMessage id={message.titleIntlKey} />
                 </Label>
             )}

@@ -41,8 +41,8 @@ const SøknadStatusInfoBlokk: React.FunctionComponent<SøknadStatusProps> = ({
             <InfoBlock>
                 <div className={bem.block}>
                     <div className={bem.element('text')}>
-                        <Label className="blokk-xxxs">{intlUtils(intl, 'velkommen.sak.type')}</Label>
-                        <BodyShort className="blokk-xxxs">
+                        <Label>{intlUtils(intl, 'velkommen.sak.type')}</Label>
+                        <BodyShort>
                             <FormattedMessage
                                 id="velkommen.sak.sistEndret"
                                 values={{
@@ -50,9 +50,7 @@ const SøknadStatusInfoBlokk: React.FunctionComponent<SøknadStatusProps> = ({
                                 }}
                             />
                         </BodyShort>
-                        <Tag className="blokk-xxxs" variant={etikettType}>
-                            {intlUtils(intl, statusTekst)}
-                        </Tag>
+                        <Tag variant={etikettType}>{intlUtils(intl, statusTekst)}</Tag>
                     </div>
                     <div className={bem.element('icon')}>
                         <BarnevognIkon></BarnevognIkon>

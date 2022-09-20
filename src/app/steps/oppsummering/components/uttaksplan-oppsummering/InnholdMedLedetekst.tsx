@@ -13,7 +13,7 @@ const hasListOfChildren = (children: string | string[]): boolean => Array.isArra
 const InnholdMedLedetekst: React.FunctionComponent<InnholdMedLedetekstProps> = ({ ledetekst, children, className }) => {
     return (
         <div className={className}>
-            <Label>{ledetekst}</Label>
+            <Label as="div">{ledetekst}</Label>
             {!Array.isArray(children) && hasListOfChildren((children as JSX.Element).props.children)
                 ? (children as JSX.Element).props.children.map((child: string) => (
                       <BodyShort className="feltoppsummering__verdi" key={guid()}>
