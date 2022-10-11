@@ -2,6 +2,7 @@ import { Block, intlUtils, Step } from '@navikt/fp-common';
 import SøknadRoutes from 'app/routes/routes';
 import useOnValidSubmit from 'app/utils/hooks/useOnValidSubmit';
 import useAvbrytSøknad from 'app/utils/hooks/useAvbrytSøknad';
+import useSaveCurrentRoute from 'app/utils/hooks/useSaveCurrentRoute';
 import { Hovedknapp } from 'nav-frontend-knapper';
 import React, { useEffect, useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -79,6 +80,9 @@ const UttaksplanStep = () => {
     const harMidlertidigOmsorg = false; //TODO søkerHarMidlertidigOmsorg
     const morsSisteDag = getMorsSisteDag(uttaksplanInfo);
     const termindato = getTermindato(barn);
+
+    useSaveCurrentRoute(SøknadRoutes.UTTAKSPLAN, søkerinfo.person.fnr);
+
     const onValidSubmitHandler = () => {
         setSubmitIsClicked(true);
         const cleanedTilleggsopplysninger = cleanupInvisibleCharsFromTilleggsopplysninger(tilleggsopplysninger);
