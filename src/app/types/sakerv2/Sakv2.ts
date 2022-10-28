@@ -8,9 +8,10 @@ export interface Sakv2 {
     barn: PersonV2;
     dekningsgrad: DekningsgradV2;
     familiehendelse: Familiehendelse;
-    gjeldendeVedtak: GjeldendeVedtak;
+    gjeldendeVedtak?: GjeldendeVedtak;
     harAnnenForelderTilsvarendeRettEØS: boolean;
     gjelderAdopsjon: boolean;
+    sistEndret: string;
     kanSøkeOmEndring: boolean;
     morUføretrygd: boolean;
     rettighetType: any;

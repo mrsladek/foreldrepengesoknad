@@ -18,7 +18,7 @@ import DinePersonopplysningerModal from '../modaler/DinePersonopplysningerModal'
 
 import './velkommen.less';
 import { validateHarForståttRettigheterOgPlikter } from './validation/velkommenValidation';
-import Sak, { FagsakStatus } from 'app/types/Sak';
+import Sak from 'app/types/Sak';
 import SøknadRoutes from 'app/routes/routes';
 import { convertYesOrNoOrUndefinedToBoolean } from 'app/utils/formUtils';
 import SøknadStatus from './components/SøknadStatus';
@@ -28,34 +28,29 @@ import Api from 'app/api/api';
 import { mapEksisterendeSakFromDTO, opprettSøknadFraEksisterendeSak } from 'app/utils/eksisterendeSakUtils';
 import { useForeldrepengesøknadContext } from 'app/context/hooks/useForeldrepengesøknadContext';
 import { Søknad } from 'app/context/types/Søknad';
-import {
-    erSakFerdigbehandlet,
-    getSakUnderBehandling,
-    getSisteForeldrepengeSak,
-    skalKunneSøkeOmEndring,
-} from 'app/utils/sakerUtils';
+import { Sakv2 } from 'app/types/sakerv2/Sakv2';
 
 interface Props {
     fornavn: string;
     onChangeLocale: (locale: Locale) => void;
     locale: Locale;
     saker: Sak[];
+    sakerv2: Sakv2[];
     fnr: string;
 }
 
-const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr, onChangeLocale }) => {
-    const sakTilBehandling = getSakUnderBehandling(saker);
-    const harSakTilBehandling = !!sakTilBehandling;
-    const sak = sakTilBehandling || getSisteForeldrepengeSak(saker);
+const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, sakerv2, fnr, onChangeLocale }) => {
+    const sakv2 = sakerv2.length > 0 ? sakerv2[0] : undefined;
     const intl = useIntl();
     const søknad = useSøknad();
     const { dispatch, state } = useForeldrepengesøknadContext();
     const [isDinePersonopplysningerModalOpen, setDinePersonopplysningerModalOpen] = useState(false);
     const bem = bemUtils('velkommen');
-    const kanSøkeOmEndring = sak !== undefined ? skalKunneSøkeOmEndring(sak) : false;
-    const sakErFerdigbehandlet = erSakFerdigbehandlet(sak);
-    const sakErAvsluttet = sak !== undefined ? sak.status === FagsakStatus.AVSLUTTET : false;
-    const { eksisterendeSakData } = Api.useGetEksisterendeSak(sak?.saksnummer, fnr);
+    const kanSøkeOmEndring = sakv2 ? sakv2.kanSøkeOmEndring : false;
+    const sakErFerdigbehandlet = sakv2?.åpenBehandling;
+    const sakErAvsluttet = sakv2?.sakAvsluttet;
+    const harSakTilBehandling = sakv2 ? sakv2.åpenBehandling.tilstand === 'UNDER_BEHANDLING' : false;
+    const { eksisterendeSakData } = Api.useGetEksisterendeSak(sakv2?.saksnummer, fnr);
 
     useEffect(() => {
         if (state.søknad.søker.språkkode !== locale) {
@@ -71,14 +66,14 @@ const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr
             actionCreator.setErEndringssøknad(vilSøkeOmEndring),
         ];
 
-        if (eksisterendeSakData && sak && vilSøkeOmEndring) {
+        if (eksisterendeSakData && sakv2 && vilSøkeOmEndring) {
             const eksisterendeSak = mapEksisterendeSakFromDTO(
                 eksisterendeSakData,
                 eksisterendeSakData.grunnlag.søkerErFarEllerMedmor,
                 false
             );
 
-            const søknad: Søknad = opprettSøknadFraEksisterendeSak(state.søkerinfo, eksisterendeSak!, sak) as Søknad;
+            const søknad: Søknad = opprettSøknadFraEksisterendeSak(state.søkerinfo, eksisterendeSak!, sakv2) as Søknad;
 
             actionsToDispatch.push(actionCreator.updateCurrentRoute(SøknadRoutes.UTTAKSPLAN));
             actionsToDispatch.push(actionCreator.setSøknad(søknad));
@@ -127,10 +122,10 @@ const Velkommen: React.FunctionComponent<Props> = ({ fornavn, locale, saker, fnr
                             <Innholdstittel className={`${bem.element('tittel')} blokk-s`}>
                                 {intlUtils(intl, 'velkommen.tittel')}
                             </Innholdstittel>
-                            {sak && !sakErAvsluttet && (
+                            {sakv2 && !sakErAvsluttet && (
                                 <Block padBottom="l">
                                     <SøknadStatus
-                                        sakOpprettetDato={new Date(sak.opprettet)}
+                                        sakOpprettetDato={new Date(sakv2.sistEndret)}
                                         sakErFerdigbehandlet={sakErFerdigbehandlet}
                                         kanSøkeOmEndring={kanSøkeOmEndring}
                                         harSakTilBehandling={harSakTilBehandling}

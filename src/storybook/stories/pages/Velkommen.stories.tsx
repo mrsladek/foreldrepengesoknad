@@ -27,7 +27,14 @@ const Template: Story<Props> = ({ harGodkjentVilkår, saker }) => {
             søknad={{ søknad: { harGodkjentVilkår, søker: { språkkode: 'nb' } } } as ForeldrepengesøknadContextState}
             søkerinfo={{ søker: { fnr: '1233434' } } as SøkerinfoDTO}
         >
-            <Velkommen fornavn="Espen" onChangeLocale={() => undefined} locale="nb" saker={saker} fnr={'123'} />
+            <Velkommen
+                fornavn="Espen"
+                onChangeLocale={() => undefined}
+                locale="nb"
+                saker={saker}
+                sakerv2={[]}
+                fnr={'123'}
+            />
         </ForeldrepengerStateMock>
     );
 };

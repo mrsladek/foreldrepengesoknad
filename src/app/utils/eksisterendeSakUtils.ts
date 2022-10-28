@@ -16,16 +16,16 @@ import mapSaksperioderTilUttaksperioder from './mapSaksperioderTilUttaksperioder
 import { Tidsperioden } from 'app/steps/uttaksplan-info/utils/Tidsperioden';
 import { Søkerinfo } from 'app/types/Søkerinfo';
 import { Søkerrolle } from 'app/types/Søkerrolle';
-import Sak from 'app/types/Sak';
 import { Søknad } from 'app/context/types/Søknad';
 import AnnenForelder from 'app/context/types/AnnenForelder';
-import { AnnenPart } from 'app/types/AnnenPart';
 import Søker from 'app/context/types/Søker';
-import Person, { RegistrertBarn } from 'app/types/Person';
 import { Situasjon } from 'app/types/Situasjon';
 import dayjs from 'dayjs';
 import Barn, { BarnType } from 'app/context/types/Barn';
 import { FamiliehendelseType } from 'app/types/FamiliehendelseType';
+import { Sakv2 } from 'app/types/sakerv2/Sakv2';
+import { PersonV2 } from 'app/types/sakerv2/Personv2';
+import { RegistrertBarn } from 'app/types/Person';
 
 export const getArbeidsformFromUttakArbeidstype = (arbeidstype: UttakArbeidType): Arbeidsform => {
     switch (arbeidstype) {
@@ -245,7 +245,7 @@ const getSøkerFromSaksgrunnlag = (grunnlag: Saksgrunnlag, erFarEllerMedmor: boo
 };
 
 const getSøkerrolleFromSaksgrunnlag = (
-    person: Person,
+    person: PersonV2,
     situasjon: Situasjon,
     grunnlag: Saksgrunnlag
 ): Søkerrolle | undefined => {
@@ -315,7 +315,7 @@ const getBarnFromSaksgrunnlag = (situasjon: Situasjon, sak: Saksgrunnlag, søker
 const getAnnenForelderFromSaksgrunnlag = (
     situasjon: Situasjon,
     grunnlag: Saksgrunnlag,
-    annenPart: AnnenPart,
+    annenPart: PersonV2,
     erFarEllerMedmor: boolean
 ): AnnenForelder | undefined => {
     switch (situasjon) {
@@ -323,19 +323,19 @@ const getAnnenForelderFromSaksgrunnlag = (
         case 'adopsjon':
             if (erFarEllerMedmor) {
                 return {
-                    fornavn: annenPart.navn.fornavn,
-                    etternavn: annenPart.navn.etternavn,
+                    fornavn: annenPart.fornavn,
+                    etternavn: annenPart.etternavn,
                     erUfør: grunnlag.morErUfør,
                     harRettPåForeldrepengerINorge: grunnlag.morHarRett,
-                    fnr: annenPart.fnr,
+                    fnr: annenPart.fødselsnummer,
                     kanIkkeOppgis: false,
                 };
             }
             return {
-                fornavn: annenPart.navn.fornavn,
-                etternavn: annenPart.navn.etternavn,
+                fornavn: annenPart.fornavn,
+                etternavn: annenPart.etternavn,
                 harRettPåForeldrepengerINorge: grunnlag.farMedmorHarRett,
-                fnr: annenPart.fnr,
+                fnr: annenPart.fødselsnummer,
                 kanIkkeOppgis: false,
             };
         default:
@@ -359,7 +359,7 @@ export const kanUttaksplanGjennskapesFraSak = (perioder: Saksperiode[]): boolean
 };
 
 const finnAnnenForelderPåFødselsdato = (
-    barn: RegistrertBarn[],
+    barn: PersonV2[],
     fødselsdato: Date | undefined,
     grunnlag: Saksgrunnlag,
     situasjon: Situasjon,
@@ -376,14 +376,12 @@ const finnAnnenForelderPåFødselsdato = (
 
         if (annenForelder !== undefined) {
             const { fnr, etternavn, fornavn } = annenForelder;
-            const annenPart: Partial<AnnenPart> = {
-                navn: {
-                    fornavn,
-                    etternavn,
-                },
-                fnr,
+            const annenPart: Partial<PersonV2> = {
+                fornavn,
+                etternavn,
+                fødselsnummer: fnr,
             };
-            return getAnnenForelderFromSaksgrunnlag(situasjon, grunnlag, annenPart as AnnenPart, erFarEllerMedmor);
+            return getAnnenForelderFromSaksgrunnlag(situasjon, grunnlag, annenPart as PersonV2, erFarEllerMedmor);
         }
     }
 };
@@ -391,7 +389,7 @@ const finnAnnenForelderPåFødselsdato = (
 export const opprettSøknadFraEksisterendeSak = (
     søkerinfo: Søkerinfo,
     eksisterendeSak: EksisterendeSak,
-    sak: Sak
+    sak: Sakv2
 ): Partial<Søknad> | undefined => {
     const { grunnlag, uttaksplan } = eksisterendeSak;
     const { fødselsdato, dekningsgrad, familiehendelseType, søkerErFarEllerMedmor } = grunnlag;
