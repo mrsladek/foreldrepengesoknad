@@ -11,6 +11,7 @@ import { harTilleggsopplysningerGyldigeCharsTest } from './tester/harTilleggsopp
 import { harUttaksplanForMangeFlerbarnsdagerTest } from './tester/harUttaksplanForMangeFlerbarnsdagerTest';
 import { inneholderUttaksplanDatoSomIkkeErUttaksdag } from './tester/inneholderUttaksplanDatoSomIkkeErUttaksdagTest';
 import { harPerioderManglendeVedleggTest } from './tester/harPerioderManglendeVedleggTest';
+import { inneholderForMangeVedleggTest } from './tester/inneholderForMangeVedleggTest';
 import { inneholderSenUtsettelsePgaFerieTest } from './tester/inneholderSenUtsettelsePgaFerieTest';
 import { inneholderTapteDagerTest } from './tester/inneholderTapteDagerTest';
 import { inneholderBareUtsettelserTest } from './tester/inneholderBareUtsettelserTest';
@@ -37,6 +38,7 @@ import { inneholderUttaksperioderMedUbesvartGradering } from './tester/inneholde
 import { inneholderUttaksperiodeMedUbservartSpmOmFlerbarnsdagerTest } from './tester/inneholderUttaksperiodeMedUbservartSpmOmFlerbarnsdagerTest';
 import { farMedmorHarRettPåFlerbarnsdagerTest } from './tester/farMedmorHarRettPåFlerbarnsdagerTest';
 import { overstigerMinsterettVedToTette } from './tester/overstigerMinsterettVedToTette';
+import { overstigerVedleggStørrelse } from './tester/overskriderVedleggStørrelseTest';
 
 export enum UttaksplanRegelKey {
     'planenInneholderIngenPerioder' = 'planenInneholderIngenPerioder',
@@ -76,6 +78,9 @@ export enum UttaksplanRegelKey {
     'inneholderUttaksperioderMedUbesvartGradering' = 'inneholderUttaksperioderMedUbesvartGradering',
     'inneholderUttaksperiodeMedUbservartSpmOmFlerbarnsdagerTest' = 'inneholderUttaksperiodeMedUbservartSpmOmFlerbarnsdagerTest',
     'overstigerMinsterettVedToTette' = 'overstigerMinsterettVedToTette',
+    'inneholderDuplikateVedlegg' = 'inneholderDuplikateVedlegg',
+    'inneholderForMangeVedleggTest' = 'inneholderForMangeVedleggTest',
+    'overstigerVedleggStørrelse' = 'overstigerVedleggStørrelse',
 }
 
 export type RegelKey = UttaksplanRegelKey | PeriodeValiderRegelKey;
@@ -272,6 +277,21 @@ const uttaksplanValideringRegler = (familiehendelsesdato: Date): Regel[] => [
         key: UttaksplanRegelKey.overstigerMinsterettVedToTette,
         alvorlighet: RegelAlvorlighet.INFO,
         test: overstigerMinsterettVedToTette,
+    },
+    // {
+    //     key: UttaksplanRegelKey.inneholderDuplikateVedlegg,
+    //     alvorlighet: RegelAlvorlighet.INFO,
+    //     test: inneholderDuplikateVedlegg,
+    // },
+    {
+        key: UttaksplanRegelKey.inneholderForMangeVedleggTest,
+        alvorlighet: RegelAlvorlighet.FEIL,
+        test: inneholderForMangeVedleggTest,
+    },
+    {
+        key: UttaksplanRegelKey.overstigerVedleggStørrelse,
+        alvorlighet: RegelAlvorlighet.FEIL,
+        test: overstigerVedleggStørrelse,
     },
 ];
 

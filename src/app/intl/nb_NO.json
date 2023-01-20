@@ -927,6 +927,8 @@
     "uttaksplan.validering.feil.periodeOverlapperAndrePerioder": "Perioden med foreldrepenger overlapper med andre perioder, du må endre datoene slik at de ikke overlapper.",
     "uttaksplan.validering.feil.inneholderUtsettelseGrunnetArbeidUtenArbeidsforhold.medTom": "Arbeidsgiveren din {navn} har registrert at du er ansatt fra {fom} til {tom}. For å kunne utsette eller kombinere foreldrepenger med arbeid må du være ansatt. Du må endre datoen for å gå videre.",
     "uttaksplan.validering.feil.inneholderUtsettelseGrunnetArbeidUtenArbeidsforhold.utenTom": "Arbeidsgiveren din {navn} har registrert at du er ansatt fra {fom}. For å kunne utsette eller kombinere foreldrepenger med arbeid må du være ansatt. Du må endre datoen for å gå videre.",
+    "uttaksplan.validering.feil.inneholderForMangeVedlegg": "Søknaden din inneholder for mange vedlegg. Du kan maksimalt sende inn {antallVedlegg} vedlegg.",
+    "uttaksplan.validering.feil.overskriderVedleggStørrelse": "Søknaden din inneholder for mange GB med vedlegg totalt. Du kan maksimalt sende inn {maksStørrelse} MB med vedlegg.",
     "uttaksplan.validering.feil.harSøktOmFerieUtenArbeidsforhold": "Du kan dessverre ikke legge inn utsettelse på grunn av lovbestemt ferie fordi du ikke er registrert med et arbeidsforhold i valgt tidsperiode.",
     "uttaksplan.validering.feil.datoErIkkeUttaksdag": "Datoen må være en ukedag.",
     "uttaksplan.validering.feil.farMedmorHarSøktUgyldigUttakEllerUtsettelseFørsteSeksUker": "Du kan ta ut eller utsette foreldrepengene dine tidligst fra uke syv etter fødselen. Unntaket er om du tar ut foreldrepenger fordi mor er for syk eller innlagt i helseinstitusjon.",
