@@ -12,7 +12,9 @@ const useSaveLoadedRoute = (currentRoute: SøknadRoutes) => {
     useEffect(() => {
         setTimeout(() => {
             console.log('SAVING');
-            if (!routeHasBeenSaved.current) {
+            if (!routeHasBeenSaved.current && state.currentRoute !== currentRoute) {
+                console.log('Current route: ', currentRoute);
+                console.log('Route is not equal to current');
                 routeHasBeenSaved.current = true;
                 dispatch(actionCreator.updateCurrentRoute(currentRoute));
                 storeAppState({ ...state, currentRoute }).catch((error) => {
@@ -21,7 +23,7 @@ const useSaveLoadedRoute = (currentRoute: SøknadRoutes) => {
                     }
                 });
             }
-        }, 5000);
+        }, 3000);
     }, [currentRoute, dispatch, state]);
 };
 
