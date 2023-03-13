@@ -10,15 +10,18 @@ const useSaveLoadedRoute = (currentRoute: SøknadRoutes) => {
     const routeHasBeenSaved = useRef(false);
 
     useEffect(() => {
-        if (!routeHasBeenSaved.current) {
-            routeHasBeenSaved.current = true;
-            dispatch(actionCreator.updateCurrentRoute(currentRoute));
-            storeAppState({ ...state, currentRoute }).catch((error) => {
-                if (error.response && (error.response.status === 401 || error.response.status === 403)) {
-                    redirectToLogin();
-                }
-            });
-        }
+        setTimeout(() => {
+            console.log('SAVING');
+            if (!routeHasBeenSaved.current) {
+                routeHasBeenSaved.current = true;
+                dispatch(actionCreator.updateCurrentRoute(currentRoute));
+                storeAppState({ ...state, currentRoute }).catch((error) => {
+                    if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+                        redirectToLogin();
+                    }
+                });
+            }
+        }, 5000);
     }, [currentRoute, dispatch, state]);
 };
 
