@@ -1,6 +1,7 @@
 .idea
 .vscode
 .awcache
+lib
 dist
 node_modules
 yarn.lock
