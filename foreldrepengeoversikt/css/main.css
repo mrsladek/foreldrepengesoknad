@@ -1,0 +1,22 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: var(--a-blue-50);
+}
+
+.app {
+    padding-bottom: 0.125rem;
+}
+
+.app__blue {
+    background-color: var(--a-blue-50);
+    height: 100%;
+}
+
+.app__white {
+    background-color: var(--a-white);
+}
+
+
+/*# sourceMappingURL=main.css.map?c948b2f87b79da506f8b-c535b68409dad455f38a-57d7364d493b6b8755a0-main*/

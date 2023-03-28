@@ -1,0 +1,4729 @@
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.feilside {
+  max-width: 704px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .feilside {
+    max-width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .feilside {
+    padding: 1rem;
+  }
+}
+.feilside__avbrytKnapp {
+  display: flex;
+  justify-content: center;
+}
+
+.dinePlikter li:not(:last-child) {
+  padding-bottom: 0.375rem;
+}
+
+.dinePersonopplysningerModal {
+  padding: 2.5rem;
+}
+.dinePersonopplysningerModal ul {
+  margin: 0.5rem 0;
+}
+.dinePersonopplysningerModal li {
+  padding: 0.125rem 0;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.velkommen {
+  max-width: 704px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .velkommen {
+    max-width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .velkommen {
+    padding: 1rem;
+  }
+}
+.velkommen__personopplysningerLink {
+  text-align: center;
+}
+.velkommen__tittel {
+  text-align: center;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.attachmentButton {
+  display: flex;
+  height: 4rem;
+  border: 2px dashed #c6c2bf;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+}
+.attachmentButton__icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.attachmentButton__label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 12px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.attachmentButton input {
+  display: none;
+}
+.attachmentButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #00347d;
+}
+.attachmentList {
+  margin: 0;
+  padding: 0;
+}
+.attachmentList li {
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  list-style-type: none;
+}
+.attachmentList li:last-child {
+  margin-bottom: 0;
+}
+.attachment {
+  position: relative;
+  padding-left: 1rem;
+}
+.attachment__spinner {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.attachment__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.attachment__filename {
+  margin-left: 1rem;
+  margin-right: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.attachment__deleteButton {
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
+}
+.attachment--pending .attachment__icon {
+  display: none;
+}
+
+.annenForelderVeileder {
+  margin: 1.5rem 0;
+}
+
+.oppgiPersonalia__nameInputsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.oppgiPersonalia__nameInput {
+  width: 49%;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.registrertePersonalia {
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+.registrertePersonalia__navn {
+  padding-bottom: 0.125rem;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.interactiveListElement {
+  border-radius: 4px;
+  border: solid 1px #7f756c;
+  padding: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+}
+.interactiveListElement:last-child {
+  margin-bottom: 0;
+}
+.interactiveListElement__top .title {
+  display: inline-block;
+  font-weight: bold;
+  width: 95%;
+}
+.interactiveListElement__editButton {
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+  transition: border-color 200ms cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.interactiveListElement__editButton:hover {
+  border-color: #0067c5;
+}
+.interactiveListElement__editButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #00347d;
+}
+.interactiveListElement__bottom {
+  margin-top: 0.5rem;
+  min-height: 1rem;
+}
+.interactiveListElement__deleteButton {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #ba3a26;
+}
+.interactiveListElement__deleteButton:hover {
+  border-bottom-color: #ba3a26;
+}
+.interactiveListElement__deleteButton:active {
+  border-bottom-color: #ba3a26;
+}
+@media (max-width: 400px) {
+  .interactiveListElement__deleteButton {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0;
+  }
+}
+@media (min-width: 400px) {
+  .interactiveListElement__deleteButton {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+.interactiveListElement__text {
+  margin-top: 0.5rem;
+}
+
+.andreInntekterModal {
+  max-width: 48rem;
+  width: 100%;
+  padding: 2rem 1rem 1rem 1rem;
+}
+.andreInntekterModal__tittel {
+  text-align: center;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.arbeidsforholdList {
+  list-style: none;
+  padding: 0;
+}
+.arbeidsforholdList li {
+  margin-bottom: 1rem;
+}
+.arbeidsforholdList li:last-child {
+  margin-bottom: 0;
+}
+.arbeidsforholdInfoBox {
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-radius: 0.25rem;
+}
+@media (max-width: 576px) {
+  .arbeidsforholdInfoBox {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
+}
+.arbeidsforholdInfoBox__topRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+.arbeidsforholdInfoBox__stillingsprosent {
+  margin-left: auto;
+}
+
+.egenNæringModal {
+  max-width: 48rem;
+  width: 100%;
+  padding: 2rem 1rem 1rem 1rem;
+}
+.egenNæringModal__tittel {
+  text-align: center;
+}
+
+.frilansoppdragModal {
+  max-width: 48rem;
+  width: 100%;
+  padding: 2rem 1rem 1rem 1rem;
+}
+.frilansoppdragModal__tittel {
+  text-align: center;
+}
+
+.oppsummeringAvDokumentasjon .etikett {
+  margin-top: 0.25rem;
+}
+
+.ReactCollapse--collapse {
+  transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ekspanderbartPanel {
+  position: relative;
+  background: white;
+  border-radius: 0.25rem;
+}
+.ekspanderbartPanel:hover,
+.ekspanderbartPanel--hover {
+  box-shadow: #a0a0a0 0 2px 1px 0;
+}
+.ekspanderbartPanel:focus,
+.ekspanderbartPanel--focus {
+  box-shadow: 0 0 0 3px #00347d;
+  outline: none;
+}
+.ekspanderbartPanel__hode {
+  background-color: #fff;
+  display: block;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 4px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+.ekspanderbartPanel__hode .ekspanderbartPanel__tittel {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5625rem;
+  font-weight: 600;
+  color: #262626;
+}
+.ekspanderbartPanel__hode:hover,
+.ekspanderbartPanel__hode--hover {
+  cursor: pointer;
+}
+.ekspanderbartPanel__hode:hover .ekspanderbartPanel__tittel,
+.ekspanderbartPanel__hode--hover .ekspanderbartPanel__tittel {
+  text-decoration: underline;
+  color: #0067c5;
+}
+.ekspanderbartPanel__hode:focus,
+.ekspanderbartPanel__hode--focus {
+  box-shadow: 0 0 0 3px #00347d;
+  outline: none;
+}
+.ekspanderbartPanel__flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ekspanderbartPanel__innhold {
+  padding: 1rem;
+  padding-top: 0.5rem;
+}
+.ekspanderbartPanel--lukket .ekspanderbartPanel__indikator {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 2px;
+  line-height: 2px;
+  width: 20px;
+  position: relative;
+  text-align: center;
+  transition: 200ms transform;
+  vertical-align: middle;
+}
+.ekspanderbartPanel--lukket .ekspanderbartPanel__indikator::before,
+.ekspanderbartPanel--lukket .ekspanderbartPanel__indikator::after {
+  transition: 200ms transform;
+  border-radius: 10px;
+}
+.ekspanderbartPanel--lukket .ekspanderbartPanel__indikator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: currentColor;
+}
+.ekspanderbartPanel--lukket .ekspanderbartPanel__indikator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: currentColor;
+}
+.ekspanderbartPanel--lukket .ekspanderbartPanel__indikator::before {
+  transform: translateX(2px) rotate(45deg);
+}
+.ekspanderbartPanel--lukket .ekspanderbartPanel__indikator::after {
+  transform: translateX(-2px) rotate(-45deg);
+}
+.ekspanderbartPanel--border {
+  border: 1px solid #6a6a6a;
+}
+.ekspanderbartPanel--border:hover,
+.ekspanderbartPanel--border.panel-interaktiv-mixin--hover {
+  border: 1px solid #0067c5;
+}
+.ekspanderbartPanel--border.ekspanderbartPanel--apen {
+  border: 1px solid #6a6a6a;
+}
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ekspanderbartPanel--apen .ekspanderbartPanel__innhold {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode .ekspanderbartPanel__indikator {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 2px;
+  line-height: 2px;
+  width: 20px;
+  position: relative;
+  text-align: center;
+  transition: 200ms transform;
+  vertical-align: middle;
+}
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode .ekspanderbartPanel__indikator::before,
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode .ekspanderbartPanel__indikator::after {
+  transition: 200ms transform;
+  border-radius: 10px;
+}
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode .ekspanderbartPanel__indikator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: currentColor;
+}
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode .ekspanderbartPanel__indikator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: currentColor;
+}
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode .ekspanderbartPanel__indikator::before {
+  transform: translateX(2px) rotate(-45deg);
+}
+.ekspanderbartPanel--apen > .ekspanderbartPanel__hode .ekspanderbartPanel__indikator::after {
+  transform: translateX(-2px) rotate(45deg);
+}
+
+.oppsummeringsPanel {
+  margin-bottom: 1rem;
+}
+.oppsummeringsPanel__content {
+  border-top: 1px solid #c6c2bf;
+  padding-top: 1rem;
+}
+
+.personalia {
+  display: flex;
+}
+.personalia__icon {
+  margin-right: 1rem;
+}
+
+.utenlandsoppholdOppsummeringListe {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.utenlandsoppholdOppsummeringListe__listElement {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.oppsummeringsliste {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+.oppsummeringsliste__element {
+  margin-top: 1.5rem;
+}
+.oppsummeringsliste__element--kompakt {
+  margin-top: 0.5rem;
+}
+.oppsummeringsliste__element__heading {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.oppsummeringsliste__element__heading .høyrestiltTekst {
+  font-weight: normal;
+}
+.oppsummeringsliste__element__content {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.oppsummering {
+  background-color: #f1f1f1;
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.feltoppsummering {
+  margin-bottom: 1rem;
+}
+.feltoppsummering__verdi {
+  margin-top: 0.125rem;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bostedUtlandList__land {
+  display: block;
+  margin-bottom: 0.125rem;
+}
+@media (min-width: 650px) {
+  .bostedUtlandList__label {
+    display: flex;
+  }
+  .bostedUtlandList__land {
+    flex: 2 1 0;
+    display: block;
+    margin-bottom: 0;
+  }
+  .bostedUtlandList__dato {
+    padding-right: 1rem;
+  }
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.lenkemedikon-mixin svg {
+  width: 1em;
+  height: 1em;
+  fill: #0067c5;
+  stroke: #0067c5;
+  vertical-align: middle;
+  position: relative;
+  top: -0.125em;
+}
+.lenkemedikon-mixin svg + span:not(.sr-only),
+.lenkemedikon-mixin span:not(.sr-only) + svg {
+  margin-left: 0.25em;
+}
+.lenkemedikon-mixin:focus svg {
+  fill: white;
+  stroke: white;
+}
+.linkButton {
+  color: #0067c5;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  text-align: left;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.linkButton:hover,
+.linkButton--hover {
+  text-decoration: none;
+}
+.linkButton:focus,
+.linkButton--focus {
+  outline: none;
+  color: white;
+  text-decoration: none;
+  background-color: #00347d;
+  box-shadow: 0 0 0 2px #00347d;
+}
+.linkButton:active,
+.linkButton--active {
+  outline: none;
+  color: white;
+  text-decoration: none;
+  background-color: #00347d;
+  box-shadow: 0 0 0 2px #00347d;
+}
+.linkButton--white {
+  color: white;
+  text-decoration: underline;
+}
+.linkButton--white:hover,
+.linkButton--white:focus {
+  color: white;
+  text-decoration: none;
+}
+.alertstripe .linkButton {
+  color: #262626;
+}
+.alertstripe .linkButton:focus {
+  color: white;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.tidsperiodeDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.tidsperiodeDisplay__dato-container {
+  display: flex;
+  justify-content: space-between;
+  width: 22rem;
+}
+.tidsperiodeDisplay__dato {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+}
+@media (max-width: 576px) {
+  .tidsperiodeDisplay {
+    flex-direction: column;
+  }
+  .tidsperiodeDisplay__dato-container {
+    margin-bottom: 1rem;
+  }
+  .tidsperiodeDisplay__dato {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.sirkelknapp {
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+  transition: border-color 200ms cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  cursor: pointer;
+  background-color: #0067c5;
+  color: white;
+  border-color: #0067c5;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  touch-action: none;
+}
+.sirkelknapp:hover {
+  border-color: #0067c5;
+}
+.sirkelknapp:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #00347d;
+}
+.sirkelknapp__ikon {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  margin-left: -1px;
+}
+.sirkelknapp--info {
+  background-color: #a3e0f4;
+  border: none;
+}
+.sirkelknapp--stor {
+  width: 32px;
+  height: 32px;
+}
+.sirkelknapp--disabled {
+  background-color: #b7b1a9;
+  border-color: #b7b1a9;
+  color: #b7b1a9;
+}
+
+.numberStepper {
+  display: flex;
+  align-items: center;
+}
+.numberStepper__input {
+  width: 4rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.ukerDagerTeller {
+  display: flex;
+}
+.ukerDagerTeller__ukerFelt {
+  margin-right: 3.5rem;
+}
+.ukerDagerTeller .skjema__legend {
+  font-weight: normal;
+}
+@media (max-width: 576px) {
+  .ukerDagerTeller {
+    flex-direction: column;
+  }
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.periodeUttakForm__slettPeriode {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #ba3a26;
+}
+.periodeUttakForm__slettPeriode:hover {
+  border-bottom-color: #ba3a26;
+}
+.periodeUttakForm__slettPeriode:active {
+  border-bottom-color: #ba3a26;
+}
+.periodeUttakForm__slettPeriodeWrapper {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+.periodeUttakForm__knapperad-legg-til {
+  text-align: center;
+}
+.periodeUttakForm__knapperad-legg-til:first-child button {
+  margin-right: 1rem;
+}
+.periodeUttakForm__knapperad-endre {
+  text-align: center;
+  position: relative;
+}
+.periodeUttakForm__knapperad-endre:first-child button {
+  margin-right: 1rem;
+}
+@media (max-width: 576px) {
+  .periodeUttakForm__knapperad-endre {
+    display: flex;
+    flex-direction: column;
+  }
+  .periodeUttakForm__slettPeriodeWrapper {
+    padding-top: 1rem;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.periodeUtsettelseForm__slettPeriode {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #ba3a26;
+}
+.periodeUtsettelseForm__slettPeriode:hover {
+  border-bottom-color: #ba3a26;
+}
+.periodeUtsettelseForm__slettPeriode:active {
+  border-bottom-color: #ba3a26;
+}
+.periodeUtsettelseForm__slettPeriodeWrapper {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+.periodeUtsettelseForm__knapperad {
+  text-align: center;
+}
+.periodeUtsettelseForm__knapperad:first-child button {
+  margin-right: 1rem;
+}
+
+.veilederMelding--transparent .alertstripe {
+  border: none;
+  background-color: #ffffff;
+}
+.veilederMelding--transparent .alertstripe__ikon {
+  display: flex;
+}
+.veilederMelding--default {
+  margin-bottom: 1rem;
+}
+.veilederMelding__padding {
+  padding-bottom: 0.5rem;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.iconBox {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.iconBox--green {
+  background-color: #06893a;
+}
+.iconBox--green--striped {
+  background: repeating-linear-gradient(-45deg, #06893a, #06893a 6.2px, #7ccf9d 6.2px, #7ccf9d 7.7px);
+}
+.iconBox--blue {
+  background-color: #3385d1;
+}
+.iconBox--blue--striped {
+  background: repeating-linear-gradient(-45deg, #3385d1, #3385d1 6.2px, #c2dbf2 6.2px, #c2dbf2 7.7px);
+}
+.iconBox--purple {
+  background-color: #634689;
+}
+.iconBox--purple--striped {
+  background: repeating-linear-gradient(-45deg, #634689, #634689 6.2px, #d2c3e6 6.2px, #d2c3e6 7.7px);
+}
+.iconBox--purpleBlue {
+  background: repeating-linear-gradient(-45deg, #3385d1, #3385d1 50%, #634689 50%, #634689 100%);
+}
+.iconBox--purpleBlue--striped {
+  background: repeating-linear-gradient(-45deg, #3385d1, #3385d1 50%, #634689 50%, #634689 100%);
+}
+.iconBox--purpleBlue--striped:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 6.2px, rgba(255, 255, 255, 0.6) 6.2px, rgba(255, 255, 255, 0.6) 7.7px);
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.periodelisteItemHeader {
+  display: flex;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+.periodelisteItemHeader abbr[title] {
+  text-decoration: none;
+  border-bottom: none;
+  cursor: inherit;
+}
+.periodelisteItemHeader__hvem {
+  color: #7f756c;
+}
+.periodelisteItemHeader__content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 4fr 1fr 2fr;
+}
+.periodelisteItemHeader__ikon {
+  align-self: center;
+  padding-right: 1rem;
+}
+.periodelisteItemHeader__beskrivelse {
+  display: flex;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-grow: 3;
+}
+.periodelisteItemHeader__beskrivelse__tekst {
+  min-width: 125px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.periodelisteItemHeader__tittel {
+  align-self: center;
+  min-width: 225px;
+}
+.periodelisteItemHeader__dato-container {
+  display: flex;
+  min-width: 130px;
+}
+.periodelisteItemHeader__advarsel {
+  align-self: center;
+}
+.periodelisteItemHeader__samtidig-uttak {
+  align-items: center;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 20fr 1fr 1fr 2fr;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border: 1px dotted #c6c2bf;
+  border-radius: 0.25rem;
+}
+.periodelisteItemHeader__samtidig-uttak-mor {
+  border-left: 8px solid #634689;
+}
+.periodelisteItemHeader__samtidig-uttak-far {
+  border-left: 8px solid #3385d1;
+}
+.periodelisteItemHeader__tidsrom {
+  min-width: 11rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: nowrap;
+}
+@media (max-width: 768px) {
+  .periodelisteItemHeader__tidsrom {
+    width: 10rem;
+  }
+}
+.periodelisteItemHeader--annenPart {
+  background-color: transparent;
+}
+.periodelisteItemHeader--egenPeriode {
+  background-color: white;
+}
+.periodelisteItemHeader__dagmnd {
+  width: 45%;
+  flex-grow: 0;
+  text-align: center;
+}
+.periodelisteItemHeader__dagmnd__dato {
+  display: block;
+}
+.periodelisteItemHeader__dagmnd__mnd {
+  letter-spacing: 0.4px;
+  color: #7f756c;
+}
+.periodelisteItemHeader__dagmnd__mnd--kort {
+  display: none;
+}
+@media (max-width: 576px) {
+  .periodelisteItemHeader__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .periodelisteItemHeader__beskrivelse {
+    order: 2;
+  }
+  .periodelisteItemHeader__tidsrom {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    order: 3;
+  }
+  .periodelisteItemHeader__advarsel {
+    width: 2.5rem;
+    order: 1;
+    padding-left: 1rem;
+  }
+  .periodelisteItemHeader__tittel {
+    order: 2;
+    padding-bottom: 1rem;
+  }
+  .periodelisteItemHeader__dato-container {
+    order: 3;
+  }
+  .periodelisteItemHeader__dato {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    order: 3;
+  }
+  .periodelisteItemHeader__dagmnd {
+    width: initial;
+    text-align: left;
+    padding-right: 1rem;
+    display: flex;
+  }
+  .periodelisteItemHeader__dagmnd__mnd {
+    padding-left: 0.25rem;
+    letter-spacing: normal;
+    color: inherit;
+  }
+  .periodelisteItemHeader__ikon {
+    display: none;
+  }
+}
+
+.periodeHull__lenker {
+  display: flex;
+}
+.periodeHull__lenker :first-child {
+  margin-right: 1rem;
+}
+
+.periodelisteItem {
+  margin-bottom: 0.25rem;
+}
+.periodelisteItem > .ekspanderbartPanel--apen {
+  border: none;
+}
+.periodelisteItem__header {
+  border: none;
+}
+.periodelisteItem__header .ekspanderbartPanel__tittel {
+  width: 90%;
+}
+.periodelisteItem__header:hover {
+  border: none;
+}
+.periodelisteItem--transparent {
+  background-color: transparent;
+  border: 1px dotted #c6c2bf;
+}
+.periodelisteItem--transparent:hover {
+  border: 1px dotted #c6c2bf;
+}
+
+.nyStønadsperiodeNesteSak {
+  border: 0px;
+}
+
+.familiehendelsesdatoDisplay {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+}
+.familiehendelsesdatoDisplay__hjerte {
+  margin-right: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+/* Periodetyper */
+.planlegger__tittel {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+.planlegger__knapperad {
+  text-align: center;
+}
+.planlegger__knapperad:first-child button {
+  margin-right: 1rem;
+}
+.planlegger__tittelLinkWrapper {
+  display: flex;
+  align-items: baseline;
+}
+.planlegger__tittelLinkWrapper :nth-child(1) {
+  margin-right: 1rem;
+}
+.planlegger__resetPlan {
+  color: #3386e0;
+  margin-right: 1rem;
+}
+.planlegger__resetPlan:focus {
+  color: white;
+}
+.planlegger__slettPlan {
+  color: #cf3333;
+}
+.planlegger__slettPlan:focus {
+  color: white;
+}
+@media (max-width: 576px) {
+  .planlegger__knapperad {
+    display: flex;
+    flex-direction: column;
+  }
+  .planlegger__knapperad :first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.kontostatus {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.kontostatus__ikon {
+  flex-grow: 0;
+  padding-right: 1rem;
+}
+.kontostatus__content {
+  flex-grow: 1;
+}
+.kontostatus__kontoOvertrukket {
+  color: #ba3a26;
+}
+.kontostatus__dagerOvertrukket {
+  color: #ba3a26;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.tilesList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  margin: -0.5rem;
+}
+.tilesList__tile {
+  flex-grow: 1;
+  min-width: 33.33333333%;
+  max-width: 33.33333333%;
+  margin: 0;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  .tilesList__tile {
+    min-width: 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .tilesList__tile {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+.tilesList--columns-2 .tilesList__tile {
+  min-width: 50%;
+  max-width: 50%;
+}
+@media screen and (max-width: 576px) {
+  .tilesList--columns-2 .tilesList__tile {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+.tilesList--columns-1 .tilesList__tile {
+  min-width: 100%;
+  max-width: 100%;
+}
+.tilesList--columns-flex .tilesList__tile {
+  min-width: 0;
+  max-width: 100%;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.oversiktKvoter {
+  display: flex;
+  justify-content: stretch;
+}
+.oversiktKvoter__perForelder {
+  min-width: 14rem;
+  flex-grow: 0;
+  padding-right: 1rem;
+  border-right: 1px solid #979797;
+}
+.oversiktKvoter__perForelder .personkort {
+  min-width: 10rem;
+}
+.oversiktKvoter__perKvote {
+  padding-left: 1rem;
+  flex-grow: 2;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .oversiktKvoter {
+    display: block;
+  }
+  .oversiktKvoter__perForelder {
+    margin-bottom: 2rem;
+    border-right: none;
+    padding: 0;
+  }
+  .oversiktKvoter__perKvote {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .oversiktKvoter {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+.slettUttaksplanModal__content {
+  padding: 1.5rem;
+  min-width: 20rem;
+  max-width: 30rem;
+}
+.slettUttaksplanModal__knappWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.slettUttaksplanModal__knappWrapper :nth-child(1) {
+  margin-bottom: 1rem;
+}
+
+.resetUttaksplanModal__content {
+  padding: 1.5rem;
+  min-width: 20rem;
+  max-width: 30rem;
+}
+.resetUttaksplanModal__knappWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.resetUttaksplanModal__knappWrapper :nth-child(1) {
+  margin-bottom: 1rem;
+}
+
+.vilDuGåTilbakeModal {
+  padding: 2rem;
+}
+.vilDuGåTilbakeModal__knapperad {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.kvitteringHeader {
+  text-align: center;
+}
+.kvitteringHeader__spotlightLetter {
+  margin-top: 2rem;
+}
+.kvitteringHeader__sendtInnTid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kvitteringHeader__vedleggWrapper {
+  display: flex;
+  justify-content: center;
+}
+.kvitteringHeader__vedleggLink {
+  padding-left: 0.5rem;
+}
+.kvitteringHeader__vedleggIkon {
+  color: #000;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.kvittering {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.kvittering__suksess {
+  border: 1px solid #9bd0b0;
+  border-radius: 4px;
+  background-color: #9bd0b0;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  width: 100%;
+}
+.kvittering--mangler-vedlegg {
+  border: 1px solid #ffe9cc;
+  background-color: #ffe9cc;
+}
+.kvittering__ikon {
+  min-width: 3rem;
+  height: 24px;
+}
+
+.lenkepanel {
+  background-color: #fff;
+  display: block;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #262626;
+}
+.lenkepanel:hover,
+.lenkepanel--hover {
+  box-shadow: #a0a0a0 0 2px 1px 0;
+}
+.lenkepanel:focus,
+.lenkepanel--focus {
+  box-shadow: 0 0 0 3px #00347d;
+  outline: none;
+}
+.lenkepanel__indikator {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 2px;
+  line-height: 2px;
+  width: 20px;
+  position: relative;
+  text-align: center;
+  transition: 200ms transform;
+  vertical-align: middle;
+  transform: rotate(-90deg);
+  left: 0;
+  transition: left 250ms;
+}
+.lenkepanel__indikator::before,
+.lenkepanel__indikator::after {
+  transition: 200ms transform;
+  border-radius: 10px;
+}
+.lenkepanel__indikator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: currentColor;
+}
+.lenkepanel__indikator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: currentColor;
+}
+.lenkepanel__indikator::before {
+  transform: translateX(2px) rotate(45deg);
+}
+.lenkepanel__indikator::after {
+  transform: translateX(-2px) rotate(-45deg);
+}
+.lenkepanel:hover .lenkepanel__heading,
+.lenkepanel--hover .lenkepanel__heading {
+  text-decoration: underline;
+  color: #0067c5;
+}
+.lenkepanel:hover .lenkepanel__indikator,
+.lenkepanel--hover .lenkepanel__indikator {
+  left: 6px;
+}
+.lenkepanel--border {
+  border: 1px solid #c9c9c9;
+  border: 1px solid #6a6a6a;
+}
+.lenkepanel--border:hover,
+.lenkepanel--border.panel-interaktiv-mixin--hover {
+  border: 1px solid #0067c5;
+}
+
+.statusBoks {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.statusBoks__right {
+  padding-top: 0.125rem;
+}
+.statusBoks__lenkepanel.lenkepanel--border {
+  border: 1px solid #c6c2bf;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.søknadSendtSectionHeader {
+  display: flex;
+  flex-flow: column;
+}
+.søknadSendtSectionHeader__punkt {
+  display: flex;
+  flex-flow: row;
+}
+.søknadSendtSectionHeader__ikon {
+  margin-right: 2rem;
+}
+
+.søknadSendtTittel {
+  background-color: #c1b5d0;
+  padding: 1rem 1.25rem 1rem 1.25rem;
+  text-align: center;
+}
+
+:export {
+  navRod: #c30000;
+  navOransje: #ff9100;
+  navLimeGronn: #a2ad00;
+  navGronn: #06893a;
+  navLilla: #634689;
+  navDypBla: #005b82;
+  navBla: #0067c5;
+  navLysBla: #66cbec;
+  navMorkGra: #262626;
+  navGra80: #4f4f4f;
+  navGra60: #6a6a6a;
+  navGra40: #a0a0a0;
+  navGra20: #c9c9c9;
+  navLysGra: #f1f1f1;
+  navBakgrunn: #ffffff;
+  navGraBakgrunn: #f1f1f1;
+  fokusFarge: #00347d;
+  redError: #ba3a26;
+  white: #fff;
+  grayBackground: #f1f1f1;
+  grayIcon: #a0a0a0;
+  grayModia: #333333;
+  grayInactive: #6a6a6a;
+  pinkErrorBg: #f3e3e3;
+  navGronnLighten80: #ccf1d6;
+  navGronnLighten60: #99dead;
+  navGronnLighten40: #66c786;
+  navGronnLighten20: #33aa5f;
+  navGronnDarken20: #007c2e;
+  navGronnDarken40: #006a23;
+  navGronnDarken60: #005519;
+  navGronnDarken80: #003b0f;
+  navLimeGronnLighten80: #f9fccc;
+  navLimeGronnLighten60: #ecf399;
+  navLimeGronnLighten40: #d9e366;
+  navLimeGronnLighten20: #c1cb33;
+  navLimeGronnDarken20: #939e00;
+  navLimeGronnDarken40: #7f8900;
+  navLimeGronnDarken60: #666e00;
+  navLimeGronnDarken80: #474e00;
+  navLysBlaLighten80: #d8f9ff;
+  navLysBlaLighten60: #b5f1ff;
+  navLysBlaLighten40: #97e6ff;
+  navLysBlaLighten20: #7cdaf8;
+  navLysBlaDarken20: #4cadcd;
+  navLysBlaDarken40: #368da8;
+  navLysBlaDarken60: #236b7d;
+  navLysBlaDarken80: #134852;
+  navBlaLighten80: #cce1ff;
+  navBlaLighten60: #99c3ff;
+  navBlaLighten40: #66a5f4;
+  navBlaLighten20: #3386e0;
+  navBlaDarken20: #0056b4;
+  navBlaDarken40: #00459c;
+  navBlaDarken60: #00347d;
+  navBlaDarken80: #002252;
+  navDypBlaLighten80: #cce2f0;
+  navDypBlaLighten60: #99c4dd;
+  navDypBlaLighten40: #66a3c4;
+  navDypBlaLighten20: #3380a5;
+  navDypBlaDarken20: #005077;
+  navDypBlaDarken40: #004367;
+  navDypBlaDarken60: #003453;
+  navDypBlaDarken80: #00243a;
+  navLillaLighten80: #e0d8e9;
+  navLillaLighten60: #c0b2d2;
+  navLillaLighten40: #a18dbb;
+  navLillaLighten20: #8269a2;
+  navLillaDarken20: #523874;
+  navLillaDarken40: #412b5d;
+  navLillaDarken60: #301f46;
+  navLillaDarken80: #1f142f;
+  redErrorLighten80: #f9d2cc;
+  redErrorLighten60: #efa89d;
+  redErrorLighten40: #e18071;
+  redErrorLighten20: #d05c4a;
+  redErrorDarken20: #a32a17;
+  redErrorDarken40: #881d0c;
+  redErrorDarken60: #6a1204;
+  redErrorDarken80: #480900;
+  navOransjeLighten80: #ffeccc;
+  navOransjeLighten60: #ffd799;
+  navOransjeLighten40: #ffc166;
+  navOransjeLighten20: #ffaa33;
+  navOransjeDarken20: #d47b00;
+  navOransjeDarken40: #a86400;
+  navOransjeDarken60: #7d4c00;
+  navOransjeDarken80: #523300;
+  screenSm: 768px;
+  screenSmMin: 768px;
+  screenTablet: 768px;
+  screenMd: 992px;
+  screenMdMin: 992px;
+  screenDesktop: 992px;
+  screenLg: 1200px;
+  screenLgMin: 1200px;
+  screenLgDesktop: 1200px;
+  screenXsMax: 767px;
+  screenSmMax: 991px;
+  screenMdMax: 1199px;
+  containerTablet: 736px;
+  containerSm: 736px;
+  containerDesktop: 956px;
+  containerMd: 956px;
+  containerLargeDesktop: 1156px;
+  containerLg: 1156px;
+  gridColumns: 12;
+  gridGutterWidth: 16px;
+  gridFloatBreakpoint: 768px;
+  gridFloatBreakpointMax: 767px;
+  paddingBaseVertical: 6px;
+  paddingBaseHorizontal: 12px;
+  paddingLargeVertical: 10px;
+  paddingLargeHorizontal: 16px;
+  paddingSmallVertical: 5px;
+  paddingSmallHorizontal: 10px;
+  paddingXsVertical: 1px;
+  paddingXsHorizontal: 5px;
+  lineHeightLarge: 1.3333333;
+  lineHeightSmall: 1.5;
+  borderRadiusSmall: 2px;
+  borderRadiusBase: 4px;
+  borderRadiusLarge: 6px;
+}
+/*
+---------------
+FARGER
+---------------
+*/
+/*
+---------------
+BREKKPUNKTER
+---------------
+*/
+/*
+--------------
+CONTAINER
+--------------
+*/
+/*
+---------------
+GRID
+---------------
+*/
+.søknadSendt {
+  display: flex;
+  flex-direction: column;
+  max-width: 704px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.søknadSendt__foreldrepengerPanel {
+  background-color: #e0f5fb;
+}
+.søknadSendt__tittel {
+  overflow: hidden;
+  text-align: center;
+}
+.søknadSendt__tittel:after {
+  content: '';
+  display: inline-block;
+  height: 0.75rem;
+  vertical-align: bottom;
+  width: 100%;
+  margin-right: -100%;
+  padding-right: 0.5rem;
+  margin-left: 1rem;
+  border-top: 1px solid #c6c2bf;
+}
+.søknadSendt__tittel:before {
+  content: '';
+  display: inline-block;
+  height: 0.75rem;
+  vertical-align: bottom;
+  width: 100%;
+  margin-left: -100%;
+  padding-left: 0.5rem;
+  margin-right: 1rem;
+  border-top: 1px solid #c6c2bf;
+}
+
+.bytt-browser-modal {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.bytt-browser-modal__ikon {
+  width: 100%;
+  justify-self: center;
+  margin-bottom: 1rem;
+}
+
+
+/*# sourceMappingURL=AppContainer-stories.css.map?139096b480f01ca7f1ec-9a4610e316c5371b69dd-d4700f25372525c472e9-AppContainer-stories*/

@@ -1,0 +1,23 @@
+@media screen {
+  .print-only {
+    display: none;
+  }
+}
+@media print {
+  .no-print {
+    display: none;
+  }
+  .print-only {
+    display: block;
+  }
+}
+#app {
+  background-color: white;
+  min-width: 320px;
+}
+.stepFooter__avbrytSoknadLenke {
+  color: #cf3333;
+}
+
+
+/*# sourceMappingURL=main.css.map?139096b480f01ca7f1ec-a2dce14e42c0ee45bbb8-3d945f2fe640cd03f1fb-main*/
