@@ -1,2 +1,0 @@
-var c=Object.defineProperty;var e=(t,u)=>c(t,"name",{value:u,configurable:!0});import{R as f,r as n}from"./index-09ad7028.js";let s=0;function d(t){const[u,o]=n.useState(t),l=t||u;return n.useEffect(()=>{u==null&&(s+=1,o(`navds-id-${s}`))},[u]),l}e(d,"useGlobalId");const a=f["useId"];function b(t){if(a!==void 0){const u=a();return t??u}return d(t)}e(b,"useId");export{b as u};
-//# sourceMappingURL=useId-69f1adcf.js.map

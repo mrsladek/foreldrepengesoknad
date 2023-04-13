@@ -1,0 +1,2 @@
+import{j as l}from"./jsx-runtime-670450c2.js";import{b as m}from"./validationUtils-67294d5c.js";const e=m("block"),a=({margin:i,padBottom:n,className:o,textAlignCenter:t,visible:r=!0,children:s})=>{const d=e.classNames(e.block,e.modifierConditional(i,i!==void 0),e.modifierConditional(`bottom-${n}`,n!==void 0),{[e.modifier("textAlignCenter")]:t,[`${o}`]:o!==void 0});return r?l("div",{className:d,children:s}):null};export{a as B};
+//# sourceMappingURL=Block-01b0ab76.js.map

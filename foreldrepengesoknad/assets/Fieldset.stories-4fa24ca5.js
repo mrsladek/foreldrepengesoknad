@@ -1,0 +1,4 @@
+import{j as t}from"./jsx-runtime-670450c2.js";import{F as i}from"./Fieldset-f8130af3.js";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-781d69e8.js";import"./index-c5a91971.js";import"./index-4d501b15.js";import"./index-7e4e529b.js";const u={title:"components/Fieldset",component:i},e=()=>t(i,{legend:"Dette er header",children:t("div",{children:"Dette er innhold"})});var r,o,s;e.parameters={...e.parameters,docs:{...(r=e.parameters)==null?void 0:r.docs,source:{originalSource:`() => <Fieldset legend="Dette er header">\r
+        <div>Dette er innhold</div>\r
+    </Fieldset>`,...(s=(o=e.parameters)==null?void 0:o.docs)==null?void 0:s.source}}};const D=["Default"];export{e as Default,D as __namedExportsOrder,u as default};
+//# sourceMappingURL=Fieldset.stories-4fa24ca5.js.map

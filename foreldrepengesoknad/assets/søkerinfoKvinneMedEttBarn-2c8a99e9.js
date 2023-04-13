@@ -1,0 +1,2 @@
+const n={søker:{fnr:"19047815714",fornavn:"TALENTFULL",etternavn:"MYGG",kjønn:"K",fødselsdato:"1978-04-19",ikkeNordiskEøsLand:!1,barn:[{fnr:"21091981146",fødselsdato:"2021-03-15",annenForelder:{fnr:"12038517080",fødselsdato:"1985-03-12",fornavn:"LEALAUS",etternavn:"BÆREPOSE"},fornavn:"KLØKTIG",etternavn:"MIDTPUNKT",kjønn:"M"}]}};export{n as _};
+//# sourceMappingURL=søkerinfoKvinneMedEttBarn-2c8a99e9.js.map
