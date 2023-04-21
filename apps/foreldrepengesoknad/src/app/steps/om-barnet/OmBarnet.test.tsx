@@ -6,8 +6,8 @@ import dayjs from 'dayjs';
 import MockDate from 'mockdate';
 import * as stories from './OmBarnet.stories';
 
-jest.mock('app/utils/hooks/useSaveLoadedRoute', () => {
-    return jest.fn();
+vi.mock('app/utils/hooks/useSaveLoadedRoute', () => {
+    return vi.fn();
 });
 
 const {
