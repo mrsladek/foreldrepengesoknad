@@ -14,6 +14,11 @@ vi.mock('@navikt/fp-common', () => ({
     guid: () => '1',
 }));
 
+vi.mock('dayjs', () => ({
+    isSameOrAfter: () => '1',
+    default: () => vi.importActual('dayjs') as any,
+}));
+
 describe('eksisterendeSakUtils', () => {
     const eksisterendeSakMorTermin = {
         saksnummer: '352010329',
