@@ -1,2 +1,0 @@
-import{r as s}from"./index-f1f749bf.js";import{b as a}from"./useFortsettSøknadSenere-e922abdf.js";import{g as c}from"./apiInterceptor-b5d8b8e4.js";const e=new a(c()),o=({children:r,mock:t})=>(s.useEffect(()=>(t(e),()=>{e.reset()})),r);try{o.displayName="AxiosMock",o.__docgenInfo={description:"",displayName:"AxiosMock",props:{mock:{defaultValue:null,description:"",name:"mock",required:!0,type:{name:"(adapter: MockAdapter) => void"}}}}}catch{}export{o as A};
-//# sourceMappingURL=AxiosMock-3a64d69b.js.map
