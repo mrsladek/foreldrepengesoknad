@@ -15,6 +15,7 @@ import { Route, useNavigate, Navigate, Routes, useLocation } from 'react-router-
 import SøknadSendt from '../pages/søknadSendt/SøknadSendt';
 import isAvailable from './isAvailable';
 import SøknadRoutes from './routes';
+import ManglendeVedlegg from 'app/steps/manglende-vedlegg/ManglendeVedlegg';
 
 interface Props {
     fornavn: string;
@@ -51,6 +52,7 @@ const renderSøknadRoutes = (harGodkjentVilkår: boolean, erEndringssøknad: boo
             <Route path={SøknadRoutes.UTTAKSPLAN} element={<UttaksplanStep />} />
             <Route path={SøknadRoutes.UTENLANDSOPPHOLD} element={<Utenlandsopphold />} />
             <Route path={SøknadRoutes.INNTEKTSINFORMASJON} element={<Inntektsinformasjon />} />
+            <Route path={SøknadRoutes.MANGLENDE_VEDLEGG} element={<ManglendeVedlegg />} />
             <Route path={SøknadRoutes.OPPSUMMERING} element={<Oppsummering />} />
             <Route path={SøknadRoutes.SØKNAD_SENDT} element={<SøknadSendt />} />
         </>

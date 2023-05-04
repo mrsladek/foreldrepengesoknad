@@ -60,7 +60,7 @@ const Inntektsinformasjon = () => {
 
     const { handleSubmit, isSubmitting } = useOnValidSubmit(
         onValidSubmitHandler,
-        SøknadRoutes.OPPSUMMERING,
+        SøknadRoutes.MANGLENDE_VEDLEGG,
         (state: ForeldrepengesøknadContextState) => storeAppState(state)
     );
     const onAvbrytSøknad = useAvbrytSøknad();

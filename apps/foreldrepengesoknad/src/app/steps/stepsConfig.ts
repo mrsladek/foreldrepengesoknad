@@ -81,8 +81,13 @@ const stepConfigFørstegangssøknad = (intl: IntlShape): StepConfig[] => [
         label: intlUtils(intl, 'steps.label.inntektsinformasjon'),
     },
     {
-        id: 'oppsummering',
+        id: 'dokumentasjon',
         index: 7,
+        label: intlUtils(intl, 'steps.label.dokumentasjon'),
+    },
+    {
+        id: 'oppsummering',
+        index: 8,
         label: intlUtils(intl, 'steps.label.oppsummering'),
     },
 ];
@@ -99,10 +104,10 @@ export const getPreviousStepHrefEndringssøknad = (id: StepIdWithBackHrefEndring
 
     switch (id) {
         case 'dokumentasjon':
-            href = '/soknad/dokumentasjon';
+            href = '/soknad/uttaksplan';
             break;
         case 'oppsummering':
-            href = '/soknad/uttaksplan';
+            href = '/soknad/dokumentasjon';
             break;
         default:
             return assertUnreachable(id, `Forsøkt å nå en side som ikke er tilgjengelig i endringssøknaden: ${id}`);
@@ -134,10 +139,10 @@ export const getPreviousStepHref = (id: StepIdWithBackHref): string => {
             href = '/soknad/utenlandsopphold';
             break;
         case 'dokumentasjon':
-            href = '/soknad/dokumentasjon';
+            href = '/soknad/inntektsinformasjon';
             break;
         case 'oppsummering':
-            href = '/soknad/inntektsinformasjon';
+            href = '/soknad/dokumentasjon';
             break;
         default:
             return assertUnreachable(id, `Forsøkt å nå en side som ikke er tilgjengelig i søknaden: ${id}`);
