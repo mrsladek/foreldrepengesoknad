@@ -520,7 +520,7 @@
     "næringstype.dagmamma": "Dagmamma eller familiebarnehage i eget hjem",
     "næringstype.fiske": "Fiske",
     "næringstype.jordbruk_skogbruk": "Jordbruk",
-    "søknadSendt.tittel": "Takk for søknaden { name }!",
+    "søknadSendt.tittel": "Takk for søknaden, { name }!",
     "søknadSendt.pdf": "Se og last ned søknaden din",
     "søknadSendt.sendtInn": "sendt inn:",
     "søknadSendt.info.tittel": "Nå er resten vårt ansvar",

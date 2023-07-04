@@ -261,7 +261,7 @@
     "oppsummering.veileder.dokumentasjon": "Husk å sende oss dokumentasjonen som mangler innen 3 uker. Hvis vi mangler nødvendige opplysninger når vi skal behandle søknaden, kan du få avslag.",
     "oppsummering.harGodkjentVilkår": "Jeg har gjort meg kjent med vilkårene for å motta svangerskapspenger, og kan ikke jobbe som vanlig i periodene jeg søker for.",
     "søknadSendt.tekst": "Søknad med saksnummer {saksNr} ble sendt {dato}.",
-    "søknadSendt.tittel": "Takk for søknaden {name}!",
+    "søknadSendt.tittel": "Takk for søknaden, {name}!",
     "søknadSendt.pdf": "Se og last ned søknaden din",
     "søknadSendt.sendtInn": "Sendt inn:",
     "søknadSendt.info.tittel": "Nå er resten vårt ansvar",
