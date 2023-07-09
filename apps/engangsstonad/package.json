@@ -95,7 +95,7 @@
         "react-refresh": "^0.14.0",
         "sass": "^1.62.0",
         "storybook": "7.0.3",
-        "storybook-addon-react-router-v6": "^0.3.5",
+        "storybook-addon-react-router-v6": "^1.0.2",
         "ts-jest": "^29.1.0",
         "tsconfig": "workspace:*",
         "typescript": "^5.0.4",
