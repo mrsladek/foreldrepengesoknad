@@ -67,7 +67,7 @@
         "@storybook/cli": "^7.0.3",
         "@storybook/react": "^7.0.3",
         "@storybook/react-vite": "7.0.3",
-        "@storybook/testing-react": "^2.0.0",
+        "@storybook/testing-react": "^2.0.1",
         "@testing-library/jest-dom": "^5.6.5",
         "@testing-library/react": "^14.0.0",
         "@testing-library/user-event": "^14.4.3",
